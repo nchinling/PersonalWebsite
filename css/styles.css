@@ -114,6 +114,11 @@ td {
 
 }
 
+.clist{
+  /* text-indent: 10%; */
+  margin-left: 35px;
+}
+
 
 #content{
   padding: 0 1rem;
