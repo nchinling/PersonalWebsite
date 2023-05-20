@@ -187,3 +187,7 @@ td {
   /* background-color: rgb(255 255 255 / 0.3);
   backdrop-filter: blur(3px); */
 }
+
+#round_corner {
+  border-radius: 35px
+}
