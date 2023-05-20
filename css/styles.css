@@ -188,6 +188,7 @@ td {
   backdrop-filter: blur(3px); */
 }
 
-#round_corner {
-  border-radius: 35px
+
+#round-corners {
+  border-radius: 10%;
 }
