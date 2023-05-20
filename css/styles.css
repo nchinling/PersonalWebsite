@@ -2,6 +2,9 @@ body {
   background-color: #FAF7F0;
   /* background-color: #9C254D; */
   font-family: "Ubuntu";
+  /* background-image: url("../Images/building2.jpg");
+  background-size: cover; */
+  /* color: red */
 }
 
 
@@ -9,14 +12,15 @@ h1 {
 
   /* color: #98A8F8; */
   /* color: #2A3990; */
-  color: #77ACF1;
 
+  /* default */
+  color: #77ACF1;
 
 
 }
 
 h3 {
-/*
+  /*
   color: #98A8F8; */
   /* color: #2A3990; */
   color: #77ACF1;
@@ -24,71 +28,73 @@ h3 {
 
 }
 
-p
-{
+p {
   /* padding:3% 15% 7%; */
   padding: 0 3%;
 }
 
-h6
-{
+h6 {
   /* padding:3% 15% 7%; */
   padding: 0 3%;
 }
 
 a.one:link {
-  color:black;
+  color: black;
   text-decoration: none;
 }
 
 a.one:visited {
-  color:black;
+  color: black;
   text-decoration: none;
 }
-a.one:active {
-  color:black;
-  text-decoration: none;
-}
-a.one:hover {color:grey;}
 
-.intro-padding{
+a.one:active {
+  color: black;
+  text-decoration: none;
+}
+
+a.one:hover {
+  color: grey;
+}
+
+.intro-padding {
   padding: 0 3%;
 }
 
 
 
 /* Container for navigation row */
-.container-fluid{
-    padding: 1% 10%;
+.container-fluid {
+  padding: 1% 10%;
 }
 
 /* Navigation Bar */
-.navbar-brand{
-  font-family:"Ubuntu";
+.navbar-brand {
+  font-family: "Ubuntu";
   font-size: 2.5rem;
   font-weight: bold;
 }
 
-.navbar{
+.navbar {
   padding-bottom: 4.5rem;
   /* background-color: #00005C; */
   background-color: #1363DF;
 }
 
-.nav-item{
+.nav-item {
 
   padding: 0 18px;
 
 
 }
 
-.nav-link{
+.nav-link {
   font-size: 1.2rem;
   font-family: "Montserrat";
 }
 
 
-.table-format{
+.table-format {
   padding: 0 18px;
   border-spacing: 20px;
 
@@ -105,8 +111,8 @@ td {
   color:black;
 } */
 
-.carousel-image{
-  width:80%;
+.carousel-image {
+  width: 80%;
   height: auto;
   display: block;
   margin-left: auto;
@@ -114,25 +120,28 @@ td {
 
 }
 
-.clist{
+.clist {
   /* text-indent: 10%; */
   margin-left: 35px;
 }
 
 
-#content{
+#content {
   padding: 0 1rem;
 }
 
-#footer{
-  padding:1rem 1rem 3rem 1rem;
+.footer {
+  padding: 1rem 1rem 3rem 1rem;
+  /* background-image: url("../Images/office2.jpg");
+  background-size: cover; */
+  /* background-color: #77ACF1; */
 }
 
-.footer-style{
+.footer-style {
   text-decoration: none;
   color: grey;
   font-size: 1rem;
-  margin-left:0;
+  margin-left: 0;
   padding: 0 18px 0 0;
 }
 
@@ -141,16 +150,40 @@ td {
   color: black;
 } */
 
-.footer-style:hover{
-  color:#D3D3D3;
+.footer-style:hover {
+  color: #D3D3D3;
 }
 
-.carousel-title{
+.carousel-title {
   text-decoration: none;
   color: black;
   font-size: 1rem;
 }
 
-.carousel-title:hover{
-  color:#D3D3D3;
+.carousel-title:hover {
+  color: #D3D3D3;
+}
+
+.intro {
+  /* background-image: url("../Images/office13.jpg"); */
+  /* background-image: url("../Images/office2.jpg"); */
+  background-image: url("../Images/office10.jpg");
+  /* background-image: url("../Images/office17.jpg"); */
+  /* background-image: url("../Images/office18.jpg"); */
+  /* background-image: url("../Images/building2.jpg"); */
+
+
+  background-size: cover;
+  background-position: center;
+
+}
+
+.intro_box {
+  background-color: rgb(255 255 255 / 0.3);
+  backdrop-filter: blur(2px);
+}
+
+.footer_box {
+  /* background-color: rgb(255 255 255 / 0.3);
+  backdrop-filter: blur(3px); */
 }
