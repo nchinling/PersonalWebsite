@@ -189,6 +189,6 @@ td {
 }
 
 
-#round-corners {
-  border-radius: 10%;
+.round-corners {
+  border-radius: 20%;
 }
