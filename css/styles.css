@@ -131,7 +131,7 @@ td {
 }
 
 .footer {
-  padding: 1rem 1rem 3rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   /* background-image: url("../Images/office2.jpg");
   background-size: cover; */
   /* background-color: #77ACF1; */
@@ -167,20 +167,20 @@ td {
 .intro {
   /* background-image: url("../Images/office13.jpg"); */
   /* background-image: url("../Images/office2.jpg"); */
-  background-image: url("../Images/office10.jpg");
+  /* background-image: url("../Images/office10.jpg"); */
   /* background-image: url("../Images/office17.jpg"); */
   /* background-image: url("../Images/office18.jpg"); */
   /* background-image: url("../Images/building2.jpg"); */
 
 
-  background-size: cover;
-  background-position: center;
+  /* background-size: cover;
+  background-position: center; */
 
 }
 
 .intro_box {
-  background-color: rgb(255 255 255 / 0.3);
-  backdrop-filter: blur(2px);
+  /* background-color: rgb(255 255 255 / 0.3);
+  backdrop-filter: blur(2px); */
 }
 
 .footer_box {
