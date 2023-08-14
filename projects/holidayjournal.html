@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width">
-    <title>Tradeus - Stock Tracker</title>
+    <title>Holiday Journal - Journalling and Social Media app</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/styles.css">
@@ -82,7 +82,8 @@
                 <div class="col-lg-12">
 
 
-                    <h1 style="text-align:center" class="intro-padding">Tradeus - Stock Tracker</h1>
+                    <h1 style="text-align:center" class="intro-padding">Holiday Journal - Journalling and Social Media
+                        app</h1>
 
                 </div>
             </div>
@@ -114,22 +115,23 @@
                                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
                                     aria-label="Slide 4">
                                 </button>
-                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                                <!-- <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
                                     aria-label="Slide 5">
-                                </button>
+                                </button> -->
                                 <!-- <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button> -->
                             </div>
                             <!-- <div class="carousel-inner"> -->
                             <div class="carousel-inner" role="listbox" style=" width:100%; height: 400px !important;">
                                 <div class="carousel-item active" data-bs-interval="3000">
-                                    <img src="../Images/tradeus/tradeus.jpeg" class="carousel-image" alt="homepage">
+                                    <img src="../Images/holidayjournal/hlhome.jpeg" class="carousel-image"
+                                        alt="homepage">
 
                                     <br />
 
                                     <!-- </div> -->
                                 </div>
                                 <div class="carousel-item" data-bs-interval="3000">
-                                    <img src="../Images/tradeus/dashboard.png" class="carousel-image"
+                                    <img src="../Images/holidayjournal/hl2.png" class="carousel-image"
                                         alt="results image">
                                     <br />
 
@@ -138,20 +140,15 @@
 
                                 <div class="carousel-item" data-bs-interval="3000">
 
-                                    <img src="../Images/tradeus/chart.png" class="carousel-image" alt="results image">
-                                </div>
-
-                                <div class="carousel-item" data-bs-interval="3000">
-
-                                    <img src="../Images/tradeus/livedata.png" class="carousel-image"
+                                    <img src="../Images/holidayjournal/hl3.png" class="carousel-image"
                                         alt="results image">
                                 </div>
 
                                 <div class="carousel-item" data-bs-interval="3000">
 
-                                    <img src="../Images/tradeus/company.png" class="carousel-image" alt="results image">
+                                    <img src="../Images/holidayjournal/hl4.png" class="carousel-image"
+                                        alt="results image">
                                 </div>
-
 
                                 <!-- <div class="carousel-item" data-bs-interval="3000">
 
@@ -180,136 +177,36 @@
     </section>
 
     <h6>
-        Project codes are available at <a class="one" href="https://github.com/nchinling/ibf-mini-project"
+        Project codes are available at <a class="one" href="https://github.com/nchinling/CS50W_capstone"
             target="_blank">
             Github <i class="contact-img fa-brands fa-github"></i></a>
     </h6>
 
     <p>
-        Tradeus is a stock tracker app, with features that distinguishes it from other typical stock tracker apps.
+        Holiday Journal is a platform that enables travel enthusiasts to embark on an unforgettable journey of memories
+        and exploration. It enables users to cherish and share their most cherished moments from around the globe. They
+        can journal, pin the map of countries or cities visited and upload photographs of their cherished moments.
 
-        It is built with Angular(frontend), Spring Boot (backend) with SQL, Redis and MongoDB as databases.
-
-        Some exciting implementations in Tradeus include charting, creation of watch list and ability to create personal
-        portfolios which displays real time update of stock profits calculated using both annualised and total profits.
     </p>
 
     <p>
-        The following list the features implemented and technology used.
-    <div>
-        <ul class="clist">
-            <li>Angular (TypeScript)</li>
-            <li>Spring Boot (Java)</li>
-            <li>Chart JS</li>
-            <li>Bootstrap</li>
-            <li>Java Mail</li>
-            <li>Web Sockets (for streaming of live data)</li>
-            <li>Stripe</li>
-        </ul>
-    </div>
+        It is built with Javascript, Python (Django framework), SQL, HTML and CSS. Javascript libraries like Lightbox.js
+        is used to implement album-like functionalities while Leaflet.js is used to implement maps and countries/cities
+        geo-tagging.
     </p>
 
-    <p>
-        Tradeus is hosted at <a href="https://tradeus.tech/"> https://tradeus.tech/</a>
+    <p>The video below describes and demonstrates the features of Holiday Journal.
+        <a class="one" href="https://www.youtube.com/watch?v=IUM1GIqxXFM" target="_blank">here</a>
     </p>
 
-    <div class="container-fluid">
-        <p><strong>Using Tradeus</strong></p>
-        <p>
-            On log in, users will be directed to the dashboard, which serves as the main page. There are a total of six
-            pages; Dashboard, Research, Portfolio, AISA, Buy Me a Coffee and user-profile edit. The AI-enabled Stock
-            Analytics (AISA)
-            will be rolled out in future implementations.
-        </p>
+    <iframe width="420" height="315" src="https://www.youtube.com/watch?v=IUM1GIqxXFM">
+    </iframe>
 
-        <br>
-        <ol>
-            <li>
-                <label>Dashboard</label>
-                <p>
-                    The top provides market data on the S&P 500, Nasdaq, CBOE, DJIA and Russell 2000 indices.
-                    There are 5 tabs which provide different lists of stock data:
-                </p>
-                <ul>
-                    Portfolio - displays portfolio performance providing total and annualised profit/loss of each stock.
-                    An snapshot providing the total value and total percentage profit/loss is provided if a portfolio is
-                    built.
-                </ul>
-                <ul>
-                    Watchlist - displays stock data of user's watchlist. Watchlist can be built and added at Research
-                    page.
-                </ul>
-                <ul>
-                    S&P 500 and Nasdaq tabs - displays stock data of these two indices. List is updated quarterly.
-                </ul>
-                <ul>
-                    Live Data - displays live data of selected stocks ( Apple, BYD, DBS, Evergreen, Infosys, Invesco,
-                    Samsung, Toyota). Data is streamed using web sockets.
+    <p align="center">
+        <iframe width="420" height="315" src="https://www.youtube.com/watch?v=IUM1GIqxXFM">
+        </iframe>
+    </p>
 
-                </ul><br>
-                <img src="../Images/tradeus/dashboard.png" alt="Dashboard image"
-                    style="width: 50%;  border: 1px solid black;">
-            </li>
-            <br><br>
-            <li>
-                <label>Research</label>
-                <p>
-                    Users can perform search on companies (currently US market) to obtain company profile and recent
-                    market performance. Search can be done by entering
-                    the name or symbol. Companies can be added to watchlist which is displayed at dashboard.
-                </p>
-
-                <img src="../Images/tradeus/company.png" alt="Company profile"
-                    style="width: 50%;  border: 1px solid black;">
-                <br><br>
-                <p>
-                    Users can also obtain chart data (OHLC) with data intervals of up to 1 day and 5000 data points.
-                </p>
-
-                <img src="../Images/tradeus/chart.png" alt="Chart image" style="width: 50%;  border: 1px solid black;">
-            </li><br><br>
-            <li>
-                <label>Portfolio</label>
-                <p>
-                    Users can construct their stock portfolio (currently limited to US stocks). By providing transaction
-                    price, number
-                    of units, date of transaction and commission (if any), the total and annualised profit will be
-                    generated for each stock.
-                    Overall value and % profit/loss are displayed as well.
-                </p>
-                <img src="../Images/tradeus/portfolio.png" alt="portfolio"
-                    style="width: 50%;  border: 1px solid black;">
-
-            </li><br><br>
-            <li>
-                <label>Artificial Intelligence-enabled Stock Analystics (AISA) </label>
-                <p>
-                    AISA utilises financial data, including historical stock prices, technical indicators
-                    market trends and other relevant information. The rollout of AISA is planned for Q4 2023.
-                </p>
-            </li><br><br>
-            <li>
-                <label>Buy me a Coffee</label>
-                <p>E-payment with Stripe. (Refer to <a
-                        href="https://stripe.com/docs/testing">https://stripe.com/docs/testing</a> to make test payment)
-                </p>
-
-                <img src="../Images/tradeus/contribute.png" alt="Contribute image"
-                    style="width: 50%;  border: 1px solid black;">
-            </li><br><br>
-            <li>
-                <label>User-profile edit</label>
-                <p>
-                    For users to edit and save personal details.
-                </p>
-            </li>
-
-        </ol>
-        <br><br>
-
-
-
-    </div>
 
 
     <!-- <p>
