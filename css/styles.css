@@ -192,3 +192,28 @@ td {
 .img-container {
   text-align: center;
 }
+
+.video-container {
+  position: relative;
+  padding-bottom: 37.5%;
+  /* 8:3 aspect ratio (h/w) */
+  width: 60%;
+  /* Set width as a percentage */
+}
+
+
+@media (max-width: 768px) {
+  .video-container {
+    width: 80%;
+    /* Adjust width for smaller screens */
+  }
+}
+
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
