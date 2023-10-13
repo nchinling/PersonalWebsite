@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills</title>
+    <style>
+        /* Add CSS styles for your skills list container */
+        #skills-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* Style individual skill items */
+        .skill {
+            background-color: #3498db;
+            color: #fff;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Style category headers */
+        .category {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Create a container for your skills list -->
+    <div id="skills-list"></div>
+
+    <!-- Include D3.js library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <script>
+        // Define skills grouped by categories
+        const skillsData = [
+            {
+                category: "Programming Languages",
+                skills: ["Java", "Python", "JavaScript/Typescript", "C/C++", "Ruby", "R"],
+            },
+            {
+                category: "Web",
+                skills: ["API", "SpringBoot", "Angular", "React", "HTML/CSS", "Bootstrap/Angular Material"],
+            },
+            {
+                category: "OS",
+                skills: ["Linux", "Windows", "macOS"],
+            },
+            {
+                category: "Databases",
+                skills: ["SQL", "MongoDB", "Redis"],
+            },
+            {
+                category: "CI/CD",
+                skills: ["Agile", "Jira", "Dockers"],
+            },
+            {
+                category: "Other Skills",
+                skills: ["Machine Learning", "Scientific computing", "Git"],
+            },
+            // Add more categories and skills as needed
+        ];
+
+        // Create a D3.js selection for the skills list container
+        const skillContainer = d3.select("#skills-list");
+
+        // Bind data (skills) to the selection and create skill elements
+        const categoryItems = skillContainer
+            .selectAll(".category")
+            .data(skillsData)
+            .enter()
+            .append("div")
+            .classed("category", true)
+            .text(d => d.category);
+
+        // Bind skills within each category
+        categoryItems.each(function (d) {
+            const skillItems = d3.select(this)
+                .selectAll(".skill")
+                .data(d.skills)
+                .enter()
+                .append("div")
+                .classed("skill", true)
+                .text(skill => skill);
+
+            // Add interactivity (e.g., tooltip on hover) to skill items
+            skillItems
+                .on("mouseover", function (event, skill) {
+                    // Show a tooltip or other interactive behavior
+                    d3.select(this).style("background-color", "#e74c3c");
+                })
+                .on("mouseout", function () {
+                    // Restore the original style
+                    d3.select(this).style("background-color", "#3498db");
+                });
+        });
+    </script>
+</body>
+
+</html>

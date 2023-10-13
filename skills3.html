@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills Tree</title>
+    <style>
+        /* CSS styles for the skill tree */
+        .tree {
+            margin-left: 20px;
+            padding-left: 20px;
+            border-left: 1px solid #ccc;
+        }
+
+        /* CSS styles for skill items */
+        .skill {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* CSS styles for categories */
+        .category {
+            /* font-weight: bold; */
+        }
+
+        /* CSS styles for projects */
+        .project {
+            list-style-type: lower-roman;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Skills Tree</h1>
+
+    <!-- Create a hierarchical skill tree -->
+    <ul class="tree">
+        <li class="category">Programming Languages
+            <ul class="skills">
+                <li class="skill">Python
+                    <ul class="projects">
+                        <li class="project">Project A</li>
+                        <li class="project">Project B</li>
+                        <!-- Add more projects for Python as needed -->
+                    </ul>
+                </li>
+                <li class="skill">Java
+                    <ul class="projects">
+                        <li class="project">Project X</li>
+                        <li class="project">Project Y</li>
+                        <!-- Add more projects for Java as needed -->
+                    </ul>
+                </li>
+                <li class="skill">C/C++</li>
+                <li class="skill">JavaScript/TypeScript</li>
+                <li class="skill">R</li>
+                <!-- Add more programming languages as needed -->
+            </ul>
+        </li>
+        <li class="category">Frameworks
+            <ul class="skills">
+                <li class="skill">Spring Boot</li>
+                <li class="skill">Angular</li>
+                <li class="skill">React</li>
+                <!-- Add more frameworks as needed -->
+            </ul>
+        </li>
+        <li class="category">Operating Systems
+            <ul class="skills">
+                <li class="skill">Linux</li>
+                <li class="skill">Windows</li>
+                <li class="skill">macOS</li>
+                <!-- Add more operating systems as needed -->
+            </ul>
+        </li>
+        <li class="category">Databases
+            <ul class="skills">
+                <li class="skill">MySQL</li>
+                <li class="skill">MongoDB</li>
+                <li class="skill">Redis</li>
+                <!-- Add more databases as needed -->
+            </ul>
+        </li>
+        <!-- Add more categories and skills as needed -->
+    </ul>
+</body>
+
+</html>

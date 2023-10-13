@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills</title>
+    <style>
+        /* Add CSS styles for your skills tabs and content */
+        .tabs {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tab {
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Skills</h1>
+
+    <!-- Create tabs for skill categories -->
+    <div class="tabs">
+        <div class="tab" onclick="showTab('programming-languages')">Programming Languages</div>
+        <div class="tab" onclick="showTab('frameworks')">Frameworks</div>
+        <div class="tab" onclick="showTab('operating-systems')">Operating Systems</div>
+        <div class="tab" onclick="showTab('databases')">Databases</div>
+        <div class="tab" onclick="showTab('web')">Web</div>
+        <div class="tab" onclick="showTab('other-skills')">Other Skills</div>
+    </div>
+
+    <!-- Create content for each tab -->
+    <div class="tab-content" id="programming-languages">
+        <ul>
+            <li>Python</li>
+            <li>Java</li>
+            <li>C/C++</li>
+            <li>JavaScript/TypeScript</li>
+            <!-- Add more programming languages as needed -->
+        </ul>
+    </div>
+
+    <div class="tab-content" id="frameworks">
+        <ul>
+            <li>Spring Boot</li>
+            <li>Angular</li>
+            <li>React</li>
+            <!-- Add more programming languages as needed -->
+        </ul>
+    </div>
+
+    <div class="tab-content" id="operating-systems">
+        <ul>
+            <li>Linux</li>
+            <li>Windows</li>
+            <li>macOS</li>
+            <!-- Add more operating systems as needed -->
+        </ul>
+    </div>
+
+    <div class="tab-content" id="databases">
+        <ul>
+            <li>MySQL</li>
+            <li>MongoDB</li>
+            <li>Redis</li>
+            <!-- Add more databases as needed -->
+        </ul>
+    </div>
+
+    <div class="tab-content" id="web">
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Bootstrap</li>
+            <li>Angular Material</li>
+            <!-- Add more databases as needed -->
+        </ul>
+    </div>
+
+
+    <div class="tab-content" id="other-skills">
+        <ul>
+            <li>Git</li>
+            <li>HTML/CSS</li>
+            <!-- Add more skills as needed -->
+        </ul>
+    </div>
+
+    <script>
+        // JavaScript function to show a specific tab by ID
+        function showTab(tabId) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Show the selected tab content
+            const selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+        }
+
+        // Show the default tab (e.g., Programming Languages)
+        showTab('programming-languages');
+    </script>
+</body>
+
+</html>

@@ -5,22 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width">
     <title> 👋 Ng Chin Ling's Personal Site</title>
-
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
-
     <!-- Google Fonts: Montserrat and Ubuntu. Currently not used.-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sacramento&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
-
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
-
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/181c7bc6bd.js" crossorigin="anonymous"></script>
 
@@ -74,50 +69,55 @@
         <!-- </div> -->
     </section>
 
-    <section id="intro">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-2">
+    <section class="intro">
+        <div class="intro_box">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-2">
 
-                    <p style="text-align:center;">
+                        <p style="text-align:center;">
 
-                        <img style="max-width: 180px; height: auto; margin: 5%" src="Images/Chin Ling photo.png" />
+                            <img style="max-width: 180px; height: auto; margin: 5%" src="Images/Chin Ling photo.png" />
 
-                    </p>
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-10">
+                        <h1 class="intro-padding">Ng Chin Ling</h1>
+
+                        <p>
+                            <em><strong>Software Engineering Trainee</strong> @ TFIP</em>
+                        </p>
+                        <p>
+                            Hi, there. I am a software engineer currently attached with DBS under the
+                            Technology in Finance Immersion Programme (TFIP). I have been an educator
+                            for 12 years before pivoting to software engineering. This website has been created
+                            using HTML, CSS, BootStrap and Javascript,
+                            allowing me to experiment with front-end web development features. Besides working on
+                            personal programming projects, I enjoy reading magazines, exercising, walking and exploring
+                            Singapore and the world. 🌏😊
+                        </p>
+
+                        <p style="text-align:right;"> Quote:
+                            <script text-align="left" type="text/javascript">
+                                writeRandomQuote();
+                            </script>
+                        </p>
+
+
+
+                    </div>
 
                 </div>
 
-                <div class="col-lg-10">
-                    <h1 class="intro-padding">Ng Chin Ling</h1>
-
-                    <p>
-                        <em><strong>Software Engineering Trainee</strong> @ TFIP</em>
-                    </p>
-                    <p>
-                        Hi, there. I am a software engineer currently attached with DBS under the
-                        Technology in Finance Immersion Programme (TFIP). I have been an educator
-                        for 12 years before pivoting to software engineering. This website has been created
-                        using HTML, CSS, BootStrap and Javascript,
-                        allowing me to experiment with front-end web development features. Besides working on
-                        personal programming projects, I enjoy reading magazines, exercising, walking and exploring
-                        Singapore and the world. 🌏😊
-                    </p>
-
-
-                </div>
             </div>
+            <hr>
         </div>
     </section>
 
-    <p style="text-align:right;"> Quote:
-        <script text-align="left" type="text/javascript">
-            writeRandomQuote();
-        </script>
-    </p>
 
 
-
-    <hr>
 
     <div class="container-fluid">
         <div class="row">
@@ -199,8 +199,15 @@
                     </h3>
                     <ul>
                         <li>
+                            Professional Diploma in Software Development (NUS-ISS, 2023)
+                        </li>
+                        <li>
+                            Professional Certificate in Computer Science for Web Programming (HarvardX, 2022 - 2023)
+                        </li>
+                        <li>
                             Post Graduate Diploma in Education (NTU, 2010 - 2011)
                         </li>
+
                         <!-- <li>
       Professional Certificate in Computer Science for Web Programming (HarvardX, 2022 - 2023)
     </li> -->
@@ -215,10 +222,10 @@
                 <br>
                 <br>
 
-                <!-- <img src="Images/clay2.jpg" alt="claymodel" width="300"> -->
-                <img src="Images/robot2.jpg" alt="claymodel" width="300">
-
-
+                <div class="img-container">
+                    <img src="Images/clay2-modified.jpeg" alt="claymodel" width="300">
+                </div>
+                <!-- <img src="Images/robot2.jpg" alt="claymodel" width="300"> -->
 
             </div>
         </div>
@@ -226,385 +233,355 @@
 
     <hr />
 
-
-    <!-- <section id="projects">
     <div class="container-fluid">
-      <div class="row">
+        <div class="row">
+            <div class="col-md-6">
+                <section id="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 id="projects" style="text-align:center" class="intro-padding">Projects</h1>
+                                <section id="slides">
+                                    <div id="carouselExampleDark" class="carousel carousel-dark slide"
+                                        data-bs-ride="carousel">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#carouselExampleDark"
+                                                data-bs-slide-to="0" class="active" aria-current="true"
+                                                aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#carouselExampleDark"
+                                                data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#carouselExampleDark"
+                                                data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                            <button type="button" data-bs-target="#carouselExampleDark"
+                                                data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                            <button type="button" data-bs-target="#carouselExampleDark"
+                                                data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                        </div>
+                                        <div class="carousel-inner" role="listbox"
+                                            style="width:100%; height: 400px !important;">
 
+                                            <!-- Tradeus -->
+                                            <div class="carousel-item active" data-bs-interval="3000">
+                                                <a href="projects/stocktracker.html"><img
+                                                        src="Images/tradeus/tradeus.jpeg" class="carousel-image"
+                                                        alt="Tradeus webpage image"></a>
 
-        <div class="col-md-6">
+                                                <br />
+                                                <a href="projects/stocktracker.html" class="carousel-title">
+                                                    <h5 style="text-align:center">Tradeus </h5>
+                                                </a>
+                                                <p style="text-align:center">Made with Spring Boot, Angular, HTML, CSS,
+                                                    Javascript</p>
+                                            </div>
 
+                                            <!-- Holiday Journal -->
+                                            <div class="carousel-item" data-bs-interval="3000">
+                                                <a href="projects/holidayjournal.html"><img
+                                                        src="Images/holidayjournal/hlhome.jpeg" class="carousel-image"
+                                                        alt="Holiday journal image"></a>
 
-          <h1 style="text-align:center" class="intro-padding">Projects</h1>
+                                                <br />
+                                                <a href="projects/stocktracker.html" class="carousel-title">
+                                                    <h5 style="text-align:center">Holiday Journal </h5>
+                                                </a>
+                                                <p style="text-align:center">Made with Python (Django framework),
+                                                    Javascript, HTML, CSS, SQL</p>
+                                            </div>
 
-        </div>
-      </div>
-    </div>
+                                            <!-- cs50 -->
+                                            <div class="carousel-item" data-bs-interval="3000">
+                                                <a href="projects/CS50.html"><img src="Images/cs50/listing.jpeg"
+                                                        class="carousel-image" alt="CS50 image"></a>
 
-  </section> -->
+                                                <br />
+                                                <!-- <div class="carousel-caption d-none d-md-block"> -->
+                                                <a href="projects/cs50.html" class="carousel-title">
+                                                    <h5 style="text-align:center">CS50 Final Project</h5>
+                                                </a>
+                                                <p style="text-align:center">Made with Python, Flask and Sql.</p>
+                                                <!-- </div> -->
+                                            </div>
+                                            <!-- Personal webpage -->
+                                            <div class="carousel-item" data-bs-interval="3000">
+                                                <a href="projects/personal_webpage.html"><img
+                                                        src="Images/personal_page.jpeg" class="carousel-image"
+                                                        alt="Personal webpage image"></a>
 
+                                                <br />
+                                                <a href="projects/personal_webpage.html" class="carousel-title">
+                                                    <h5 style="text-align:center">Personal webpage</h5>
+                                                </a>
+                                                <p style="text-align:center">Made with HTML, CSS, Javascript and
+                                                    Bootstrap.</p>
+                                            </div>
 
-    <section id="content">
-        <div class="container-fluid">
-            <div class="row">
+                                            <!-- Weather Forecast Project -->
+                                            <div class="carousel-item" data-bs-interval="3000">
+                                                <a href="projects/openweather.html"><img
+                                                        src="Images/weather/weather1.jpg" class="carousel-image"
+                                                        alt="weather homepage"></a>
 
+                                                <br />
+                                                <!-- <div class="carousel-caption d-none d-md-block"> -->
+                                                <a href="projects/openweather.html" class="carousel-title">
+                                                    <h5 style="text-align:center">Weather Site</h5>
+                                                </a>
+                                                <p style="text-align:center">Made with Java, Springboot and Redis.</p>
+                                                <!-- </div> -->
+                                            </div>
 
-                <div style="margin:0 auto;" class="col-md-6">
-                    <h1 style="text-align:center" class="intro-padding">Projects</h1>
-
-                    <section id="slides">
-
-                        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
-                                    class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
-                                    aria-label="Slide 4"></button>
-                                <!-- <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </section>
                             </div>
-
-                            <!-- personal webpage -->
-                            <div class="carousel-inner" role="listbox" style=" width:100%; height: 400px !important;">
-                                <div class="carousel-item active" data-bs-interval="3000">
-                                    <a href="projects/personal_webpage.html"><img src="Images/personal_page.png"
-                                            class="carousel-image" alt="Personal webpage image"></a>
-
-                                    <br />
-                                    <a href="projects/personal_webpage.html" class="carousel-title">
-                                        <h5 style="text-align:center">Personal webpage</h5>
-                                    </a>
-                                    <p style="text-align:center">Made with HTML, CSS, Javascript and Bootstrap.</p>
-                                </div>
-
-                                <!-- cs50 -->
-                                <div class="carousel-item" data-bs-interval="3000">
-                                    <a href="projects/cs50.html"><img src="Images/cs50/listing.png"
-                                            class="carousel-image" alt="CS50 image"></a>
-
-                                    <br />
-                                    <!-- <div class="carousel-caption d-none d-md-block"> -->
-                                    <a href="projects/cs50.html" class="carousel-title">
-                                        <h5 style="text-align:center">CS50 Final Project</h5>
-                                    </a>
-                                    <p style="text-align:center">Made with Python, Flask and Sql.</p>
-                                    <!-- </div> -->
-                                </div>
-
-                                <!-- Weather Forecast Project -->
-                                <div class="carousel-item" data-bs-interval="3000">
-                                    <a href="projects/openweather.html"><img src="Images/weather/homepage.jpg"
-                                            class="carousel-image" alt="weather homepage"></a>
-
-                                    <br />
-                                    <!-- <div class="carousel-caption d-none d-md-block"> -->
-                                    <a href="projects/openweather.html" class="carousel-title">
-                                        <h5 style="text-align:center">Weather Site</h5>
-                                    </a>
-                                    <p style="text-align:center">Made with Java, Springboot and Redis.</p>
-                                    <!-- </div> -->
-                                </div>
-
-                                <!-- Love Calculator -->
-                                <div class="carousel-item" data-bs-interval="3000">
-                                    <a href="projects/lovecalculator.html"><img src="Images/loveapi/homepage.jpg"
-                                            class="carousel-image" alt="weather homepage"></a>
-
-                                    <br />
-                                    <!-- <div class="carousel-caption d-none d-md-block"> -->
-                                    <a href="projects/lovecalculator.html" class="carousel-title">
-                                        <h5 style="text-align:center">Love Calculator</h5>
-                                    </a>
-                                    <p style="text-align:center">Made with Java, Springboot and Redis.</p>
-                                    <!-- </div> -->
-                                </div>
-
-
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
                         </div>
+                    </div>
+
+                    <ul>
+                        <a class="one" href="projects/stocktracker.html">
+                            <tr>
+                                <li>
+                                    <td>Tradeus - Portfolio Manager/Stock Tracker</td>
+                                </li>
+                            </tr>
+                        </a>
+                        <a class="one" href="projects/holidayjournal.html">
+                            <tr>
+                                <li>
+                                    <td>Holiday Journal- Journalling and Social Media</td>
+                                </li>
+                            </tr>
+                        </a>
+                        <a class="one" href="projects/CS50.html">
+                            <tr>
+                                <li>
+                                    <td>CS50 Final Project - C2C and B2C marketplace</td>
+                                </li>
+                            </tr>
+                        </a>
+                        <a class="one" href="projects/personal_webpage.html">
+                            <tr>
+                                <li>
+                                    <td>Personal Webpage</td>
+                                </li>
+                            </tr>
+                        </a>
+                        <a class="one" href="projects/openweather.html">
+                            <tr>
+                                <li>
+                                    <td>Weather Site</td>
+                                </li>
+                            </tr>
+                        </a>
+                        <!-- <a class="one" href="projects/lovecalculator.html">
+              <tr>
+                <li>
+                  <td>Love Calculator</td>
+                </li>
+              </tr>
+            </a> -->
+                    </ul>
+
+                    <h6>
+                        Codes are available at <a class="one" href="https://github.com/nchinling" target="_blank">
+                            Github <i class="contact-img fa-brands fa-github"></i></a>
+                    </h6><br>
+                    <h6 style=text-align:right>
+                        <a class="one" href="projectlist.html"> More Projects... </a>
+                    </h6><br>
+                </section>
+            </div>
+
+            <div class="col-md-6">
+                <section id="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 id="blog" style="text-align:center" class="intro-padding">Blog</h1>
+                                <section id="slides">
+                                    <div id="carouselExampleDark2" class="carousel carousel-dark slide"
+                                        data-bs-ride="carousel">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#carouselExampleDark2"
+                                                data-bs-slide-to="0" class="active" aria-current="true"
+                                                aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#carouselExampleDark2"
+                                                data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#carouselExampleDark2"
+                                                data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                            <button type="button" data-bs-target="#carouselExampleDark2"
+                                                data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                            <button type="button" data-bs-target="#carouselExampleDark2"
+                                                data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                            <button type="button" data-bs-target="#carouselExampleDark2"
+                                                data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                            <button type="button" data-bs-target="#carouselExampleDark2"
+                                                data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                        </div>
+                                        <div class="carousel-inner" role="listbox"
+                                            style="width:100%; height: 400px !important;">
+                                            <div class="carousel-item active" data-bs-interval="3000">
+                                                <img src="Images/bond1.jpeg" class="carousel-image" alt="Otter">
+                                            </div>
+                                            <div class="carousel-item" data-bs-interval="3000">
+                                                <img src="Images/monitor2.jpg" class="carousel-image" alt="Robot2">
+                                            </div>
+
+                                            <div class="carousel-item" data-bs-interval="3000">
+                                                <img src="Images/Korea/seoul3.png" class="carousel-image" alt="seoul3">
+                                            </div>
+                                            <div class="carousel-item" data-bs-interval="3000">
+                                                <img src="Images/Korea/gamcheon4.jpeg" class="carousel-image"
+                                                    alt="Busan">
+                                            </div>
+                                            <div class="carousel-item" data-bs-interval="3000">
+                                                <img src="Images/Korea/seoul1.jpeg" class="carousel-image"
+                                                    alt="seoul 1" />
+                                            </div>
+                                            <div class="carousel-item" data-bs-interval="3000">
+                                                <img src="Images/Korea/seoul2.jpeg" class="carousel-image"
+                                                    alt="seoul 2">
+                                            </div>
+                                            <div class="carousel-item" data-bs-interval="3000">
+                                                <img src="Images/riflerange/riflerange1.jpeg" class="carousel-image"
+                                                    alt="rifle range 1">
+                                            </div>
+                                            <!-- <div class="carousel-item" data-bs-interval="3000">
+                        <img src="Images/bond.jpeg" class="carousel-image" alt="Otter">
+                      </div>
+                      <div class="carousel-item" data-bs-interval="3000">
+                        <img src="Images/monitor2.jpg" class="carousel-image" alt="Robot2">
+                      </div> -->
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselExampleDark2" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselExampleDark2" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <ul>
+                        <a class="one" href="blog/bond.html">
+                            <li>007: No Time to Die 5 June '23</li>
+                        </a>
+                        <a class="one" href="blog/ai.html">
+                            <li>AI: Shaping the Future of Society 18 May'23</li>
+                        </a>
+                        <a class="one" href="busan.html">
+                            <li>South Korea trip (Part 2 - Busan) &nbsp; 18 - 21 Dec '22</li>
+                        </a>
+                        <a class="one" href="korea.html">
+                            <li>South Korea trip (Part 1 - Seoul) &nbsp; 12 - 18 Dec '22 and 21 - 22' Dec'22</li>
+                        </a>
+                        <a class="one" href="rifle_range.html">
+                            <li>Rifle Range Nature Park &nbsp; 20 Nov '22'</li>
+                        </a>
+
+                    </ul>
+                    <h6 style=text-align:right>
+                        <a class="one" href="bloglist.html"> More blog entries... </a>
+                    </h6><br>
+                </section>
+
+                <br />
+            </div>
+
+
+            <br />
+
+
+            <hr>
+
+            <!-- <div class="container-fluid"> -->
+            <section id="content">
+                <div class="container-fluid">
+                    <section id="contact">
+                        <h3>
+                            Contact and Social Media
+                        </h3>
+                        <ul>
+                            <li>
+                                <a class="one" href="mailto:nchinling@gmail.com" target="_blank"> nchinling@gmail.com <i
+                                        class="contact-img fa-solid fa-envelope"></i> </a>
+                            </li>
+                            <li>
+                                <a class="one" href="https://linkedin.com/in/chin-ling-ng" target="_blank"> LinkedIn <i
+                                        class="contact-img fa-brands fa-linkedin"></i> </a>
+                            </li>
+                            <li>
+                                <a class="one" href="https://github.com/nchinling" target="_blank"> Github <i
+                                        class="contact-img fa-brands fa-github"></i></a>
+                            </li>
+                            <li>
+                                <a class="one" href="https://twitter.com/ChinLing_Ng" target="_blank"> Twitter <i
+                                        class="contact-img fa-brands fa-twitter"></i></a>
+                            </li>
+                        </ul>
                     </section>
 
                 </div>
-            </div>
-        </div>
 
-        <ul>
-            <a class="one" href="projects/personal_webpage.html">
-                <tr>
-                    <li>
-                        <td>Personal Webpage</td>
-                    </li>
-                </tr>
-            </a>
-            <a class="one" href="projects/CS50.html">
-                <tr>
-                    <li>
-                        <td>CS50 Final Project - C2C and B2C marketplace</td>
-                    </li>
-                </tr>
-            </a>
-            <a class="one" href="projects/openweather.html">
-                <tr>
-                    <li>
-                        <td>Weather Site</td>
-                    </li>
-                </tr>
-            </a>
-            <a class="one" href="projects/lovecalculator.html">
-                <tr>
-                    <li>
-                        <td>Love Calculator</td>
-                    </li>
-                </tr>
-            </a>
-        </ul>
-
-
-        <h6 style="text-align:center">
-            Codes are available at <a class="one" href="https://github.com/nchinling" target="_blank"> Github <i
-                    class="contact-img fa-brands fa-github"></i></a>
-        </h6></br>
-
-        </div>
-        </div>
-        </div>
-
-
-
-    </section>
-
-
-    <hr>
-
-
-    <section id="blog">
-        <div class="container-fluid">
-            <div class="row">
-
-
-                <div class="col-lg-12">
-
-
-                    <h1 style="text-align:center" class="intro-padding">Blog</h1>
-
-                </div>
-
-                <div style="margin:0 auto;" class="col-md-6">
-                    dddd
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-
-    <section id="content">
-        <div class="container-fluid">
-
-            <div class="row">
-
-
-                <div style="margin:0 auto;" class="col-lg-6">
-
-                    <section id="slides">
-
-
-                        <div id="carouselExampleDark2" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="0"
-                                    class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="3"
-                                    aria-label="Slide 4"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="4"
-                                    aria-label="Slide 5"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="5"
-                                    aria-label="Slide 6"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="6"
-                                    aria-label="Slide 7"></button>
-                            </div>
-
-
-                            <div class="carousel-inner" role="listbox" style=" width:100%; height: 400px !important;">
-                                <div class="carousel-item active" data-bs-interval="3000">
-                                    <img src="Images/Korea/seoul3.png" class="carousel-image" alt="seoul3">
-                                </div>
-
-                                <div class="carousel-item" data-bs-interval="3000">
-                                    <img src="Images/Korea/gamcheon4.png" class="carousel-image" alt="Busan">
-                                </div>
-
-
-                                <div class="carousel-item" data-bs-interval="3000">
-                                    <img src="Images/Korea/seoul1.png" class="carousel-image" alt="seoul 1" />
-                                </div>
-
-                                <div class="carousel-item" data-bs-interval="3000">
-                                    <img src="Images/Korea/seoul2.png" class="carousel-image" alt="seoul 2">
-                                </div>
-
-                                <div class="carousel-item" data-bs-interval="3000">
-                                    <img src="Images/riflerange/riflerange1.png" class="carousel-image"
-                                        alt="rifle range 1">
-                                </div>
-
-                                <div class="carousel-item" data-bs-interval="3000">
-                                    <img src="Images/alexandra/alexandra1.png" class="carousel-image" alt="Otter">
-                                </div>
-
-                                <div class="carousel-item" data-bs-interval="3000">
-                                    <img src="Images/robot2.jpg" class="carousel-image" alt="Robot2">
-                                </div>
-
-
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleDark2" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselExampleDark2" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
-                            </div>
-                    </section>
-
-                </div>
-            </div>
-        </div>
-        </br>
-
-        <ul>
-            <a class="one" href="blog/ai.html">
-                <tr>
-                    <li>
-                        <td>AI: Shaping the Future of Society 18 May'22</td>
-                    </li>
-                </tr>
-            </a>
-            <a class="one" href="busan.html">
-                <tr>
-                    <li>
-                        <td>South Korea trip (Part 2 - Busan) &nbsp 18 - 21 Dec '22</td>
-                    </li>
-                </tr>
-            </a>
-            <a class="one" href="korea.html">
-                <tr>
-                    <li>
-                        <td>South Korea trip (Part 1 - Seoul) &nbsp 12 - 18 Dec '22 and 21 - 22' Dec'22</td>
-                    </li>
-                </tr>
-            </a>
-            <a class="one" href="rifle_range.html">
-                <tr>
-                    <li>
-                        <td>Rifle Range Nature Park &nbsp 20 Nov '22'</td>
-                    </li>
-                </tr>
-            </a>
-            <a class="one" href="alexandra.html">
-                <tr>
-                    <li>
-                        <td>Treasures of our Park Connector Network &nbsp 19 Nov '22</td>
-                    </li>
-                </tr>
-            </a>
-
-        </ul>
-
-    </section>
-
-    <br />
-
-
-    <hr>
-
-    <div class="container-fluid">
-        <section id="content">
-            <section id="contact">
-                <h3>
-                    Contact and Social Media
-                </h3>
-                <ul>
-                    <li>
-                        <a class="one" href="mailto:nchinling@gmail.com" target="_blank"> nchinling@gmail.com <i
-                                class="contact-img fa-solid fa-envelope"></i> </a>
-                    </li>
-                    <li>
-                        <a class="one" href="https://linkedin.com/in/chin-ling-ng" target="_blank"> LinkedIn <i
-                                class="contact-img fa-brands fa-linkedin"></i> </a>
-                    </li>
-                    <li>
-                        <a class="one" href="https://github.com/nchinling" target="_blank"> Github <i
-                                class="contact-img fa-brands fa-github"></i></a>
-                    </li>
-                    <li>
-                        <a class="one" href="https://twitter.com/ChinLing_Ng" target="_blank"> Twitter <i
-                                class="contact-img fa-brands fa-twitter"></i></a>
-                    </li>
-                </ul>
             </section>
-        </section>
-    </div>
 
-    <hr />
+            <!-- </div> -->
 
+            <hr>
 
-    <section id=footer>
-        <!-- <table cellspacing="10"> -->
+            <section class=footer>
 
-        <!-- <table border="0px;" height="50%" width="50%" bordercolor="grey" align=left cellpadding ="10"> -->
-        <table>
+                <div class="footer_box">
 
-            <tr>
-                <td>
+                    <table>
 
-                    <a class="footer-style" href="index.html"> Home</a>
+                        <tr>
+                            <td>
 
-                </td>
-                <td>
+                                <a class="footer-style" href="index.html"> Home</a>
 
-                    <a class="footer-style" href="#projects"> Projects</a>
+                            </td>
+                            <td>
 
-                </td>
+                                <a class="footer-style" href="#projects"> Projects</a>
 
-                <td>
+                            </td>
 
-                    <a class="footer-style" href="#blog"> Blog</a>
+                            <td>
 
-                </td>
-            </tr>
+                                <a class="footer-style" href="#blog"> Blog</a>
 
-        </table>
-    </section>
+                            </td>
+                        </tr>
 
-    <!-- </section> -->
+                    </table>
+                </div>
+            </section>
 
-    <!-- Bootstrap - Javascript -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
-        crossorigin="anonymous"></script>
+            <!-- Bootstrap - Javascript -->
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+                integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+                integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+                crossorigin="anonymous"></script>
 
 
 </body>
