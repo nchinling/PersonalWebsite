@@ -126,23 +126,27 @@ td {
 }
 
 .footer {
-  padding: 1rem 1rem 1rem 1rem;
-  /* background-image: url("../Images/office2.jpg");
-  background-size: cover; */
-  /* background-color: #77ACF1; */
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  /* position: absolute; */
+  bottom: 0;
 }
 
-.link-style {
+
+.link-style:link {
   color: grey;
   text-decoration: none;
 }
 
 .link-style:hover {
   color: #D3D3D3;
-  text-decoration: none;
 }
 
 .link-style:visited {
+  color: grey;
+  text-decoration: none;
+}
+
+.link-style:active {
   color: grey;
   text-decoration: none;
 }
