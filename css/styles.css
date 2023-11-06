@@ -142,6 +142,11 @@ td {
   text-decoration: none;
 }
 
+.link-style:visited {
+  color: grey;
+  text-decoration: none;
+}
+
 .footer-style {
   text-decoration: none;
   color: grey;
