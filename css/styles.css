@@ -167,6 +167,9 @@ td {
 
 .img-container {
   text-align: center;
+  max-width: 100%;
+  height: auto;
+
 }
 
 .video-container {
