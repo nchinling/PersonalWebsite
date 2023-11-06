@@ -106,11 +106,6 @@ td {
 }
 
 
-/* #slides{
-  background-color: #D3D3D3;
-  color:black;
-} */
-
 .carousel-image {
   width: 80%;
   height: auto;
@@ -137,6 +132,16 @@ td {
   /* background-color: #77ACF1; */
 }
 
+.link-style {
+  color: grey;
+  text-decoration: none;
+}
+
+.link-style:hover {
+  color: #D3D3D3;
+  text-decoration: none;
+}
+
 .footer-style {
   text-decoration: none;
   color: grey;
@@ -144,11 +149,6 @@ td {
   margin-left: 0;
   padding: 0 18px 0 0;
 }
-
-/* .bloglist-style{
-  text-decoration: none;
-  color: black;
-} */
 
 .footer-style:hover {
   color: #D3D3D3;
@@ -162,30 +162,6 @@ td {
 
 .carousel-title:hover {
   color: #D3D3D3;
-}
-
-.intro {
-  /* background-image: url("../Images/office13.jpg"); */
-  /* background-image: url("../Images/office2.jpg"); */
-  /* background-image: url("../Images/office10.jpg"); */
-  /* background-image: url("../Images/office17.jpg"); */
-  /* background-image: url("../Images/office18.jpg"); */
-  /* background-image: url("../Images/building2.jpg"); */
-
-
-  /* background-size: cover;
-  background-position: center; */
-
-}
-
-.intro_box {
-  /* background-color: rgb(255 255 255 / 0.3);
-  backdrop-filter: blur(2px); */
-}
-
-.footer_box {
-  /* background-color: rgb(255 255 255 / 0.3);
-  backdrop-filter: blur(3px); */
 }
 
 
