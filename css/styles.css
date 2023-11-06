@@ -2,9 +2,7 @@ body {
   background-color: #FAF7F0;
   /* background-color: #9C254D; */
   font-family: "Ubuntu";
-  /* background-image: url("../Images/building2.jpg");
-  background-size: cover; */
-  /* color: red */
+
 }
 
 
@@ -216,4 +214,14 @@ td {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+
+.cube-style {
+  /* Add your custom styles for the cube here */
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  transform: rotate(45deg);
+  /* Add more styles as needed */
 }
