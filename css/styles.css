@@ -105,7 +105,7 @@ td {
 
 
 .carousel-image {
-  width: 80%;
+  width: 90%;
   height: auto;
   display: block;
   margin-left: auto;
@@ -212,4 +212,17 @@ td {
   background-color: red;
   transform: rotate(45deg);
   /* Add more styles as needed */
+}
+
+/* Default height for medium-sized screens and above */
+.carousel-inner {
+  height: 500px;
+}
+
+/* Adjust the height for smaller screens (e.g., mobile devices) */
+@media (max-width: 767px) {
+  .carousel-inner {
+    height: auto;
+    /* or any other suitable value for smaller screens */
+  }
 }
