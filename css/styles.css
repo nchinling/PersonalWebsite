@@ -251,3 +251,10 @@ td {
   margin-top: 10px;
   /* Adjust the margin as needed to control spacing */
 }
+
+@media (max-width: 768px) {
+  figure img {
+    max-width: 100%;
+    /* Adjust the width as needed */
+  }
+}
