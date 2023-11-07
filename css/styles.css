@@ -104,14 +104,6 @@ td {
 }
 
 
-.carousel-image {
-  width: 90%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
-}
 
 .clist {
   /* text-indent: 10%; */
@@ -216,13 +208,33 @@ td {
 
 /* Default height for medium-sized screens and above */
 .carousel-inner {
-  height: 500px;
+  height: 450px;
 }
 
+
+
 /* Adjust the height for smaller screens (e.g., mobile devices) */
-@media (max-width: 767px) {
+@media (max-width: 750px) {
   .carousel-inner {
-    height: auto;
+
+    height: 300px;
     /* or any other suitable value for smaller screens */
   }
 }
+
+.carousel-inner img {
+  max-height: 430px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .carousel-image {
+  width: 80%;
+  height: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} */
