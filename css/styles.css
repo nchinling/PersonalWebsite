@@ -217,6 +217,7 @@ td {
 @media (max-width: 750px) {
   .carousel-inner {
 
+
     height: 300px;
     /* or any other suitable value for smaller screens */
   }
