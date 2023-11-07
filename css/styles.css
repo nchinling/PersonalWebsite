@@ -232,10 +232,22 @@ td {
   margin-right: auto;
 }
 
-/* .carousel-image {
-  width: 80%;
-  height: 300px;
+/* Centering the image container using CSS flexbox */
+.image-container {
+  display: flex;
+  justify-content: center;
+  /* Horizontally center the content */
+  align-items: center;
+  /* Vertically center the content */
+}
+
+/* Style the image */
+.image-container img {
+  max-width: 100%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-} */
+}
+
+.image-container figcaption {
+  margin-top: 10px;
+  /* Adjust the margin as needed to control spacing */
+}
