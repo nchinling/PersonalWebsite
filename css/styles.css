@@ -230,6 +230,7 @@ td {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 5%;
 }
 
 /* Centering the image container using CSS flexbox */
