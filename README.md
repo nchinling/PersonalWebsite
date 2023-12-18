@@ -4,25 +4,25 @@ The website can be accessed at https://ngchinling.com/
 
 ## Overview
 
-This website serves as a showcase of Chin Ling's skills, projects, and blog entries. 
+This website serves as a showcase of my skills, projects, and blog entries. 
 
 ## Features
 
 ### 1. Navigation
 
 The website features a clean and intuitive navigation menu at the top, allowing users to easily access different sections:
-- **Home**: Overview of Ng Chin Ling's background and introduction.
+- **Home**: Overview of my background and introduction.
 - **Projects**: Showcase of various projects with links to project details.
 - **Blog**: A collection of blog entries on personal interests and experiences.
-- **Contact**: Information on how to get in touch with Ng Chin Ling and links to social media.
+- **Contact**: Information on how to get in touch with me and links to social media.
 
 ### 2. Introduction Section
 
-The landing section provides a brief introduction to Chin Ling. The section also includes a personal quote generated randomly.
+The landing section provides a brief introduction to me. The section also includes a personal quote generated randomly.
 
 ### 3. Work and Education Details
 
-Detailed sections on work experience, education, and professional qualifications provide a comprehensive overview of Chin Ling's background.
+Detailed sections on work experience, education, and professional qualifications provide a comprehensive overview of my background.
 
 ### 4. Projects Section
 
@@ -37,7 +37,7 @@ Notable projects include:
 
 ### 5. Blog Section
 
-Ng Chin Ling shares personal experiences and interests in the blog section. Each blog entry is accompanied by images, providing a visually engaging experience. Users can click on the blog titles to read the full entries.
+Personal experiences and interests are shared in the blog section. Each blog entry is accompanied by images, providing a visually engaging experience. Users can click on the blog titles to read the full entries.
 
 Recent blog entries include:
 - **Jeju Island Trip (Part 1: Days 1-3)** - 1-8 Dec '23.
@@ -49,7 +49,7 @@ Recent blog entries include:
 
 ### 6. Contact and Social Media
 
-Users can easily get in touch with Ng Chin Ling through provided contact information, including email. Links to LinkedIn, GitHub, and Twitter are available for social media connections.
+Users can easily get in touch with me through provided contact information, including email. Links to LinkedIn, GitHub, and Twitter are available for social media connections.
 
 ### 7. Footer
 
@@ -66,8 +66,8 @@ The website is developed using:
 
 ## How to Run
 
-To explore Ng Chin Ling's website locally:
+To explore my website locally:
 1. Clone this repository.
 2. Open `index.html` in a web browser.
 
-Feel free to explore the various sections, projects, and blog entries to learn more about Ng Chin Ling's journey and expertise.
+Feel free to explore the various sections, projects, and blog entries to learn more about my journey and expertise.
