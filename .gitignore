@@ -2,3 +2,11 @@
 # *.jpeg
 # *.png
 # /Images/
+
+# Ignore JPEG files
+*.jpeg
+*.jpg
+*.png
+
+# Ignore MOV files
+*.mov
