@@ -4,9 +4,6 @@
 # /Images/
 
 # Ignore JPEG files
-*.jpeg
-*.jpg
-*.png
 *.HEIC
 
 # Ignore MOV files
