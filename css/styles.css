@@ -259,3 +259,10 @@ td {
     /* Adjust the width as needed */
   }
 }
+
+@media (max-width: 767px) {
+  #footer.fixed-bottom {
+    position: relative;
+    /* or remove the fixed positioning */
+  }
+}
