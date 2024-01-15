@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width">
-    <title>TradeSims</title>
+    <title>EduQuest LMS</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/styles.css">
@@ -82,7 +82,7 @@
                 <div class="col-lg-12">
 
 
-                    <h1 style="text-align:center" class="intro-padding">TradeSims - Stock Trading simulator</h1>
+                    <h1 style="text-align:center" class="intro-padding">EduQuest Learning Management System</h1>
 
                 </div>
             </div>
@@ -114,20 +114,22 @@
                                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
                                     aria-label="Slide 4">
                                 </button>
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                                    aria-label="Slide 5">
+                                </button>
 
                             </div>
 
                             <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" data-bs-interval="3000">
-                                    <img src="../Images/tradesims/home.jpeg" class="carousel-image" alt="homepage">
+                                    <img src="../Images/eduquest/lms.png" class="carousel-image" alt="homepage">
 
                                     <br />
 
                                     <!-- </div> -->
                                 </div>
                                 <div class="carousel-item" data-bs-interval="3000">
-                                    <img src="../Images/tradesims/piecharts.png" class="carousel-image"
-                                        alt="results image">
+                                    <img src="../Images/eduquest/lms3.png" class="carousel-image" alt="results image">
                                     <br />
 
                                     <!-- </div> -->
@@ -135,13 +137,19 @@
 
                                 <div class="carousel-item" data-bs-interval="3000">
 
-                                    <img src="../Images/tradesims/trades.png" class="carousel-image"
+                                    <img src="../Images/eduquest/studentnotes.png" class="carousel-image"
                                         alt="results image">
                                 </div>
 
                                 <div class="carousel-item" data-bs-interval="3000">
 
-                                    <img src="../Images/tradesims/chart1.png" class="carousel-image"
+                                    <img src="../Images/eduquest/studentquiz1.png" class="carousel-image"
+                                        alt="results image">
+                                </div>
+
+                                <div class="carousel-item" data-bs-interval="3000">
+
+                                    <img src="../Images/eduquest/quizfeatures.png" class="carousel-image"
                                         alt="results image">
                                 </div>
 
@@ -168,24 +176,22 @@
     </section><br>
 
     <h6>
-        Project codes are available at <a class="one" href="https://github.com/nchinling/TradeSims" target="_blank">
+        Project codes are available at <a class="one" href="https://github.com/nchinling/learning_management_system"
+            target="_blank">
             Github <i class="contact-img fa-brands fa-github"></i></a>
     </h6>
 
     <p>
-        TradeSims is hosted at <a href="https://tradesims.up.railway.app/"> https://tradesims.up.railway.app/</a>
+        EduQuest is a Learning Management System (LMS) developed with Angular(frontend) and Spring Boot
+        (backend) with SQL and MongoDB as databases. Teachers are able to create content and quizzes for students while
+        students are able to make use of these content developed. Student attempt data are displayed to both teachers
+        and students for analytics.
     </p>
 
-    <p>
-        TradeSims is a stock trading simulator app, which allows users to simulate the buying and selling of stocks
-        Users can check their trading profits (or losses) and perform charting. There are various charting technical
-        indicators available to aid users in identifying buy/sell signals. Other features include listing of trades
-        history and current cash to stocks ratio.
+    <p>Why did I decide to create an LMS? As an educator, I have always wondered how an LMS is developed. Now, armed
+        with programming skills, I decided to develop one myself to see how much can I value-add to the industry.</p>
 
-        Just like <a href="https://tradeus.tech">Tradeus</a>, it is built with Angular(frontend), Spring Boot
-        (backend) with SQL, Redis and MongoDB as databases.
 
-    </p>
 
     <p>
         The following lists the features implemented and technology used.
@@ -193,9 +199,9 @@
         <ul class="clist">
             <li>Angular (TypeScript)</li>
             <li>Spring Boot (Java)</li>
-            <li>Financial data (web API)</li>
             <li>Chart JS</li>
             <li>Bootstrap</li>
+            <li>SQL and MongoDB</li>
         </ul>
     </div>
     </p>
@@ -205,10 +211,11 @@
     </p>
 
     <div class="container-fluid">
-        <p><strong>Using TradeSims</strong></p>
+        <p><strong>Using EduQuest</strong></p>
         <p>
-            On log in, users will be directed to the dashboard. Users can view their cash to stock ratio and the
-            proportion of the different stocks in the portfolio.
+            On teacher account log in, the teacher will be directed to the dashboard to view data related to student
+            quiz and notes access presented in the form of bar charts. They will also be able to view their created quiz
+            and notes in lists form.
         </p>
 
         <br>
@@ -216,75 +223,132 @@
             <li>
                 <label>Dashboard</label>
                 <p>
-                    The total profit (loss) in absolute terms and percentage are presented at the top. Doughnut charts
-                    present data on the user's cash to stock ratio as well as the proportion of the
-                    different stocks in the portfolio. The table below presents data on the performance of each trade.
-                    In addition, users can view their trade history on the dashboard (not shown).
+                    There are three barcharts displayed at the top of the page. They are the number of times each quiz
+                    has been attempted, each quiz's average score and the number of times each note has been accessed.
+                    The listed quiz and notes provide information on the date they were created and modified, if any.
                 </p>
-                <img src="../Images/tradesims/piecharts.png" alt="Dashboard image"
+                <img src="../Images/eduquest/lms3.png" alt="Dashboard image"
                     style="width: 70%; border: 1px solid black;"><br><br>
-                <img src="../Images/tradesims/trades.png" alt="Dashboard image"
+                <img src="../Images/eduquest/lms4.png" alt="Dashboard image"
                     style="width: 70%;  border: 1px solid black;">
 
             </li>
             <br><br>
             <li>
-                <label>Charting</label>
+                <label>Content</label>
                 <p>
-                    Users can view stock charts of listed companies (limited to US stocks). They can zoom in or
-                    out to view less or more data points respectively by clicking the buttons on the top right.
+                    Teachers can click on a created content to edit the text, add sections or to reassign the classes
+                    which have access to it.
                 </p>
 
-                <img src="../Images/tradesims/chart1.png" alt="Dashboard image"
+                <img src="../Images/eduquest/content1.png" alt="content image"
                     style="width: 70%;  border: 1px solid black;">
                 <br><br>
-                <p>
-                    Users are provided with a buffet of technical indicators with their charts to aid them in making
-                    trading decisions.
-                </p>
-
-                <img src="../Images/tradesims/chart2.png" alt="Dashboard image"
+                <img src="../Images/eduquest/content2.png" alt="Dashboard image"
                     style="width: 70%;  border: 1px solid black;">
                 <br><br>
-                <img src="../Images/tradesims/chart3.png" alt="Dashboard image"
-                    style="width: 70%;  border: 1px solid black;">
-                <br><br>
-            </li><br><br>
+            </li><br>
             <li>
-                <label>Buy/Sell orders</label>
+                <label>Create New Content</label>
                 <p>
-                    Users place buy/sell orders by providing the number of units and the buy/sell action. The order will
-                    be executed using stocks prices which are accurate to 1 minute.
+                    Teachers can create a new content by clicking on 'Content' at the navigation menu. After that, fill
+                    in
+                    the section header and text. Users can add and delete sections, or even delete the entire content.
                 </p>
-                <img src="../Images/tradesims/tradeform.png" alt="Dashboard image"
+                <img src="../Images/eduquest/content3.png" alt="Dashboard image"
+                    style="width: 70%;  border: 1px solid black;">
+                <br><br>
+                <img src="../Images/eduquest/contentfeature.png" alt="Dashboard image"
                     style="width: 70%;  border: 1px solid black;">
                 <br><br>
 
             </li><br><br>
 
             <li>
-                <label>Company Information</label>
-                <p>Users can also search for company data using the search bar.
+                <label>Quiz</label>
+                <p> Teachers can click on a created quiz to analyse quiz performance by questions. A barchart is created
+                    which displays the percentage of students who answered each question correctly. Teachers can also
+                    make modificatons to the quiz by editing the question text, answer and
+                    adding or deleting questions.
                 </p>
-                <img src="../Images/tradesims/company.png" alt="Dashboard image"
+                <img src="../Images/eduquest/breakdown.png" alt="Dashboard image"
                     style="width: 70%;  border: 1px solid black;">
-
+                <br><br>
             </li><br>
 
+            <li>
+                <label>Create New Quiz</label>
+                <p>
+                    Teachers can create a new quiz by clicking on 'Quiz' at the navigation menu. There are two types of
+                    question types that can be created, namely multiple choice questions (MCQs) and free-response. Each
+                    question requires the question text, answer and marks. After assigning and saving the quiz, the
+                    teacher will be directed to the dashboard page.
+                </p>
+                <img src="../Images/eduquest/freeresponse.png" alt="free-response image"
+                    style="width: 70%;  border: 1px solid black;">
+                <br><br>
+                <img src="../Images/eduquest/mcq.png" alt="mcq image" style="width: 70%;  border: 1px solid black;">
+                <br><br>
+                <img src="../Images/eduquest/quizfeatures.png" alt="quiz features"
+                    style="width: 70%;  border: 1px solid black;">
+                <br><br>
+
+            </li><br>
+            <li>
+                <label>Student dashboard</label>
+                <p>
+                    The student dashboard displays the student's quiz results as well as available notes and quiz. New
+                    quiz are
+                    reflected with 'New'.
+                </p>
+                <img src="../Images/eduquest/studentdashboard.png" alt="free-response image"
+                    style="width: 70%;  border: 1px solid black;">
+                <br><br>
+                <img src="../Images/eduquest/studentdashboard2.png" alt="mcq image"
+                    style="width: 70%;  border: 1px solid black;">
+                <br><br>
+            </li><br>
+            <li>
+                <label>Student Notes View</label>
+                <p>
+                    Students can click on the links to the created notes to view their readings. They are almost the
+                    same as the teacher's notes view, without the ability to edit them.
+                </p>
+                <img src="../Images/eduquest/studentnotes.png" alt="free-response image"
+                    style="width: 70%;  border: 1px solid black;">
+                <br><br>
+            </li><br>
+            <li>
+                <label>Student Quiz</label>
+                <p>
+                    Students answer the questions in the quiz by choosing the correct MCQ option or filling in the
+                    blanks for free-response questions. The quiz will be graded automatically, allowing students to view
+                    their results.
+                </p>
+                <img src="../Images/eduquest/studentquiz1.png" alt="free-response image"
+                    style="width: 70%;  border: 1px solid black;">
+                <br><br>
+                <img src="../Images/eduquest/studentquiz2.png" alt="free-response image"
+                    style="width: 70%;  border: 1px solid black;">
+                <br><br>
+            </li><br>
         </ol>
-        <p>View the video below for more details about TradeSims.</p>
+
+        <p>The Educational Technology sector is relatively saturated. Newer companies differentiate their LMS offerings
+            by providing AI features such as adaptive learning. From my experience in developing EduQuest, I realised
+            that a LMS is a complex system which has many interlinked features involving the four models of content,
+            assessment, teachers and students. It is easy to create one, but challenging to create a good one that will
+            benefit students. Even after having developed a good LMS, there are many facets to learning that will not be
+            discussed here. View the video below for a demonstration of EduQuest.</p><br>
         <div class="container">
             <div align="center">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/WsDP4cAWfAY" title="YouTube video player" frameborder="0"
+                    <iframe src="https://www.youtube.com/embed/PYoFiQt7LvY" title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
                 </div>
             </div>
         </div>
-
-
-
     </div>
 
     <br />
