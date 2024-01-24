@@ -87,16 +87,27 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/algorithms/algorithms1.png" alt="algorithmscover" width="700" height="auto">
+                    </figure>
+                </div>
+            </div>
+        </div></br>
         <p>
             This article introduces the basic algorithms that one would usually cover in a Data Structures and
             Algorithms course. It's not meant to be a comprehensive or technical piece, but rather to cover the big
             ideas on
             algorithms.I decided to write this article as a form of revision for the DSA book, <em>Ace Your Next Coding
-                Interview by Learning Algorithms through Programming and Problem Solving</em> written by <em>Alexander
-                Kulikov</em> and <em>Pavel Pevzner</em>. The contents in the book are rephrased to reflect my own
+                Interview by Learning Algorithms through Programming and Problem Solving</em>, which is written by
+            <em>Alexander
+                Kulikov</em> and <em>Pavel Pevzner</em>. The contents in the book are rephrased to demonstrate my
             understanding. It is supplemented with my prior knowledge, other
             books and websites.
-            I hope that people who read this will find it useful as well. Ready to begin? Let's go... :)
+            I hope that people who read this will find it useful as well. Ready? Let's begin... :)
         </p>
 
         <p>What is an algorithm? An algorithm is a sequence of instructions that one must perform in order to solve a
@@ -106,21 +117,89 @@
             in
             a computer.</p>
 
-        <p>Running Time and the Big-O Notation, O(n)</p>
+        <p><u>Running Time of Algorithms</u></p>
 
-        <p></p>
+        <p>
+            Given the choice between two or more algorithms that produce the same output barring any side-effects,
+            computer scientists and programmers will want to
+            implement the fastest algorithms as it saves time. Measuring the true running time of algorithms is not a
+            scalable and feasible approach as it is affected by hardware factors like processor speeds, which is
+            constantly improving. A better measure would be to calculate the algorithm's total number of operations.
+            However, it is not easy to calculate the exact number of operations. A more feasible way would be to have a
+            <em>high-level understanding</em> of the <em>growth</em> of the algorithm's operation count as the size of
+            the
+            input increases (Kulikov & Pevzner). What does it mean then? In studying the running time of algorithms, one
+            is
+            not interested in small values of input,
+            <i>n</i>. What is of interest is the measure of growth of the algorithm as <i>n</i> becomes large.
+        </p>
 
-        <p>Brute-Force Algorithms</p>
+        <p><u>Big-Oh Notation</u></p>
+        <p>The Big-Oh notation is a function which defines the limits of the growth of the algorithm. It is a measure of
+            the algorithm's worse case efficiency. For example, if an algorithm has a Big-Oh represented by the
+            function
+            <i>f</i>(<i>n</i>) = <i>O</i>(<i>n</i><sup>2</sup>), it would mean <i>f</i>(<i>n</i>) does not grow faster
+            than a function
+            with a leading term of <i>cn</i><sup>2</sup>. In
+            Big-Oh notations, the
+            coefficient and trailing terms are ignored. A more precise definition of the Big-Oh can be defined from the
+            following. Consider two algorithms with
+            running times of <i>f</i>(<i>n</i>) and <i>g</i>(<i>n</i>), where <i>n</i> is the input size. The function
+            <i>f</i> grows no faster than <i>g</i> if there exists a constant <i>c</i> such that <i>f</i>(<i>n</i>) &le;
+            <i>c.g</i>(<i>n</i>), leading to the notation, <i>f</i> = <i>O</i>(<i>g</i>).
+        </p>
 
-        <p></p>
+        <p>In the sections that follow, we will look at some common algorithm designs. Many algorithms are
+            created based on these algorithmic designs.</p><br>
 
-        <p>Branch and Bound Algorithms</p>
+        <p><u>A) Brute-Force Algorithms</u></p>
 
-        <p></p>
+        <p>Brute-Force Algorithms, also known as exhaustive search algorithms, are as what its name implies. For
+            example, in searching for an item, it would traverse an entire map or maze without any strategy. While it
+            almost
+            certainly ensures the item is found, it is inefficient. In designing algorithms, one should as much as
+            possible avoid brute-force algorithms.</p>
 
-        <p>Greedy Algorithms</p>
+        <p><u>B) Branch and Bound Algorithms</u></p>
 
-        <p></p>
+        <p>Branch and bound is an algorithm design which is generally used for solving combinatorial
+            optimisation problems. These problems are typically exponential in terms of time complexity and may require
+            exploring all possible permutations in worst case. A famous example is The Travelling Salesman Problem
+            (TSP). The
+            problem statement is as such:</p>
+        <p><i>"Given a set of cities and the distances between each pair of cities, a salesman uses the shortest
+                distance
+                to visit each city exactly once and returns to the starting city."</i></p>
+
+        <p>There is no algorithm that can solve all instances of TSP optimally. The branch and bound algorithm works by
+            systematically exploring the solution space, keeping track of
+            promising candidates, and eliminating branches of the search space that cannot lead to an optimal solution.
+            For TSP, it involves techniques and heuristics to efficiently explore the solution space. While it may not
+            guarantee finding the optimal solution for large instances due to the NP-hard nature of the problem, branch
+            and bound algorithms can significantly improve the efficiency of the search process.
+        </p>
+
+        <p><u>C) Greedy Algorithms</u></p>
+
+        <p>Greedy algorithms are iterative optimisation algorithms that make locally optimal choices at each step with
+            the hope of finding a global optimum. While this strategy often leads to correct solutions and works well
+            for many problems, it does not guarantee an optimal solution in all cases. An example in which greedy
+            algorithm paradigm is used is in timetabling or scheduling problems.
+        </p>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/algorithms/scheduling.png" alt="scheduling" width="700" height="auto">
+                        <figcaption>Image from <em>Ace Your Next Coding
+                                Interview by Learning Algorithms through Programming and Problem Solving </em>(
+                            Kulikov and Pevzner) </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div></br>
 
         <p>Dynamic Programming Algorithms</p>
 
