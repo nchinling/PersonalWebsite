@@ -184,7 +184,7 @@
         <p>Greedy algorithms are iterative optimisation algorithms that make locally optimal choices at each step with
             the hope of finding a global optimum. While this strategy often leads to correct solutions and works well
             for many problems, it does not guarantee an optimal solution in all cases. An example in which greedy
-            algorithm paradigm is used is in timetabling or scheduling problems.
+            algorithm paradigm is used is in scheduling problems.
         </p>
 
         <div class="container">
@@ -200,10 +200,137 @@
                 </div>
             </div>
         </div></br>
+        <p><u>i) Scheduling Problem</u></p>
+        <p>In the scheduling problem, the objective is to fit in as many bookings for a meeting room. A greedy approach
+            could be to select the meeting with the shortest duration, remove meetings that overlap it, and iterate.
+            This greedy approach algorithm seems sensible but it doesn't always work, as seen in the image below.</p>
 
-        <p>Dynamic Programming Algorithms</p>
+        <div class="container">
 
-        <p></p>
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/algorithms/greedysub.png" alt="scheduling" width="700" height="auto">
+                        <figcaption>Image from <em>Ace Your Next Coding
+                                Interview by Learning Algorithms through Programming and Problem Solving </em>(
+                            Kulikov and Pevzner) </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+        <p>Let's try again then. Another sensible approach would be to select the meeting with the earliest start time,
+            remove overlaps, and iterate. Again, it doesn't always work, as seen in the image below.</p>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/algorithms/greedysub2.png" alt="scheduling" width="700" height="auto">
+                        <figcaption>Image from <em>Ace Your Next Coding
+                                Interview by Learning Algorithms through Programming and Problem Solving </em>(
+                            Kulikov and Pevzner) </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+        <p>Having seen two greedy algorithms which may not work for all cases, is there a solution to it? The answer is
+            yes. By selecting the right endpoint which is the smallest among all right endpoints, removing all intervals
+            that overlap, and then iterating it, one would get the optimal solution to the scheduling problem.</p>
+
+        <p><u>ii) Haversack Greedy Algorithm</u></p>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/algorithms/knapsack.svg" alt="haversack" width="500" height="auto">
+                        <figcaption> </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+
+        <p>Let's look at another greedy algorithm problem. The Haversack Greedy Algorithm, also known as the Knapsack
+            Greedy Algorithm, is an approach used to solve the knapsack problem, a classic optimisation problem in
+            computer science. The problem is described as follows:</p>
+
+        <p> There is a set of items and a knapsack with a maximum weight capacity. Each item has a weight and value. The
+            weight of an item could be represented by its actual weight or how much volume it occupies. The value can be
+            thought of as a utility function like monetary value.
+            The goal is to maximise the total value of items placed in the knapsack without exceeding its weight
+            capacity.</p>
+
+        <p>
+            The greedy algorithm works by iteratively selecting items to include in the
+            knapsack based on a greedy criterion. The criterion involves selecting items with the highest
+            value-to-weight ratio first, as this maximises the value gained per unit of weight.
+        </p>
+        <p>Here's a step-by-step description of the Haversack Greedy Algorithm: </p>
+
+        <div class="container">
+            <ol class="preStyle">
+                <li>
+                    <em><b>Sort items: </b></em>Start by sorting all items in decreasing order of their value-to-weight
+                    ratio. This
+                    ratio is
+                    calculated by dividing the value of each item by its weight.
+                </li>
+                <li>
+                    <em><b>Iterative selection:</b></em>Iterate through the sorted list of items. At each iteration,
+                    select
+                    the
+                    item
+                    with
+                    the
+                    highest value-to-weight ratio that can still fit into the knapsack without exceeding its weight
+                    capacity.
+                </li>
+                <li>
+                    <em><b>Update knapsack:</b></em> Add the selected item to the knapsack and update the remaining
+                    capacity
+                    of the
+                    knapsack by
+                    subtracting the weight of the selected item.
+                </li>
+                <li>
+                    <em><b>Repeat:</b></em> Continue the iteration until either the knapsack is full or
+                    there are no more items to consider.
+                </li>
+
+            </ol>
+        </div>
+
+        <p>
+            The Haversack Greedy Algorithm provides a relatively simple and efficient solution to the knapsack problem,
+            particularly when the items are sorted based on their value-to-weight ratios. However, it's important to
+            note that this algorithm does not always guarantee an optimal solution. For example, it may overlook certain
+            combinations of items that could yield a higher total value than simply selecting items based solely on
+            their individual value-to-weight ratios.
+        </p>
+        <p>In conclusion while greedy algorithms offer a straightforward approach to solving optimisation problems and
+            are often efficient, it's important to carefully analyse the problem to
+            determine whether a greedy algorithm is appropriate and whether its solution is optimal.</p>
+        <div class="container">
+            <pre class="preStyle">
+
+            </pre>
+        </div>
+
+        <p>
+            <u>D) Dynamic Programming Algorithms</u>
+        </p>
+
+        <p>Dynamic programming organizes computations to avoid recomputing values that you already know, which can often
+            save a great deal of time.</p>
+
+        <p>Dynamic programming is a method for solving complex problems by breaking them down into simpler subproblems
+            and solving each subproblem only once. It is typically used for optimization problems where the solution can
+            be obtained by combining solutions to overlapping subproblems.</p>
+
+        <p>Dynamic programming is an important technique in computer science and is widely used in algorithm design and
+            optimization. It allows for efficient solutions to complex problems by breaking them down into smaller, more
+            manageable subproblems and reusing the solutions to these subproblems as needed.</p>
 
         <p>Recursive Algorithms</p>
 

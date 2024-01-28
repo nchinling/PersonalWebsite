@@ -270,3 +270,9 @@ td {
 .bullet_indent {
   padding: 0 7%;
 }
+
+.preStyle {
+  background-color: #97e8d5;
+  /* Specify the desired background color */
+  padding: 25px;
+}
