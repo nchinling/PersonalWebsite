@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width">
-    <title>Algorithms: An Introduction</title>
+    <title>Creating a Python package</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/styles.css">
@@ -82,7 +82,7 @@
                 <div class="col-lg-12">
 
 
-                    <h1 style="text-align:center" class="intro-padding">Algorithms: An Introduction (Part 1)</h1>
+                    <h1 style="text-align:center" class="intro-padding">Creating a Python Package</h1>
 
                 </div>
             </div>
@@ -98,17 +98,47 @@
             </div>
         </div></br>
         <p>
-            This article introduces the basic algorithms that one would usually cover in a Data Structures and
-            Algorithms course. It's not meant to be a comprehensive or technical piece, but rather to cover the big
-            ideas on
-            algorithms.I decided to write this article as a form of revision for the DSA book, <em>Ace Your Next Coding
-                Interview by Learning Algorithms through Programming and Problem Solving</em>, which is written by
-            <em>Alexander
-                Kulikov</em> and <em>Pavel Pevzner</em>. The contents in the book are rephrased to demonstrate my
-            understanding. It is supplemented with my prior knowledge, other
-            books and websites.
-            I hope that people who read this will find it useful as well. Ready? Let's begin... :)
+            In this article, we are going to learn how to create our very own Python package and access the package's
+            functions (scripts) using the Python command line. A Python package is a
+            collection of
+            modules. A module is a file ending in '<b>.py</b>' containing Python functions, classes and variables. These
+            packages can be imported by another module so that the functions can be accessed or it can be used as
+            scripts via the Python command line. For additional context, a collection of packages forms a library. Some
+            of the more established libraries are NumPy (scientific computing), Pandas (data analysis) and Scikit-learn
+            (machine-learning).
         </p>
+        <p>This tutorial assumes one has the pre-requisite knowledge on using the command line and an IDE like VS
+            Code.</p>
+
+        <div class="container">
+            <ol class="preStyle">
+                <li>
+                    <em><b>Create a folder. </b></em>Name the folder with a name of your choice, e.g. mymath
+                </li>
+                <li>
+                    <em><b>Iterative selection:</b></em>Iterate through the sorted list of items. At each iteration,
+                    select
+                    the
+                    item
+                    with
+                    the
+                    highest value-to-weight ratio that can still fit into the knapsack without exceeding its weight
+                    capacity.
+                </li>
+                <li>
+                    <em><b>Update knapsack:</b></em> Add the selected item to the knapsack and update the remaining
+                    capacity
+                    of the
+                    knapsack by
+                    subtracting the weight of the selected item.
+                </li>
+                <li>
+                    <em><b>Repeat:</b></em> Continue the iteration until either the knapsack is full or
+                    there are no more items to consider.
+                </li>
+
+            </ol>
+        </div>
 
         <p>What is an algorithm? An algorithm is a sequence of instructions that one must perform in order to solve a
             well-formulated problem (Kulikov & Pevzner). An algorithm is not confined to the domain of computer science.
@@ -306,24 +336,8 @@
             particularly when the items are sorted based on their value-to-weight ratios. However, it's important to
             note that this algorithm does not always guarantee an optimal solution. For example, it may overlook certain
             combinations of items that could yield a higher total value than simply selecting items based solely on
-            their individual value-to-weight ratios. The reason why a sub-optimal solution may be selected is due to the
-            constraint set in the algorithm. Instead of exploring all possible solutions, the greedy constraint (e.g.
-            highest value-to-weight ratio) restricts the search space for the optimal solution.
+            their individual value-to-weight ratios.
         </p>
-        <div class="container">
-            <pre class="preStyle">
-                Change(money, Denominations):
-                    numCoins <- 0
-                    while money > 0:
-                        maxCoin <- largest among Denominations that does not exceed money
-                        money <- money - maxCoin
-                        numCoins <- numCoins + 1
-                    return numCoins
-            </pre>
-        </div>
-        <p>The Change Greedy Algorithm displayed above is another example where the greedy algorithm produces a
-            sub-optimal solution on
-            using certain values e.g. Change(8,[1,4,6])</p>
         <p>In conclusion while greedy algorithms offer a straightforward approach to solving optimisation problems and
             are often efficient, it's important to carefully analyse the problem to
             determine whether a greedy algorithm is appropriate and whether its solution is optimal.</p>
@@ -340,33 +354,13 @@
         <p>Dynamic programming organizes computations to avoid recomputing values that you already know, which can often
             save a great deal of time.</p>
 
-        <p>Dynamic programming is a method for solving complex problems by breaking them down into smaller, more
-            manageable subproblems
-            and solving each subproblem only <b>once</b>, thus saving time. The solutions to these subproblems are
-            reused as needed. It is usually used in optimisation problems where the solution can
+        <p>Dynamic programming is a method for solving complex problems by breaking them down into simpler subproblems
+            and solving each subproblem only once. It is typically used for optimization problems where the solution can
             be obtained by combining solutions to overlapping subproblems.</p>
-        <p>Let us analyse dynamic programming algorithms using the "Rocks" game. There are variations to this game and
-            we will look into one of them; There are two piles of ten rocks each. In each turn, a player may take either
-            one rock (from either pile) or two rocks (one from each pile). Once the rocks are taken, they are removed
-            from play. The player that takes the last rock wins the game.</p>
 
-        <p>Let's visualise the pile of rocks using a 10 x 10 grid table, called <i>R</i>. The row and column each
-            represents
-            a pile. We can generalise the 10 x 10 table to a <i>n</i> x <i>m</i> table, implying <i>n</i> rocks in one
-            pile and <i>m</i> rocks in the other. If, at the current state, Player 1 always wins the <i>n</i> + <i>m</i>
-            game no matter what
-            Player 2 does, then <i>R</i>(<i>n</i>,<i>m</i>) = <i>W</i> (Mark grid (<i>n</i>,<i>m</i>) with <i>W</i>).
-            Likewise, <i>R</i>(<i>n</i>,<i>m</i>) = <i>L</i> if at the current state, Player 1 can never win against
-            Player 2 (Mark grid (<i>n</i>,<i>m</i>) with <i>L</i>). How can the table be filled up systematically
-            (algorithmically) if there are <i>n</i> by <i>m</i> entries in the table? A commonly-used technique in
-            problem-solving is to start with small values, scale it up, and notice if there is a pattern. If there is,
-            it means there is an algorithmic approach to solving the problem.
-        </p>
-
-        <p>This concludes Part 1 of the Algorithms: An Introduction blog. In Part 2, we will be exploring Recursive
-            Algorithms, Divide and Conquer Algorithms and Randomised Algorithms. These algorithms that have long been
-            studied by computer scientists and practitioners</p>
-
+        <p>Dynamic programming is an important technique in computer science and is widely used in algorithm design and
+            optimization. It allows for efficient solutions to complex problems by breaking them down into smaller, more
+            manageable subproblems and reusing the solutions to these subproblems as needed.</p>
 
         <p>Recursive Algorithms</p>
 
@@ -378,6 +372,14 @@
 
 
         <p>Randomised Algorithms</p>
+
+        <p></p>
+
+
+
+
+
+
 
 
 
