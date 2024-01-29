@@ -92,14 +92,14 @@
             <div class="row">
                 <div class="col-lg-12">
                     <figure style="text-align: center;">
-                        <img src="../Images/algorithms/algorithms1.png" alt="algorithmscover" width="700" height="auto">
+                        <img src="../Images/pythonpackage/package.png" alt="algorithmscover" width="700" height="auto">
                     </figure>
                 </div>
             </div>
         </div></br>
         <p>
             In this article, we are going to learn how to create our very own Python package and access the package's
-            functions (scripts) using the Python command line. A Python package is a
+            functions (scripts) using the Python interpreter. A Python package is a
             collection of
             modules. A module is a file ending in '<b>.py</b>' containing Python functions, classes and variables. These
             packages can be imported by another module so that the functions can be accessed or it can be used as
@@ -111,276 +111,162 @@
             Code.</p>
 
         <div class="container">
-            <ol class="preStyle">
+            <ol>
                 <li>
                     <em><b>Create a folder. </b></em>Name the folder with a name of your choice, e.g. mymath
                 </li>
                 <li>
-                    <em><b>Iterative selection:</b></em>Iterate through the sorted list of items. At each iteration,
-                    select
-                    the
-                    item
-                    with
-                    the
-                    highest value-to-weight ratio that can still fit into the knapsack without exceeding its weight
-                    capacity.
+                    <em><b>Create a few modules. </b></em>Create about two to three Python modules, or even more. Each
+                    python module ends with the '.py' extension. Place
+                    them inside the folder created. In this example, I created basic.py and geometric.py and placed them
+                    inside 'mymath' folder.
+                </li></br>
+                <pre class="preStyle2">
+                        <u>basic.py</u>
+                        def square(number):
+                            """
+                            This function returns the square of a given number
+                            """
+                            return number ** 2
+                    
+                        def double(number):
+                            """
+                            This function returns twice the value of a given number
+                            """
+                            return number * 2
+                        
+                        def add(a, b):
+                            """
+                            This function returns the sum of given numbers
+                            """
+                            return a + b
+                    </pre>
+                <pre class="preStyle2">
+                        <u>geometry.py</u>
+                        import math
+
+                        def area_of_rectangle(length, breadth):
+                            return length*breadth
+
+                        def area_of_circle(radius):
+                            return math.pi*radius**2
+                    </pre>
+
                 </li>
                 <li>
-                    <em><b>Update knapsack:</b></em> Add the selected item to the knapsack and update the remaining
-                    capacity
-                    of the
-                    knapsack by
-                    subtracting the weight of the selected item.
+                    <em><b>Create a __init__.py file:</b></em> Place __init__.py inside mymath folder. The file, also
+                    called a package constructor,
+                    initialises the package when it is imported.
                 </li>
                 <li>
-                    <em><b>Repeat:</b></em> Continue the iteration until either the knapsack is full or
-                    there are no more items to consider.
+                    <em><b>Copy the following import statements into __init__.py: </b></em>The '.' denotes the current
+                    directory, which contains basic.py and geometry.py modules. With these imports, the contents of
+                    basic.py and geometry.py can be accessed using mymath.basic and mymath.geometry respectively.
+                    <br><br>
+                    <pre class="preStyle2">
+                        from . import basic
+                        from . import geometry
+                    </pre><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <figure style="text-align: center;">
+                                    <img src="../Images/pythonpackage/directory.png" alt="stage1" width="300"
+                                        height="auto">
+                                    <figcaption>This is how the files should be organised in the mymath folder.
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
                 </li>
 
             </ol>
         </div>
-
-        <p>What is an algorithm? An algorithm is a sequence of instructions that one must perform in order to solve a
-            well-formulated problem (Kulikov & Pevzner). An algorithm is not confined to the domain of computer science.
-            Think of cooking recipes and finding the highest common factor (greatest common divisor). One is in the
-            domain of cooking and another is in mathematics, although one can solve the HCF by programming the algorithm
-            in
-            a computer.</p>
-
-        <p><u>Running Time of Algorithms</u></p>
-
-        <p>
-            Given the choice between two or more algorithms that produce the same output barring any side-effects,
-            computer scientists and programmers will want to
-            implement the fastest algorithms as it saves time. Measuring the true running time of algorithms is not a
-            scalable and feasible approach as it is affected by hardware factors like processor speeds, which is
-            constantly improving. A better measure would be to calculate the algorithm's total number of operations.
-            However, it is not easy to calculate the exact number of operations. A more feasible way would be to have a
-            <em>high-level understanding</em> of the <em>growth</em> of the algorithm's operation count as the size of
-            the
-            input increases (Kulikov & Pevzner). What does it mean then? In studying the running time of algorithms, one
-            is
-            not interested in small values of input,
-            <i>n</i>. What is of interest is the measure of growth of the algorithm as <i>n</i> becomes large.
-        </p>
-
-        <p><u>Big-Oh Notation</u></p>
-        <p>The Big-Oh notation is a function which defines the limits of the growth of the algorithm. It is a measure of
-            the algorithm's worse case efficiency. For example, if an algorithm has a Big-Oh represented by the
-            function
-            <i>f</i>(<i>n</i>) = <i>O</i>(<i>n</i><sup>2</sup>), it would mean <i>f</i>(<i>n</i>) does not grow faster
-            than a function
-            with a leading term of <i>cn</i><sup>2</sup>. In
-            Big-Oh notations, the
-            coefficient and trailing terms are ignored. A more precise definition of the Big-Oh can be defined from the
-            following. Consider two algorithms with
-            running times of <i>f</i>(<i>n</i>) and <i>g</i>(<i>n</i>), where <i>n</i> is the input size. The function
-            <i>f</i> grows no faster than <i>g</i> if there exists a constant <i>c</i> such that <i>f</i>(<i>n</i>) &le;
-            <i>c.g</i>(<i>n</i>), leading to the notation, <i>f</i> = <i>O</i>(<i>g</i>).
-        </p>
-
-        <p>In the sections that follow, we will look at some common algorithm designs. Many algorithms are
-            created based on these algorithmic designs.</p><br>
-
-        <p><u>A) Brute-Force Algorithms</u></p>
-
-        <p>Brute-Force Algorithms, also known as exhaustive search algorithms, are as what its name implies. For
-            example, in searching for an item, it would traverse an entire map or maze without any strategy. While it
-            almost
-            certainly ensures the item is found, it is inefficient. In designing algorithms, one should as much as
-            possible avoid brute-force algorithms.</p>
-
-        <p><u>B) Branch and Bound Algorithms</u></p>
-
-        <p>Branch and bound is an algorithm design which is generally used for solving combinatorial
-            optimisation problems. These problems are typically exponential in terms of time complexity and may require
-            exploring all possible permutations in worst case. A famous example is The Travelling Salesman Problem
-            (TSP). The
-            problem statement is as such:</p>
-        <p><i>"Given a set of cities and the distances between each pair of cities, a salesman uses the shortest
-                distance
-                to visit each city exactly once and returns to the starting city."</i></p>
-
-        <p>There is no algorithm that can solve all instances of TSP optimally. The branch and bound algorithm works by
-            systematically exploring the solution space, keeping track of
-            promising candidates, and eliminating branches of the search space that cannot lead to an optimal solution.
-            For TSP, it involves techniques and heuristics to efficiently explore the solution space. While it may not
-            guarantee finding the optimal solution for large instances due to the NP-hard nature of the problem, branch
-            and bound algorithms can significantly improve the efficiency of the search process.
-        </p>
-
-        <p><u>C) Greedy Algorithms</u></p>
-
-        <p>Greedy algorithms are iterative optimisation algorithms that make locally optimal choices at each step with
-            the hope of finding a global optimum. While this strategy often leads to correct solutions and works well
-            for many problems, it does not guarantee an optimal solution in all cases. An example in which greedy
-            algorithm paradigm is used is in scheduling problems.
-        </p>
+        <p>At this point, the setup for the package has been created. Let's access it using the Python interpreter.</p>
 
         <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <figure style="text-align: center;">
-                        <img src="../Images/algorithms/scheduling.png" alt="scheduling" width="700" height="auto">
-                        <figcaption>Image from <em>Ace Your Next Coding
-                                Interview by Learning Algorithms through Programming and Problem Solving </em>(
-                            Kulikov and Pevzner) </figcaption>
-                    </figure>
-                </div>
-            </div>
-        </div></br>
-        <p><u>i) Scheduling Problem</u></p>
-        <p>In the scheduling problem, the objective is to fit in as many bookings for a meeting room. A greedy approach
-            could be to select the meeting with the shortest duration, remove meetings that overlap it, and iterate.
-            This greedy approach algorithm seems sensible but it doesn't always work, as seen in the image below.</p>
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <figure style="text-align: center;">
-                        <img src="../Images/algorithms/greedysub.png" alt="scheduling" width="700" height="auto">
-                        <figcaption>Image from <em>Ace Your Next Coding
-                                Interview by Learning Algorithms through Programming and Problem Solving </em>(
-                            Kulikov and Pevzner) </figcaption>
-                    </figure>
-                </div>
-            </div>
-        </div></br>
-        <p>Let's try again then. Another sensible approach would be to select the meeting with the earliest start time,
-            remove overlaps, and iterate. Again, it doesn't always work, as seen in the image below.</p>
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <figure style="text-align: center;">
-                        <img src="../Images/algorithms/greedysub2.png" alt="scheduling" width="700" height="auto">
-                        <figcaption>Image from <em>Ace Your Next Coding
-                                Interview by Learning Algorithms through Programming and Problem Solving </em>(
-                            Kulikov and Pevzner) </figcaption>
-                    </figure>
-                </div>
-            </div>
-        </div></br>
-        <p>Having seen two greedy algorithms which may not work for all cases, is there a solution to it? The answer is
-            yes. By selecting the right endpoint which is the smallest among all right endpoints, removing all intervals
-            that overlap, and then iterating it, one would get the optimal solution to the scheduling problem.</p>
-
-        <p><u>ii) Haversack Greedy Algorithm</u></p>
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <figure style="text-align: center;">
-                        <img src="../Images/algorithms/knapsack.svg" alt="haversack" width="500" height="auto">
-                        <figcaption> </figcaption>
-                    </figure>
-                </div>
-            </div>
-        </div></br>
-
-        <p>Let's look at another greedy algorithm problem. The Haversack Greedy Algorithm, also known as the Knapsack
-            Greedy Algorithm, is an approach used to solve the knapsack problem, a classic optimisation problem in
-            computer science. The problem is described as follows:</p>
-
-        <p> There is a set of items and a knapsack with a maximum weight capacity. Each item has a weight and value. The
-            weight of an item could be represented by its actual weight or how much volume it occupies. The value can be
-            thought of as a utility function like monetary value.
-            The goal is to maximise the total value of items placed in the knapsack without exceeding its weight
-            capacity.</p>
-
-        <p>
-            The greedy algorithm works by iteratively selecting items to include in the
-            knapsack based on a greedy criterion. The criterion involves selecting items with the highest
-            value-to-weight ratio first, as this maximises the value gained per unit of weight.
-        </p>
-        <p>Here's a step-by-step description of the Haversack Greedy Algorithm: </p>
-
-        <div class="container">
-            <ol class="preStyle">
+            <ol>
                 <li>
-                    <em><b>Sort items: </b></em>Start by sorting all items in decreasing order of their value-to-weight
-                    ratio. This
-                    ratio is
-                    calculated by dividing the value of each item by its weight.
+                    Type <strong>python3</strong> at the terminal to start the Python interpreter. <br><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <figure style="text-align: center;">
+                                    <img src="../Images/pythonpackage/python3.png" alt="stage1" width="500"
+                                        height="auto">
+                                    <figcaption>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div></br>
                 </li>
                 <li>
-                    <em><b>Iterative selection:</b></em>Iterate through the sorted list of items. At each iteration,
-                    select
-                    the
-                    item
-                    with
-                    the
-                    highest value-to-weight ratio that can still fit into the knapsack without exceeding its weight
-                    capacity.
+                    Type <strong>import mymath</strong> at the terminal to import the mymath package. If it loads
+                    successfully, it will
+                    proceed to the next line without any error message. <br><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <figure style="text-align: center;">
+                                    <img src="../Images/pythonpackage/import.png" alt="stage1" width="500"
+                                        height="auto">
+                                    <figcaption>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div></br>
                 </li>
                 <li>
-                    <em><b>Update knapsack:</b></em> Add the selected item to the knapsack and update the remaining
-                    capacity
-                    of the
-                    knapsack by
-                    subtracting the weight of the selected item.
+                    Access the function in the package using the following syntax <package_name>.<module_name>.
+                            <function_name(parameters if any)><br>
+                                For example, to test the add function in the basic module, type
+                                <strong>mymath.basic.add(1,5)</strong>.
+                                The output will be 6. To access the area_of_circle function in the geometry
+                                module, type <strong>mymath.geometry.area_of_circle(7)</strong>. The output will be
+                                153.938 (3 d.p.).
+                                <br><br>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <figure style="text-align: center;">
+                                                <img src="../Images/pythonpackage/add.png" alt="stage1" width="500"
+                                                    height="auto">
+                                                <figcaption>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div></br>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <figure style="text-align: center;">
+                                                <img src="../Images/pythonpackage/area.png" alt="stage1" width="500"
+                                                    height="auto">
+                                                <figcaption>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div></br>
                 </li>
-                <li>
-                    <em><b>Repeat:</b></em> Continue the iteration until either the knapsack is full or
-                    there are no more items to consider.
-                </li>
+
 
             </ol>
         </div>
 
         <p>
-            The Haversack Greedy Algorithm provides a relatively simple and efficient solution to the knapsack problem,
-            particularly when the items are sorted based on their value-to-weight ratios. However, it's important to
-            note that this algorithm does not always guarantee an optimal solution. For example, it may overlook certain
-            combinations of items that could yield a higher total value than simply selecting items based solely on
-            their individual value-to-weight ratios.
-        </p>
-        <p>In conclusion while greedy algorithms offer a straightforward approach to solving optimisation problems and
-            are often efficient, it's important to carefully analyse the problem to
-            determine whether a greedy algorithm is appropriate and whether its solution is optimal.</p>
-        <div class="container">
-            <pre class="preStyle">
-
-            </pre>
-        </div>
-
-        <p>
-            <u>D) Dynamic Programming Algorithms</u>
-        </p>
-
-        <p>Dynamic programming organizes computations to avoid recomputing values that you already know, which can often
-            save a great deal of time.</p>
-
-        <p>Dynamic programming is a method for solving complex problems by breaking them down into simpler subproblems
-            and solving each subproblem only once. It is typically used for optimization problems where the solution can
-            be obtained by combining solutions to overlapping subproblems.</p>
-
-        <p>Dynamic programming is an important technique in computer science and is widely used in algorithm design and
-            optimization. It allows for efficient solutions to complex problems by breaking them down into smaller, more
-            manageable subproblems and reusing the solutions to these subproblems as needed.</p>
-
-        <p>Recursive Algorithms</p>
-
-        <p></p>
-
-        <p>Divide and Conquer Algorithms</p>
-
-        <p></p>
-
-
-        <p>Randomised Algorithms</p>
-
-        <p></p>
-
-
-
-
-
-
-
+            This sums up the tutorial on creating a Python package. We have learnt how to create a Python package by
+            looking at the directory structure and creating a __init__.py to initialise the construction of the package.
+            We have also
+            used the Python interpreter to import a package and call its modules' functions. With this knowledge, one
+            can proceed to build
+            his or her own package/library of Python functions (scripts) and use them for their work or own projects.
+            Who knows, you may create the next NumPy scientific computing library &#128516;. Till next time...
+        </p><br>
 
 
     </section>
