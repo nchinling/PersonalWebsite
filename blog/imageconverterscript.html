@@ -92,7 +92,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <figure style="text-align: center;">
-                        <img src="../Images/pythonpackage/package.webp" alt="algorithmscover" width="700" height="auto">
+                        <img src="../Images/imageconverter/tux1.webp" alt="tux" width="700" height="auto">
                     </figure>
                 </div>
             </div>
@@ -121,7 +121,10 @@
             the website were of .png or .jpeg formats. Converting each image manually to .webp would be a painstaking
             task. So, being the software engineer that I am, the idea of automation instantly came to mind. Having taken
             a few courses on Linux which covered shell scripting, I thought it would be a good idea to experiment with
-            automating the image conversion.
+            automating the image conversion. So, the process of creating a Bash script began.
+        </p>
+        <p>The first step was to decide on the requirements. Besides converting an image to WebP format, it should work
+            down from a root directory. In other words, it should convert images which are inside a child directory.
         </p>
 
         <div class="container">
@@ -136,6 +139,10 @@
             </div>
         </div></br>
 
+        <p>find . -type f \( -name "*.jpeg" -o -name "*.jpg" -o -name "*.png" \) -delete
+        </p>
+        <p>find . \( -type f -name "*.jpeg" -o -name "*.jpg" -o -name "*.png" \) -delete
+        </p>
 
 
         <div class="container">
