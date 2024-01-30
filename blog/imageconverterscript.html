@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Image Converter (Shell script)</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Google Fonts: Montserrat and Ubuntu. Currently not used.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sacramento&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/181c7bc6bd.js" crossorigin="anonymous"></script>
+
+
+    <!-- Javascript -->
+    <script src="../index.js" charset="utf-8"></script>
+
+</head>
+
+
+
+<body>
+
+
+    <section id="nav">
+        <!-- <div class="container-fluid"> -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links at top right will collapse -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#projects">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="../index.html#blog" class="nav-link">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="../index.html#contact" class="nav-link">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </nav>
+
+        <!-- </div> -->
+    </section>
+
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+
+
+                <div class="col-lg-12">
+
+
+                    <h1 style="text-align:center" class="intro-padding">Image Converter (Shell Script)</h1>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/pythonpackage/package.webp" alt="algorithmscover" width="700" height="auto">
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+        <p>
+            I was inspired to create this tutorial while updating my personal website, which is this site that you are
+            looking at. I had logged into my web-hosting administrator's page and out of curiosity, decided to explore
+            host-provider's inbuilt web performance monitoring tool. It was a tool which could analyse how optimised my
+            website was. When
+            the report was generated, I was surprised to find out that the website was running sub-optimally. The report
+            provided a list of suggestions on how my website can be optimised, one of which was to use '.webp' images
+            instead of the usual '.png' and '.jpeg' images.
+        </p>
+        <p>On doing a search, I found out that WebP, which has a file extension of '.webp', is an image format developed
+            by Google that provides both lossy and lossless compression for images on the web. It aims to create smaller
+            file sizes without compromising image quality, thus helping web pages load faster. The conversion from other
+            image formats to WebP can be done using the 'cwebp' command line tool by Google.
+
+        <div class="container">
+            <pre class="preStyle2">
+                cwebp input.jpg -o output.webp
+            </pre><br>
+        </div>
+        </p>
+        <p>I tried it out on a jpeg file and it worked nicely. But a bigger problem loomed ahead. All the images used in
+            the website were of .png or .jpeg formats. Converting each image manually to .webp would be a painstaking
+            task. So, being the software engineer that I am, the idea of automation instantly came to mind. Having taken
+            a few courses on Linux which covered shell scripting, I thought it would be a good idea to experiment with
+            automating the image conversion.
+        </p>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/imageconverter/jpegtowebpimage.webp" alt="imagescript" width="700"
+                            height="auto">
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+
+
+
+        <div class="container">
+            <ol>
+                <li>
+                    Type <strong>python3</strong> at the terminal to start the Python interpreter. <br><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <figure style="text-align: center;">
+                                    <img src="../Images/pythonpackage/python3.webp" alt="stage1" width="500"
+                                        height="auto">
+                                    <figcaption>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div></br>
+                </li>
+                <li>
+                    Type <strong>import mymath</strong> at the terminal to import the mymath package. If it loads
+                    successfully, it will
+                    proceed to the next line without any error message. <br><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <figure style="text-align: center;">
+                                    <img src="../Images/pythonpackage/import.webp" alt="stage1" width="500"
+                                        height="auto">
+                                    <figcaption>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div></br>
+                </li>
+                <li>
+                    Access the function in the package using the following syntax <package_name>.<module_name>.
+                            <function_name(parameters if any)><br>
+                                For example, to test the add function in the basic module, type
+                                <strong>mymath.basic.add(1,5)</strong>.
+                                The output will be 6. To access the area_of_circle function in the geometry
+                                module, type <strong>mymath.geometry.area_of_circle(7)</strong>. The output will be
+                                153.938 (3 d.p.).
+                                <br><br>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <figure style="text-align: center;">
+                                                <img src="../Images/pythonpackage/add.webp" alt="stage1" width="500"
+                                                    height="auto">
+                                                <figcaption>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div></br>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <figure style="text-align: center;">
+                                                <img src="../Images/pythonpackage/area.webp" alt="stage1" width="500"
+                                                    height="auto">
+                                                <figcaption>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div></br>
+                </li>
+
+
+            </ol>
+        </div>
+
+        <p>
+            This sums up the tutorial on creating a Python package. We have learnt how to create a Python package by
+            looking at the directory structure and creating a __init__.py to initialise the construction of the package.
+            We have also
+            used the Python interpreter to import a package and call its modules' functions. With this knowledge, one
+            can proceed to build
+            his or her own package/library of Python functions (scripts) and use them for their work or own projects.
+            Who knows, you may create the next NumPy scientific computing library &#128516;. Till next time...
+        </p><br>
+
+
+    </section>
+
+
+    <hr>
+
+
+    <section id=footer>
+
+        <table>
+
+            <tr>
+                <td>
+
+                    <a class="footer-style" href="../index.html"> Home</a>
+
+                </td>
+                <td>
+
+                    <a class="footer-style" href="../index.html#projects"> Projects</a>
+
+                </td>
+
+                <td>
+
+                    <a class="footer-style" href="../index.html#blog"> Blog</a>
+
+                </td>
+            </tr>
+
+        </table><br>
+    </section>
+
+    <!-- Bootstrap - Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
