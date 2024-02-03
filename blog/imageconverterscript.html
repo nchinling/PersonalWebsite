@@ -92,7 +92,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <figure style="text-align: center;">
-                        <img src="../Images/imageconverter/tux1.webp" alt="tux" width="700" height="auto">
+                        <!-- <img src="../Images/imageconverter/tux1.webp" alt="tux" width="700" height="auto"> -->
+                        <img src="../Images/imageconverter/bash.webp" alt="tux" width="700" height="auto">
                     </figure>
                 </div>
             </div>
@@ -113,15 +114,17 @@
 
         <div class="container">
             <pre class="preStyle2">
-                cwebp input.jpg -o output.webp
-            </pre><br>
+        cwebp input.jpg -o output.webp
+        </pre><br>
         </div>
+
         </p>
         <p>I tried it out on a jpeg file and it worked nicely. But a bigger problem loomed ahead. All the images used in
             the website were of .png or .jpeg formats. Converting each image manually to .webp would be a painstaking
             task. So, being the software engineer that I am, the idea of automation instantly came to mind. Having taken
             a few courses on Linux which covered shell scripting, I thought it would be a good idea to experiment with
-            automating the image conversion. So, the process of creating a Bash script began.
+            automating the image conversion. So, the process of creating a Bash script began. Click <a
+                href=https://github.com/nchinling/image_converter_script>here</a> for the Github repository.
         </p>
         <p><u>Script requirements</u></p>
         <p>The first step was to decide on the requirements. Besides converting an image to WebP format, it should work
@@ -129,13 +132,17 @@
             directory.
         </p>
         <p><u>Coding</u></p>
-        <ol>
-            <li>The script begins with '#!/bin/bash'. It specifies that the Bash shell interpreter will be used to run
-                the
-                commands in the script. Aftert that, create a function. Let's call it 'convert_jpeg_to_webp'. At this
-                point, the script should look like below.</li>
+        <div class="container">
+            <ol>
+                <li>Click The script begins with '#!/bin/bash'. It specifies that the Bash shell interpreter will be
+                    used to
+                    run
+                    the
+                    commands in the script. Aftert that, create a function. Let's call it 'convert_jpeg_to_webp'. At
+                    this
+                    point, the script should look like below.</li>
 
-            <div class="container">
+
                 <pre class="preStyle2">
                     #!/bin/bash
 
@@ -144,164 +151,176 @@
                     }
 
                 </pre><br>
-            </div>
 
-            <li>Initialise two local variables, dir and file. 'dir' refers to a directory variable which will be the
-                first
-                argument
-                passed
-                to the function. This is to inform the script to work on current variable.</li>
 
-            <div class="container">
+                <li>Initialise two local variables, 'dir' and 'file'. 'dir' is a directory variable which will
+                    hold the value of the first
+                    argument
+                    passed
+                    to the function. Run the function below the function code using 'convert_jpeg_to_webp "$(pwd)"' to
+                    inform the script to work on the present work directory. </li>
+
+
                 <pre class="preStyle2">
                             #!/bin/bash
         
                             convert_jpeg_to_webp() {
                             local dir="$1"
                             local file
+
+                            # to be implemented
                             
 
-                            
                             }
+
+                            convert_jpeg_to_webp "$(pwd)"
         
                         </pre><br>
-            </div>
-        </ol>
 
-        <div class="container">
-            <pre class="preStyle2">
-                    #!/bin/bash
-
-                    convert_jpeg_to_webp() {
-                    
-                    }
-
-                </pre><br>
-        </div>
-
-        <p>Initialise two local variables, dir and file. 'dir' refers to the directory which will be the first argument
-            passed
-            to the function.</p>
-
-        convert_jpeg_to_webp() {
-        local dir="$1"
-        local file
-
-        # Loop through files and directories in the current directory
-        for file in "$dir"/*; do
-        if [ -d "$file" ]; then
-        # If the item is a directory, call the function recursively
-        convert_jpeg_to_webp "$file"
-        elif [ -f "$file" ] && { [[ "$file" == *.jpg ]] || [[ "$file" == *.jpeg ]]; }; then
-        # If the item is a JPEG file, convert it to WebP format
-        filename=$(basename "$file")
-        cwebp "$file" -o "${file%.*}.webp"
-        echo "Converted $file to ${file%.*}.webp"
-        fi
-        done
-        }
-
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <figure style="text-align: center;">
-                        <img src="../Images/imageconverter/jpegtowebpimage.webp" alt="imagescript" width="700"
-                            height="auto">
-                    </figure>
-                </div>
-            </div>
-        </div></br>
-
-        <p>find . -type f \( -name "*.jpeg" -o -name "*.jpg" -o -name "*.png" \) -delete
-        </p>
-        <p>find . \( -type f -name "*.jpeg" -o -name "*.jpg" -o -name "*.png" \) -delete
-        </p>
-
-
-        <div class="container">
-            <ol>
                 <li>
-                    Type <strong>python3</strong> at the terminal to start the Python interpreter. <br><br>
+                    A 'for' loop iterates over each file in the present work directory ($dir).
+
+                    Within the loop, an 'if' statement checks if the current item ($file) is a directory using the -d
+                    flag.
+                    If it is, the function calls itself recursively with the current directory ("$file")
+                    as an argument. This recursive call allows the function to traverse nested directories.
+
+                    <pre class="preStyle2">
+                        #!/bin/bash
+
+                        convert_jpeg_to_webp() {
+                            local dir="$1"
+                            local file
+                        
+                            # Loop through files and directories in the current directory
+                            for file in "$dir"/*; do
+                                if [ -d "$file" ]; then
+                                    # If the item is a directory, call the function recursively
+                                    convert_jpeg_to_webp "$file"
+                              
+                                fi
+                            done
+                        }
+                        
+                        convert_jpeg_to_webp "$(pwd)"
+            
+                            </pre><br>
+
+                </li>
+                <li>
+                    If the item is a regular file (-f "$file") and has a file extension of .jpg or .jpeg, the script
+                    converts it to WebP format.
+
+                    <pre class="preStyle2">
+                        #!/bin/bash
+
+                        convert_jpeg_to_webp() {
+                            local dir="$1"
+                            local file
+                        
+                            # Loop through files and directories in the current directory
+                            for file in "$dir"/*; do
+                                if [ -d "$file" ]; then
+                                    # If the item is a directory, call the function recursively
+                                    convert_jpeg_to_webp "$file"
+                                elif [ -f "$file" ] && { [[ "$file" == *.jpg ]] || [[ "$file" == *.jpeg ]]; }; then
+                                    # If the item is a JPEG file, convert it to WebP format
+                                    filename=$(basename "$file")
+                                    cwebp "$file" -o "${file%.*}.webp"
+                            
+                                fi
+                            done
+                        }
+                        
+                        convert_jpeg_to_webp "$(pwd)"
+            
+                            </pre><br>
+
+                </li>
+                <li>
+                    The cwebp command converts the JPEG file to WebP format. The
+                    output file is named with the same base name as the original JPEG file but with the .webp extension.
+                </li>
+                <li>
+                    After conversion, a message is printed to the console indicating that the file has been successfully
+                    converted. This is how the entire <a
+                        href=https://github.com/nchinling/image_converter_script/blob/main/convert_jpeg_to_webp.sh>script</a>
+                    looks like.
+
                     <div class="container">
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <figure style="text-align: center;">
-                                    <img src="../Images/pythonpackage/python3.webp" alt="stage1" width="500"
-                                        height="auto">
-                                    <figcaption>
-                                    </figcaption>
+                                    <img src="../Images/imageconverter/jpegtowebpimage.webp" alt="imagescript"
+                                        width="700" height="auto">
                                 </figure>
                             </div>
                         </div>
                     </div></br>
                 </li>
-                <li>
-                    Type <strong>import mymath</strong> at the terminal to import the mymath package. If it loads
-                    successfully, it will
-                    proceed to the next line without any error message. <br><br>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <figure style="text-align: center;">
-                                    <img src="../Images/pythonpackage/import.webp" alt="stage1" width="500"
-                                        height="auto">
-                                    <figcaption>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div></br>
-                </li>
-                <li>
-                    Access the function in the package using the following syntax <package_name>.<module_name>.
-                            <function_name(parameters if any)><br>
-                                For example, to test the add function in the basic module, type
-                                <strong>mymath.basic.add(1,5)</strong>.
-                                The output will be 6. To access the area_of_circle function in the geometry
-                                module, type <strong>mymath.geometry.area_of_circle(7)</strong>. The output will be
-                                153.938 (3 d.p.).
-                                <br><br>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <figure style="text-align: center;">
-                                                <img src="../Images/pythonpackage/add.webp" alt="stage1" width="500"
-                                                    height="auto">
-                                                <figcaption>
-                                                </figcaption>
-                                            </figure>
-                                        </div>
-                                    </div>
-                                </div></br>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <figure style="text-align: center;">
-                                                <img src="../Images/pythonpackage/area.webp" alt="stage1" width="500"
-                                                    height="auto">
-                                                <figcaption>
-                                                </figcaption>
-                                            </figure>
-                                        </div>
-                                    </div>
-                                </div></br>
-                </li>
-
-
             </ol>
         </div>
 
-        <p>
-            This sums up the tutorial on creating a Python package. We have learnt how to create a Python package by
-            looking at the directory structure and creating a __init__.py to initialise the construction of the package.
-            We have also
-            used the Python interpreter to import a package and call its modules' functions. With this knowledge, one
-            can proceed to build
-            his or her own package/library of Python functions (scripts) and use them for their work or own projects.
-            Who knows, you may create the next NumPy scientific computing library &#128516;. Till next time...
-        </p><br>
+        <p><u>Running the script</u></p>
+        <div class="container">
+            <ol>
+                <li>By default, a newly created script is not executable. Change the permission of the script using
+                    'chmod
+                    +x
+                    script_name'. This grants execute permission to all categories of users. If permission is to be
+                    granted
+                    to
+                    only the owner, add the letter 'u' to the beginning '+x'. e.g. 'chmod u+x
+                    script_name'.
+
+
+                    <pre class="preStyle2">
+                        chmod +x convert_jpeg_to_webp.sh
+
+                    </pre><br>
+
+                </li>
+                <li>Run the script using ./script_name.
+
+                    <pre class="preStyle2">
+                        ./convert_jpeg_to_webp.sh
+
+                    </pre><br>
+
+                </li>
+                <li>Remove the jpeg files which are not needed. It searches in the current directory files which have
+                    image formats of .jpeg, .jpg or .png and deletes them.
+
+                    <pre class="preStyle2">
+                        find . -type f \( -name "*.jpeg" -o -name "*.jpg" -o -name "*.png" \) -delete
+
+                    </pre><br>
+
+                </li>
+            </ol>
+        </div>
+        <p><u>Improvements</u></p>
+        <p>From here, we can
+            think of various ways to modify and extend the functionality of the script, such as converting png to webp,
+            or from any format to another format. </p>
+        <p>In fact, as the file types are currently hardcoded, we can consider the use of variables, thus making the
+            script more
+            robust. Refer to my <a href=https://github.com/nchinling/image_converter_script>Github
+                repo</a> for variants of the above script. Finally, we can also implement the removal of the original
+            file images using the script, instead of manually keying it into the terminal, as done earlier.</p>
+        <p><u>Conclusion</u></p>
+        <p>This is all for the tutorial. We have seen how we can create a bash script to automate the conversion of file
+            images from one format to another, thus saving a lot of time. This is one of the advantages of using Linux
+            instead of other operating systems. I experienced firsthand the practical advantages of the command line
+            through this mini-project. I have shown a basic implementation of the script, while exploring
+            possible implementations to improve on the existing code. Hope that you have found the tutorial useful.
+            &#128522;</p><br>
+
+
+
+
+
 
 
     </section>

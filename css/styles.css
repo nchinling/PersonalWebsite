@@ -272,13 +272,16 @@ td {
 }
 
 .preStyle {
-  background-color: #d6ebf5;
-  /* Specify the desired background color */
+  /* background-color: #d6ebf5; */
+  background-color: black;
+  color: white;
   padding: 25px;
 }
 
 .preStyle2 {
-  background-color: #d6ebf5;
+  /* background-color: #d6ebf5; */
+  background-color: black;
+  color: white;
   /* Specify the desired background color */
   padding: 10px;
 }
