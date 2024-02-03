@@ -123,9 +123,84 @@
             a few courses on Linux which covered shell scripting, I thought it would be a good idea to experiment with
             automating the image conversion. So, the process of creating a Bash script began.
         </p>
+        <p><u>Script requirements</u></p>
         <p>The first step was to decide on the requirements. Besides converting an image to WebP format, it should work
-            down from a root directory. In other words, it should convert images which are inside a child directory.
+            down from a root directory. In other words, it should recursively convert images which are inside a child
+            directory.
         </p>
+        <p><u>Coding</u></p>
+        <ol>
+            <li>The script begins with '#!/bin/bash'. It specifies that the Bash shell interpreter will be used to run
+                the
+                commands in the script. Aftert that, create a function. Let's call it 'convert_jpeg_to_webp'. At this
+                point, the script should look like below.</li>
+
+            <div class="container">
+                <pre class="preStyle2">
+                    #!/bin/bash
+
+                    convert_jpeg_to_webp() {
+                    
+                    }
+
+                </pre><br>
+            </div>
+
+            <li>Initialise two local variables, dir and file. 'dir' refers to a directory variable which will be the
+                first
+                argument
+                passed
+                to the function. This is to inform the script to work on current variable.</li>
+
+            <div class="container">
+                <pre class="preStyle2">
+                            #!/bin/bash
+        
+                            convert_jpeg_to_webp() {
+                            local dir="$1"
+                            local file
+                            
+
+                            
+                            }
+        
+                        </pre><br>
+            </div>
+        </ol>
+
+        <div class="container">
+            <pre class="preStyle2">
+                    #!/bin/bash
+
+                    convert_jpeg_to_webp() {
+                    
+                    }
+
+                </pre><br>
+        </div>
+
+        <p>Initialise two local variables, dir and file. 'dir' refers to the directory which will be the first argument
+            passed
+            to the function.</p>
+
+        convert_jpeg_to_webp() {
+        local dir="$1"
+        local file
+
+        # Loop through files and directories in the current directory
+        for file in "$dir"/*; do
+        if [ -d "$file" ]; then
+        # If the item is a directory, call the function recursively
+        convert_jpeg_to_webp "$file"
+        elif [ -f "$file" ] && { [[ "$file" == *.jpg ]] || [[ "$file" == *.jpeg ]]; }; then
+        # If the item is a JPEG file, convert it to WebP format
+        filename=$(basename "$file")
+        cwebp "$file" -o "${file%.*}.webp"
+        echo "Converted $file to ${file%.*}.webp"
+        fi
+        done
+        }
+
 
         <div class="container">
 
