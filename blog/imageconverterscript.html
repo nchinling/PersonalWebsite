@@ -113,9 +113,10 @@
             image formats to WebP can be done using the 'cwebp' command line tool by Google.
 
         <div class="container">
-            <pre class="preStyle2">
-        cwebp input.jpg -o output.webp
-        </pre><br>
+            <pre class="preStyle">
+    cwebp input.jpg -o output.webp
+
+</pre><br>
         </div>
 
         </p>
@@ -143,14 +144,14 @@
                     point, the script should look like below.</li>
 
 
-                <pre class="preStyle2">
-                    #!/bin/bash
+                <pre class="preStyle">
+    #!/bin/bash
 
-                    convert_jpeg_to_webp() {
-                    
-                    }
+    convert_jpeg_to_webp() {
+    
+    }
 
-                </pre><br>
+</pre><br>
 
 
                 <li>Initialise two local variables, 'dir' and 'file'. 'dir' is a directory variable which will
@@ -161,21 +162,20 @@
                     inform the script to work on the present work directory. </li>
 
 
-                <pre class="preStyle2">
-                            #!/bin/bash
-        
-                            convert_jpeg_to_webp() {
-                            local dir="$1"
-                            local file
+                <pre class="preStyle">
+    #!/bin/bash
 
-                            # to be implemented
-                            
+    convert_jpeg_to_webp() {
+    local dir="$1"
+    local file
 
-                            }
+    # to implement
 
-                            convert_jpeg_to_webp "$(pwd)"
-        
-                        </pre><br>
+    }
+
+    convert_jpeg_to_webp "$(pwd)"
+
+        </pre><br>
 
                 <li>
                     A 'for' loop iterates over each file in the present work directory ($dir).
@@ -185,56 +185,56 @@
                     If it is, the function calls itself recursively with the current directory ("$file")
                     as an argument. This recursive call allows the function to traverse nested directories.
 
-                    <pre class="preStyle2">
-                        #!/bin/bash
+                    <pre class="preStyle">
+    #!/bin/bash
 
-                        convert_jpeg_to_webp() {
-                            local dir="$1"
-                            local file
-                        
-                            # Loop through files and directories in the current directory
-                            for file in "$dir"/*; do
-                                if [ -d "$file" ]; then
-                                    # If the item is a directory, call the function recursively
-                                    convert_jpeg_to_webp "$file"
-                              
-                                fi
-                            done
-                        }
-                        
-                        convert_jpeg_to_webp "$(pwd)"
+    convert_jpeg_to_webp() {
+        local dir="$1"
+        local file
+    
+        # Loop through files and directories in the current directory
+        for file in "$dir"/*; do
+            if [ -d "$file" ]; then
+                # If the item is a directory, call the function recursively
+                convert_jpeg_to_webp "$file"
             
-                            </pre><br>
+            fi
+        done
+    }
+    
+    convert_jpeg_to_webp "$(pwd)"
+
+        </pre><br>
 
                 </li>
                 <li>
                     If the item is a regular file (-f "$file") and has a file extension of .jpg or .jpeg, the script
                     converts it to WebP format.
 
-                    <pre class="preStyle2">
-                        #!/bin/bash
+                    <pre class="preStyle">
+    #!/bin/bash
 
-                        convert_jpeg_to_webp() {
-                            local dir="$1"
-                            local file
-                        
-                            # Loop through files and directories in the current directory
-                            for file in "$dir"/*; do
-                                if [ -d "$file" ]; then
-                                    # If the item is a directory, call the function recursively
-                                    convert_jpeg_to_webp "$file"
-                                elif [ -f "$file" ] && { [[ "$file" == *.jpg ]] || [[ "$file" == *.jpeg ]]; }; then
-                                    # If the item is a JPEG file, convert it to WebP format
-                                    filename=$(basename "$file")
-                                    cwebp "$file" -o "${file%.*}.webp"
-                            
-                                fi
-                            done
-                        }
-                        
-                        convert_jpeg_to_webp "$(pwd)"
-            
-                            </pre><br>
+    convert_jpeg_to_webp() {
+        local dir="$1"
+        local file
+    
+        # Loop through files and directories in the current directory
+        for file in "$dir"/*; do
+            if [ -d "$file" ]; then
+                # If the item is a directory, call the function recursively
+                convert_jpeg_to_webp "$file"
+            elif [ -f "$file" ] && { [[ "$file" == *.jpg ]] || [[ "$file" == *.jpeg ]]; }; then
+                # If the item is a JPEG file, convert it to WebP format
+                filename=$(basename "$file")
+                cwebp "$file" -o "${file%.*}.webp"
+        
+            fi
+        done
+    }
+    
+    convert_jpeg_to_webp "$(pwd)"
+
+            </pre><br>
 
                 </li>
                 <li>
@@ -275,27 +275,27 @@
                     script_name'.
 
 
-                    <pre class="preStyle2">
-                        chmod +x convert_jpeg_to_webp.sh
+                    <pre class="preStyle">
+    chmod +x convert_jpeg_to_webp.sh
 
-                    </pre><br>
+</pre><br>
 
                 </li>
                 <li>Run the script using ./script_name.
 
-                    <pre class="preStyle2">
-                        ./convert_jpeg_to_webp.sh
+                    <pre class="preStyle">
+    ./convert_jpeg_to_webp.sh
 
-                    </pre><br>
+</pre><br>
 
                 </li>
                 <li>Remove the jpeg files which are not needed. It searches in the current directory files which have
                     image formats of .jpeg, .jpg or .png and deletes them.
 
-                    <pre class="preStyle2">
-                        find . -type f \( -name "*.jpeg" -o -name "*.jpg" -o -name "*.png" \) -delete
+                    <pre class="preStyle">
+    find . -type f \( -name "*.jpeg" -o -name "*.jpg" -o -name "*.png" \) -delete
 
-                    </pre><br>
+</pre><br>
 
                 </li>
             </ol>
