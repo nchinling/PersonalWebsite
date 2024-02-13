@@ -92,7 +92,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <figure style="text-align: center;">
-                        <img src="../Images/algorithms/algorithms1.png" alt="algorithmscover" width="700" height="auto">
+                        <img src="../Images/algorithms/algorithms1.webp" alt="algorithmscover" width="700"
+                            height="auto">
                     </figure>
                 </div>
             </div>
@@ -154,8 +155,8 @@
 
         <p><u>A) Brute-Force Algorithms</u></p>
 
-        <p>Brute-Force Algorithms, also known as exhaustive search algorithms, are as what its name implies. For
-            example, in searching for an item, it would traverse an entire map or maze without any strategy. While it
+        <p>Brute-Force Algorithms are also known as exhaustive search algorithms. In searching for an item, it would
+            traverse an entire map or maze without any strategy. While it
             almost
             certainly ensures the item is found, it is inefficient. In designing algorithms, one should as much as
             possible avoid brute-force algorithms.</p>
@@ -175,8 +176,11 @@
             systematically exploring the solution space, keeping track of
             promising candidates, and eliminating branches of the search space that cannot lead to an optimal solution.
             For TSP, it involves techniques and heuristics to efficiently explore the solution space. While it may not
-            guarantee finding the optimal solution for large instances due to the NP-hard nature of the problem, branch
-            and bound algorithms can significantly improve the efficiency of the search process.
+            guarantee finding the optimal solution for large instances due to the Nondeterministic Polynomial (NP)-hard
+            nature of the problem, branch
+            and bound algorithms can significantly improve the efficiency of the search process. Click <a
+                href=https://deepai.org/machine-learning-glossary-and-terms/nondeterministic-polynomial-time#:~:text=Nondeterministic%20Polynomial%20Time%20is%20a,what%20can%20be%20efficiently%20computed.>here</a>
+            for an interesting read on understanding NP problems.
         </p>
 
         <p><u>C) Greedy Algorithms</u></p>
@@ -192,7 +196,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <figure style="text-align: center;">
-                        <img src="../Images/algorithms/scheduling.png" alt="scheduling" width="700" height="auto">
+                        <img src="../Images/algorithms/scheduling.webp" alt="scheduling" width="700" height="auto">
                         <figcaption>Image from <em>Ace Your Next Coding
                                 Interview by Learning Algorithms through Programming and Problem Solving </em>(
                             Kulikov and Pevzner) </figcaption>
@@ -210,7 +214,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <figure style="text-align: center;">
-                        <img src="../Images/algorithms/greedysub.png" alt="scheduling" width="700" height="auto">
+                        <img src="../Images/algorithms/greedysub.webp" alt="scheduling" width="700" height="auto">
                         <figcaption>Image from <em>Ace Your Next Coding
                                 Interview by Learning Algorithms through Programming and Problem Solving </em>(
                             Kulikov and Pevzner) </figcaption>
@@ -225,7 +229,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <figure style="text-align: center;">
-                        <img src="../Images/algorithms/greedysub2.png" alt="scheduling" width="700" height="auto">
+                        <img src="../Images/algorithms/greedysub2.webp" alt="scheduling" width="700" height="auto">
                         <figcaption>Image from <em>Ace Your Next Coding
                                 Interview by Learning Algorithms through Programming and Problem Solving </em>(
                             Kulikov and Pevzner) </figcaption>
@@ -269,7 +273,7 @@
         <p>Here's a step-by-step description of the Haversack Greedy Algorithm: </p>
 
         <div class="container">
-            <ol class="preStyle">
+            <ol>
                 <li>
                     <em><b>Sort items: </b></em>Start by sorting all items in decreasing order of their value-to-weight
                     ratio. This
@@ -312,32 +316,29 @@
         </p>
         <div class="container">
             <pre class="preStyle">
-                Change(money, Denominations):
-                    numCoins <- 0
-                    while money > 0:
-                        maxCoin <- largest among Denominations that does not exceed money
-                        money <- money - maxCoin
-                        numCoins <- numCoins + 1
-                    return numCoins
-            </pre>
+    Change(money, Denominations):
+        numCoins <- 0
+        while money > 0:
+            maxCoin <- largest among Denominations that does not exceed money
+            money <- money - maxCoin
+            numCoins <- numCoins + 1
+        return numCoins
+    </pre>
         </div>
         <p>The Change Greedy Algorithm displayed above is another example where the greedy algorithm produces a
             sub-optimal solution on
-            using certain values e.g. Change(8,[1,4,6])</p>
+            using certain values e.g. Change(8,[1,4,6]). The algorithm above will result in 3 coins (6+1+1) when it can
+            be achieved with a better result of 2 coins (4+4).</p>
         <p>In conclusion while greedy algorithms offer a straightforward approach to solving optimisation problems and
             are often efficient, it's important to carefully analyse the problem to
-            determine whether a greedy algorithm is appropriate and whether its solution is optimal.</p>
-        <div class="container">
-            <pre class="preStyle">
+            determine whether a greedy algorithm is appropriate and whether its solution is optimal.</p><br>
 
-            </pre>
-        </div>
 
         <p>
             <u>D) Dynamic Programming Algorithms</u>
         </p>
 
-        <p>Dynamic programming organizes computations to avoid recomputing values that you already know, which can often
+        <p>Dynamic programming organises computations to avoid recomputing values that you already know, which can often
             save a great deal of time.</p>
 
         <p>Dynamic programming is a method for solving complex problems by breaking them down into smaller, more
@@ -346,9 +347,10 @@
             reused as needed. It is usually used in optimisation problems where the solution can
             be obtained by combining solutions to overlapping subproblems.</p>
         <p>Let us analyse dynamic programming algorithms using the "Rocks" game. There are variations to this game and
-            we will look into one of them; There are two piles of ten rocks each. In each turn, a player may take either
-            one rock (from either pile) or two rocks (one from each pile). Once the rocks are taken, they are removed
-            from play. The player that takes the last rock wins the game.</p>
+            we will look into one of them; There are two piles of ten rocks each. In each turn, a player may remove
+            either
+            one rock (from either pile) or two rocks (one from each pile). The player who takes the last rock wins the
+            game.</p>
 
         <p>Let's visualise the pile of rocks using a 10 x 10 grid table, called <i>R</i>. The row and column each
             represents
@@ -357,29 +359,116 @@
             game no matter what
             Player 2 does, then <i>R</i>(<i>n</i>,<i>m</i>) = <i>W</i> (Mark grid (<i>n</i>,<i>m</i>) with <i>W</i>).
             Likewise, <i>R</i>(<i>n</i>,<i>m</i>) = <i>L</i> if at the current state, Player 1 can never win against
-            Player 2 (Mark grid (<i>n</i>,<i>m</i>) with <i>L</i>). How can the table be filled up systematically
+            Player 2 (Mark grid (<i>n</i>,<i>m</i>) with <i>L</i>).</p>
+
+        <p>Having learnt how the cells should be filled up, we can start filling up the table. Cells (1,0), (1,1) and
+            (0,1) would always result in Player 1 winning as Player 1 can make moves to remove all rocks based on the
+            rules
+            provided. We can fill up (2,0) next. As Player 1 can only remove 1 rock, it will result in (1,0),
+            ensuring that Player 2 wins. Thus (2,0) is marked L. (0,2) is also marked L as it is just a matter of
+            removing from the bottom pile instead of the top pile, all else being equal (symmetrical).</p>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <figure style="text-align: center;">
+                        <img src="../Images/algorithms/dp1.webp" alt="dp1" style="max-width: 100%; display: block;">
+                        <figcaption>a) States where Player 1 always wins</figcaption>
+                    </figure>
+                </div>
+                <div class="col-lg-6">
+                    <figure style="text-align: center;">
+                        <img src="../Images/algorithms/dp2.webp" alt="dp2" style="max-width: 100%; display: block;">
+                        <figcaption>b) States where Player 2 always wins (green boxes)</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+
+        <p>We have filled up 5 boxes so far. Let's proceed to fill up (2,1). Player 1 can make one of 3 moves, resulting
+            in (2,0), (1,0) or (1,1). Assuming the game is played optimally (Player 1 removes 1 rock from the bottom
+            pile resulting in (2,0)), (2,1) results in a
+            winning move for Player
+            1 as Player 2 can only remove 1 out of 2 rocks from the bottom pile. Thus <i>R</i>(<i>2</i>,<i>1</i>) is
+            marked W. As (1,2) is symmetrical to (2,1), <i>R</i>(<i>1</i>,<i>2</i>) is also marked W. </p>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/algorithms/dp3.webp" alt="haversack" width="500" height="auto">
+                        <figcaption>c) <i>R</i>(<i>2</i>,<i>1</i>) and <i>R</i>(<i>1</i>,<i>2</i>) = W </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+
+        <p>We use the same approach of determining the winner for the other cells.
+            In
+            the (2,2) case, Player 1 can make three different moves that lead to (2,1), (1,2) and (1,1). As we have
+            already filled up the cells for these states with W, they would be winning states for the next Player, which
+            is Player 2. Thus <i>R</i>(<i>2</i>,<i>2</i>) is
+            marked L.</p>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/algorithms/dp4.webp" alt="haversack" width="500" height="auto">
+                        <figcaption>d) <i>R</i>(<i>2</i>,<i>2</i>) = L </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+
+
+        <p>How can the table be filled up systematically
             (algorithmically) if there are <i>n</i> by <i>m</i> entries in the table? A commonly-used technique in
             problem-solving is to start with small values, scale it up, and notice if there is a pattern. If there is,
-            it means there is an algorithmic approach to solving the problem.
+            it means there is an algorithmic approach to solving the problem. This is exactly what we have been doing.
+            One can fill up the
+            rest of table using the same reasoning.</p>
+        <p>In the Rocks game, a pattern can be established using this
+            approach. We can quickly fill up the table by noticing that whenever a cell is marked L, the cells above,
+            diagonally left and directly left are marked W. The completed table has the following entries below.
         </p>
 
-        <p>This concludes Part 1 of the Algorithms: An Introduction blog. In Part 2, we will be exploring Recursive
-            Algorithms, Divide and Conquer Algorithms and Randomised Algorithms. These algorithms that have long been
-            studied by computer scientists and practitioners</p>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/algorithms/dp5.webp" alt="haversack" width="500" height="auto">
+                        <figcaption></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+
+        <p>The Rocks game demonstrates dynamic programming where a complex problem is solved by broking it down into
+            smaller subproblems. The solutions to the subproblems are used to solve the bigger problem and are used as
+            needed. </p>
 
 
-        <p>Recursive Algorithms</p>
+        <p>We have gotten a taste of four approaches to designing algorithms, namely brute force, branch-and-bound,
+            greedy algorithms and dynamic programming. Going through these algorithms, I realise that they were akin to
+            solving puzzles. Those who enjoy puzzles will find a knack in this field. This concludes Part 1 of the
+            Algorithms: An Introduction blog. In Part 2, we will explore Recursive
+            Algorithms, Divide and Conquer Algorithms and Randomised Algorithms. Till next time. &#128522;</p>
 
-        <p></p>
+        <div class="container">
 
-        <p>Divide and Conquer Algorithms</p>
-
-        <p></p>
-
-
-        <p>Randomised Algorithms</p>
-
-
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/algorithms/algorithms2.webp" alt="haversack" width="500" height="auto">
+                        <figcaption></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div></br>
 
     </section>
 
