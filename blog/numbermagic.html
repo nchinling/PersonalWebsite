@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width">
-    <title>Number magic</title>
+    <title>Magic number</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/styles.css">
@@ -75,7 +75,7 @@
     </section>
 
     <section>
-        <div class="container-fluid">
+        <!-- <div class="container-fluid">
             <div class="row">
 
 
@@ -86,13 +86,13 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="container">
 
             <div class="row">
                 <div class="col-lg-12">
                     <figure style="text-align: center;">
-                        <img src="../Images/pythonpackage/package.webp" alt="algorithmscover" width="700" height="auto">
+                        <img src="../Images/magicnumber/nine.webp" alt="nine" width="700" height="auto">
                     </figure>
                 </div>
             </div>
@@ -100,26 +100,26 @@
         <p>
             I recently came across an interesting mathematical knowledge while reading '<i>Chaotic Thoughts from the Old
                 Millenium</i>'. It is a book written by the founder of Creative Technology, the iconic homegrown
-            technology firm, Mr Sim Wong Hoo. I will touch more on the book at the end of the article.
+            technology firm, the late Mr Sim Wong Hoo. I will touch more on the book at the end of the article.
         </p>
         <p>In one of his
             short stories in the book, he shared a number trick involving the number 9. Well, it is not exactly a trick,
             but a mathematical relationship, which is that the sum of digits of any number multiplied by 9 will be
             equal to 9 or its multiple. </p>
-
-        <pre class="preStyle2">
-    1 x 9 = 9
-    2 x 9 = 18 => 1 + 8 = 9
-    3 x 9 = 27 => 2 + 7 = 9
-    4 x 9 = 36 => 3 + 6 = 9
-    .
-    .
-    11 x 9 = 99 => 9 + 9 = 18 (multiple of 9)
-    .
-    .
-    23 x 9 = 207 => 2 + 0 + 7 = 9
-
-</pre>
+        <div class="container">
+            <pre class="preStyle2">
+        1 x 9 = 9
+        2 x 9 = 18 => 1 + 8 = 9
+        3 x 9 = 27 => 2 + 7 = 9
+        4 x 9 = 36 => 3 + 6 = 9
+        .
+        .
+        11 x 9 = 99 => 9 + 9 = 18 (multiple of 9)
+        .
+        .
+        23 x 9 = 207 => 2 + 0 + 7 = 9
+        </pre>
+        </div>
 
         <p>One who knows this relationship could ask another person to choose any number which is not made known to the
             person asking. Get the person to perform a few intermediate arithmetic computations. It wouldn't matter what
@@ -127,104 +127,55 @@
             person to
             recite all digits in the resulting value except the last digit. The person asking would be able to guess the
             last digit easily as the digits should sum to 9 or its multiple. I tried it out with my wife and it worked
-            beautifully. As she was a Math educator, she
+            beautifully. As she is a Math educator, she
             easily guessed that there was a relationship involving the number 9.</p>
-        <p>Being mathematical people ourselves, we were not satisfied with merely knowing the relationshop. We needed to
-            find a proof. So we set out to find the reason behind this relationship online. There were a few proofs
-            available online witht the one below being the one I could understand better.</p>
-
-
-        <pre class="preStyle">
-                #!/bin/bash
-            
-                convert_jpeg_to_webp() {
-                
-                }
-            
-            </pre><br>
+        <p>Being mathematical people ourselves, we were not satisfied with merely knowing the relationship. We needed to
+            find a proof. So we set out to find the reason behind this relationship online. The algebraic approach to
+            proving it might be easier to understand.</p><br>
 
         <div class="container">
-            <ol>
-                <li>
-                    Type <strong>python3</strong> at the terminal to start the Python interpreter. <br><br>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <figure style="text-align: center;">
-                                    <img src="../Images/pythonpackage/python3.webp" alt="stage1" width="500"
-                                        height="auto">
-                                    <figcaption>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div></br>
-                </li>
-                <li>
-                    Type <strong>import mymath</strong> at the terminal to import the mymath package. If it loads
-                    successfully, it will
-                    proceed to the next line without any error message. <br><br>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <figure style="text-align: center;">
-                                    <img src="../Images/pythonpackage/import.webp" alt="stage1" width="500"
-                                        height="auto">
-                                    <figcaption>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div></br>
-                </li>
-                <li>
-                    Access the function in the package using the following syntax <package_name>.<module_name>.
-                            <function_name(parameters if any)><br>
-                                For example, to test the add function in the basic module, type
-                                <strong>mymath.basic.add(1,5)</strong>.
-                                The output will be 6. To access the area_of_circle function in the geometry
-                                module, type <strong>mymath.geometry.area_of_circle(7)</strong>. The output will be
-                                153.938 (3 d.p.).
-                                <br><br>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <figure style="text-align: center;">
-                                                <img src="../Images/pythonpackage/add.webp" alt="stage1" width="500"
-                                                    height="auto">
-                                                <figcaption>
-                                                </figcaption>
-                                            </figure>
-                                        </div>
-                                    </div>
-                                </div></br>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <figure style="text-align: center;">
-                                                <img src="../Images/pythonpackage/area.webp" alt="stage1" width="500"
-                                                    height="auto">
-                                                <figcaption>
-                                                </figcaption>
-                                            </figure>
-                                        </div>
-                                    </div>
-                                </div></br>
-                </li>
+            <pre class="preStyle2">
+        Let 9<i>k</i> be an integer which is a multiple of 9.
+        9<i>k</i> = <i>n</i><sub>1</sub> + 10<i>n</i><sub>2</sub> + 100<i>n</i><sub>3</sub> + ...
+        where <i>n</i><sub>1</sub>, <i>n</i><sub>2</sub> ... are the digits of 9<i>k</i>.
 
+        9<i>k</i> = (<i>n</i><sub>1</sub> + <i>n</i><sub>2</sub> +   <i>n</i><sub>3</sub> + ...) +
+                    (                      9<i>n</i><sub>2</sub> + 99<i>n</i><sub>3</sub> + ...)
+                  = (<i>n</i><sub>1</sub> + <i>n</i><sub>2</sub> +   <i>n</i><sub>3</sub> + ...) +
+                    9(<i>n</i><sub>2</sub> + 11<i>n</i><sub>3</sub> + 111<i>n</i><sub>3</sub> + ...)
+        
+        <i>n</i><sub>1</sub> + <i>n</i><sub>2</sub> +   <i>n</i><sub>3</sub> + ... are the sum of digits of the integer 9<i>k</i>.
 
-            </ol>
+        Let 9(<i>n</i><sub>2</sub> + 11<i>n</i><sub>3</sub> + 111<i>n</i><sub>3</sub> + ...) = 9<i>x</i>. 
+
+        &#8756; 9<i>k</i> = (&#931; digits of 9<i>k</i>) + 9<i>x</i>
+                9<i>k</i> - 9<i>x</i>  = &#931; digits of 9<i>k</i>
+                9(<i>k</i> - <i>x</i>) = &#931; digits of 9<i>k</i>
+
+        Since (<i>k</i> - <i>x</i>) &#8712; &#8484; (element of set of integers), we have the relationship that any number multipled by 9 is equal to &#931; digits of 9<i>k</i>.
+                    </pre><br>
         </div>
+        <p>The relationship presented above is one of the many interesting mathematical relationships which
+            mathematicians have discovered. There are many more relationships which have been discovered, </p>
+        <p>Coming back to the late Mr Sim's book, it is an engaging read filled with many anecdotes. Mr Sim shares many
+            of his
+            observations, childhood and non-childhood stories in a light-hearted and entertaining way, peppering in some
+            wisdom and life philosophy along the way. A common thread in the book is his ability to win against the
+            odds, even when it is stacked against him. We see this in how he grew Creative from a 2-man-run computer
+            repair shop to the technological great it is today. Interestingly, 'Chaotic Thoughts from the Old
+            Millenium' was written in a span of 8 weeks before the turn of the previous millenium, a challenge which he
+            had set for himself and once again, which showed his ability to win against all odds. </p><br>
+        <div class="container">
 
-        <p>
-            This sums up the tutorial on creating a Python package. We have learnt how to create a Python package by
-            looking at the directory structure and creating a __init__.py to initialise the construction of the package.
-            We have also
-            used the Python interpreter to import a package and call its modules' functions. With this knowledge, one
-            can proceed to build
-            his or her own package/library of Python functions (scripts) and use them for their work or own projects.
-            Who knows, you may create the next NumPy scientific computing library &#128516;. Till next time...
-        </p><br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/magicnumber/end2.webp" alt="algorithmscover" width="700" height="auto">
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+
 
 
     </section>
