@@ -276,3 +276,16 @@ td {
   background-color: black;
   color: white;
 }
+
+.hidden-table-row {
+  display: none;
+}
+
+.hidden-list-row {
+  display: none;
+}
+
+/* #toggleButton {
+  float: right;
+
+} */

@@ -139,7 +139,7 @@
 
           <!-- <table class="table-format" cellspacing="5"> -->
           <h3>
-            Work Experience
+            Work Experience&nbsp; <button type="button" class="btn btn-light" id="toggleButton">-</button>
           </h3>
 
           <table cellspacing="5">
@@ -179,8 +179,20 @@
                   1 Jan '12 - 31 Dec '21
                 </td>
               </tr>
+              <tr class="hidden-table-row">
+                <td>
+                  Assistant Money Market Dealer
+                </td>
+                <td>
+                  Sumitomo Mitsui Banking Corp
+                </td>
+                <td>
+                  May '08 - Jul '09
+                </td>
+              </tr>
             </ol>
           </table>
+          <!-- <button type="button" class="btn btn-light" id="toggleButton"><i class="fa-solid fa-minus"></i></button> -->
           <br />
 
 
@@ -205,16 +217,19 @@
 
 
           <h3>
-            Professional Qualifications
+            Professional Qualifications&nbsp; <button type="button" class="btn btn-light" id="toggleButton2">-</button>
           </h3>
           <ul>
+            <li>
+              Professional Certifcate in DevOps and Software Engineering (IBM, 2023 - 2024)
+            </li>
             <li>
               Google Advanced Data Analytics Certifcate (Google, 2023 - 2024)
             </li>
             <li>
               Professional Certificate in Computer Science for Web Programming (HarvardX, 2022 - 2023)
             </li>
-            <li>
+            <li class="hidden-list-row">
               Post Graduate Diploma in Education (NTU, 2010 - 2011)
             </li>
 
@@ -695,6 +710,39 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
       <!-- <script src="js/3d-cube.js"></script> -->
+
+      <script>
+        // Toggle visibility of additional rows
+        function toggleRows() {
+          const rows = document.querySelectorAll('.hidden-table-row');
+          rows.forEach(row => {
+            row.style.display = row.style.display === 'none' ? 'table-row' : 'none';
+          });
+          // Update button text based on visibility
+          const buttonText = document.getElementById('toggleButton').textContent;
+          document.getElementById('toggleButton').textContent = buttonText === '+' ? '-' : '+';
+        }
+        toggleRows();
+        document.getElementById('toggleButton').addEventListener('click', toggleRows);
+      </script>
+
+
+      <script>
+        // Toggle visibility of additional rows
+        function toggleCertRows() {
+          const rows = document.querySelectorAll('.hidden-list-row');
+          rows.forEach(row => {
+            row.style.display = row.style.display === 'none' ? 'list-item' : 'none';
+          });
+          // Update button text based on visibility
+          const buttonText = document.getElementById('toggleButton2').textContent;
+          document.getElementById('toggleButton2').textContent = buttonText === '-' ? '+' : '-';
+        }
+
+        // Initially, hide additional rows and add event listener to the button
+        toggleCertRows(); // Call toggleCertRows() to hide additional rows initially
+        document.getElementById('toggleButton2').addEventListener('click', toggleCertRows);
+      </script>
 
 
 
