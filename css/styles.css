@@ -285,7 +285,16 @@ td {
   display: none;
 }
 
-/* #toggleButton {
-  float: right;
+.thumbnail {
+  width: 150px;
+  /* Adjust as needed */
+  height: auto;
+  /* Maintain aspect ratio */
+}
 
-} */
+.thumbnailtableau {
+  width: 20px;
+  /* Adjust as needed */
+  height: auto;
+  /* Maintain aspect ratio */
+}
