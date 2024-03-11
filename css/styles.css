@@ -287,9 +287,9 @@ td {
 
 .thumbnail {
   width: 150px;
-  /* Adjust as needed */
   height: auto;
-  /* Maintain aspect ratio */
+  /* border-style: solid;
+  color: red */
 }
 
 .thumbnailtableau {
