@@ -281,7 +281,12 @@ td {
   display: none;
 }
 
-.hidden-list-row {
+
+.hidden-education-list-row {
+  display: none;
+}
+
+.hidden-certificate-list-row {
   display: none;
 }
 

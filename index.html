@@ -198,7 +198,7 @@
 
 
           <h3>
-            Education
+            Education&nbsp; <button type="button" class="btn btn-light" id="toggleButtonEducation">-</button>
           </h3>
           <ul>
             <li>
@@ -211,13 +211,17 @@
             <li>
               Masters of Education in Mathematics (NTU, 2016 - 2020)
             </li>
+            <li class="hidden-education-list-row">
+              Post Graduate Diploma in Education (NTU, 2010 - 2011)
+            </li>
           </ul>
           <br />
 
 
 
           <h3>
-            Professional Qualifications&nbsp; <button type="button" class="btn btn-light" id="toggleButton2">-</button>
+            Professional Certificates&nbsp; <button type="button" class="btn btn-light"
+              id="toggleButtonCerts">-</button>
           </h3>
           <ul>
             <li>
@@ -229,13 +233,9 @@
             <li>
               Google Advanced Data Analytics Certifcate (Google, 2023 - 2024)
             </li>
-            <li class="hidden-list-row">
+            <li class="hidden-certificate-list-row">
               Professional Certificate in Computer Science for Web Programming (HarvardX, 2022 - 2023)
             </li>
-            <li class="hidden-list-row">
-              Post Graduate Diploma in Education (NTU, 2010 - 2011)
-            </li>
-
           </ul>
 
 
@@ -729,18 +729,35 @@
       <script>
         // Toggle visibility of additional rows
         function toggleCertRows() {
-          const rows = document.querySelectorAll('.hidden-list-row');
+          const rows = document.querySelectorAll('.hidden-certificate-list-row');
           rows.forEach(row => {
             row.style.display = row.style.display === 'none' ? 'list-item' : 'none';
           });
           // Update button text based on visibility
-          const buttonText = document.getElementById('toggleButton2').textContent;
-          document.getElementById('toggleButton2').textContent = buttonText === '-' ? '+' : '-';
+          const buttonText = document.getElementById('toggleButtonCerts').textContent;
+          document.getElementById('toggleButtonCerts').textContent = buttonText === '-' ? '+' : '-';
         }
 
         // Initially, hide additional rows and add event listener to the button
         toggleCertRows(); // Call toggleCertRows() to hide additional rows initially
-        document.getElementById('toggleButton2').addEventListener('click', toggleCertRows);
+        document.getElementById('toggleButtonCerts').addEventListener('click', toggleCertRows);
+      </script>
+
+      <script>
+        // Toggle visibility of additional rows
+        function toggleEducationRows() {
+          const rows = document.querySelectorAll('.hidden-education-list-row');
+          rows.forEach(row => {
+            row.style.display = row.style.display === 'none' ? 'list-item' : 'none';
+          });
+          // Update button text based on visibility
+          const buttonText = document.getElementById('toggleButtonEducation').textContent;
+          document.getElementById('toggleButtonEducation').textContent = buttonText === '-' ? '+' : '-';
+        }
+
+        // Initially, hide additional rows and add event listener to the button
+        toggleEducationRows(); // Call toggleCertRows() to hide additional rows initially
+        document.getElementById('toggleButtonEducation').addEventListener('click', toggleEducationRows);
       </script>
 
 
