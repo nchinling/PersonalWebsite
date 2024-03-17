@@ -165,11 +165,13 @@ td {
 
 
 .img-container {
-  text-align: center;
+  text-align: left;
+  margin-top: 320px;
   max-width: 100%;
   height: auto;
-
 }
+
+
 
 .video-container {
   position: relative;
