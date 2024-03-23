@@ -1,8 +1,6 @@
 body {
-  background-color: #FAF7F0;
-  /* background-color: #9C254D; */
-  font-family: "Ubuntu";
-
+  /* font-family: "Ubuntu" !important; */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 
