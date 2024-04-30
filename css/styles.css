@@ -302,3 +302,13 @@ td {
   height: auto;
   /* Maintain aspect ratio */
 }
+
+.rounded-img {
+  max-width: 180px;
+  height: auto;
+  margin: 5%;
+  border-radius: 10%;
+  /* This makes the image rounded */
+  overflow: hidden;
+  /* This ensures the image doesn't overflow the border radius */
+}
