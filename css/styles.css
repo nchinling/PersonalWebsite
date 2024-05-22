@@ -74,7 +74,11 @@ a.one:hover {
 .navbar {
   padding-bottom: 4.5rem;
   /* background-color: #00005C; */
+
+  /* present */
   background-color: #1363DF;
+  /* background-color: #7AB2B2 */
+  /* background-color: #7AB2B2 */
 }
 
 .nav-item {

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Java Generics</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Google Fonts: Montserrat and Ubuntu. Currently not used.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sacramento&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/181c7bc6bd.js" crossorigin="anonymous"></script>
+
+
+    <!-- Javascript -->
+    <script src="../index.js" charset="utf-8"></script>
+
+</head>
+
+
+
+<body>
+
+
+    <section id="nav">
+        <!-- <div class="container-fluid"> -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links at top right will collapse -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#projects">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="../index.html#blog" class="nav-link">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="../index.html#contact" class="nav-link">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </nav>
+
+        <!-- </div> -->
+    </section>
+
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+
+
+                <div class="col-lg-12">
+
+
+                    <h1 style="text-align:center" class="intro-padding">Java Generics</h1>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/climate/env.webp" alt="env1" width="500" height="auto">
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+        <p>
+            22 May '24
+        </p>
+        <p>
+            In Java, generics provide a way to define classes, interfaces, and methods with type parameters. This allows
+            you to write more flexible and reusable code while ensuring type safety at compile time. Generics help you
+            to define classes, methods, and interfaces that can operate on any specified type, thereby removing the need
+            to write multiple versions of the same code for different data types. Here's a deeper look into generic
+            types and methods in Java:
+
+            Generic Types
+            A generic type is a class or interface that is parameterized over types. This means you can create classes
+            and interfaces that can operate on objects of various types while providing compile-time type safety.
+        </p>
+        <p>
+            public class Box<T> {
+                private T content;
+
+                public void setContent(T content) {
+                this.content = content;
+                }
+
+                public T getContent() {
+                return content;
+                }
+                }
+        </p>
+        <p>
+            In this example:
+
+            Box<T> is a generic class with a type parameter T.
+                The T stands for "type" and can be any valid identifier.
+                The content field and the methods use the type parameter T.
+        </p>
+        <p>
+            Box<String> stringBox = new Box<>();
+                    stringBox.setContent("Hello World");
+                    String content = stringBox.getContent();
+
+                    Box<Integer> integerBox = new Box<>();
+                            integerBox.setContent(123);
+                            Integer number = integerBox.getContent();
+        </p>
+
+        <p>Generic Methods</p>
+        <p>
+            A generic method is a method that is parameterized over types, allowing you to write methods that can
+            operate on various types without being tied to a specific one.
+
+            Defining a Generic Method
+            Here's an example of a generic method:
+        </p>
+        <p>
+            public class Utility {
+            public static <T> void printArray(T[] array) {
+                for (T element : array) {
+                System.out.println(element);
+                }
+                }
+                }
+
+        </p>
+        <p>
+            In this example:
+
+            <T> before the return type void signifies that the method is generic and T is the type parameter.
+                The printArray method can operate on arrays of any type.
+                Using a Generic Method
+                You can call the generic method with different types of arrays:
+        </p>
+        <p>
+            String[] stringArray = {"Hello", "World"};
+            Utility.printArray(stringArray);
+
+            Integer[] integerArray = {1, 2, 3, 4};
+            Utility.printArray(integerArray);
+        </p>
+
+        <p>Bounded Type Parameters</p>
+        <p>
+            Generics can be bounded to restrict the types that can be used as arguments. This is done using extends for
+            upper bounds and super for lower bounds.
+
+            <u>Upper Bound</u>
+            Using the extends keyword, you can specify that a type parameter must be a subtype of a specific class or
+            implement a specific interface:
+        </p>
+        <p>
+            public class NumberBox<T extends Number> {
+                private T number;
+
+                public void setNumber(T number) {
+                this.number = number;
+                }
+
+                public T getNumber() {
+                return number;
+                }
+                }
+
+        </p>
+        <p>
+            In this example:
+
+            T extends Number means that T must be a subclass of Number (e.g., Integer, Double).
+        </p>
+        <p>
+            <u>Lower Bound</u>
+            Using the super keyword, you can specify that a type parameter must be a supertype of a specific class:
+        </p>
+        <p>
+            public class LowerBoundedBox<T> {
+                public void addNumbersToList(List
+                <? super Integer> list) {
+                    list.add(1);
+                    list.add(2);
+                    list.add(3);
+                }
+            }
+            
+        </p>
+        <p>
+            In this example:
+
+? super Integer means any type that is a supertype of Integer (e.g., Number, Object).
+        </p>
+
+        <p>
+            Wildcards
+        </p>
+        <p>
+            Generics in Java also support wildcards, which are represented by the ? symbol. Wildcards can be used to specify unknown types and are often used in method parameters.
+        </p>
+        <p>
+            Unbounded Wildcard
+
+            public void printList(List<?> list) {
+                for (Object element : list) {
+                System.out.println(element);
+                }
+                }
+
+        </p>
+        <p>
+            Bounded Wildcards
+        </p>
+        <p>
+            Upper Bounded Wildcard:
+            <? extends Type>
+
+            public void processNumbers(List<? extends Number> list) {
+                for (Number number : list) {
+                    System.out.println(number);
+                }
+            }            
+        </p>
+        <p>
+            Lower Bounded Wildcard: <? super Type>
+
+            public void addIntegers(List<? super Integer> list) {
+                list.add(1);
+                list.add(2);
+                list.add(3);
+            }            
+        </p>
+        <p>
+            Advantages of Using Generics
+1. Type Safety: Generics provide compile-time type checking, which reduces runtime errors and the need for type casting.
+2. Code Reusability: You can write more generic and reusable code.
+Elimination of Casts: Generics reduce the need for explicit casting, making the code cleaner and easier to read.
+3. Generics in Java are a powerful feature that allows for the creation of flexible, reusable, and type-safe code. They are an essential tool for modern Java development.
+        </p>
+
+        <p>Type Safety</p>
+        <p>
+            Certainly! Generics in Java enhance type safety by allowing developers to specify the types that a class, interface, or method can operate on. This ensures that type mismatches are caught at compile time rather than at runtime, which reduces the likelihood of ClassCastException and makes the code more robust and easier to maintain.
+
+Compile-Time Type Checking
+When you use generics, the Java compiler enforces the type constraints specified by the generic type parameters. This means that any type mismatch will be detected during compilation, preventing the code from compiling if there are any type-related errors.
+
+Example Without Generics
+Consider a simple example of a collection without using generics:
+        </p>
+        <p>
+            import java.util.ArrayList;
+
+public class NonGenericExample {
+    public static void main(String[] args) {
+        ArrayList list = new ArrayList();
+        list.add("Hello");
+        list.add(123); // This is allowed since the list can hold any type
+
+        for (Object obj : list) {
+            // Need to cast each element to String
+            String str = (String) obj; // Causes a ClassCastException at runtime
+            System.out.println(str);
+        }
+    }
+}
+
+In this example:
+
+The ArrayList can hold any type of objects, so both a String and an Integer are added to the list.
+When iterating over the list, each element is cast to String.
+A ClassCastException occurs at runtime when attempting to cast an Integer to String.
+        </p>
+
+        <p>
+            Example With Generics
+Now consider the same example using generics:
+
+import java.util.ArrayList;
+
+public class GenericExample {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Hello");
+        // list.add(123); // Compile-time error: incompatible types
+
+        for (String str : list) {
+            // No need for casting
+            System.out.println(str);
+        }
+    }
+}
+
+        </p>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/climate/env4.webp" alt="env4" width="500" height="auto">
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+
+    </section>
+
+
+    <hr>
+
+
+    <section id=footer>
+
+        <table>
+
+            <tr>
+                <td>
+
+                    <a class="footer-style" href="../index.html"> Home</a>
+
+                </td>
+                <td>
+
+                    <a class="footer-style" href="../index.html#projects"> Projects</a>
+
+                </td>
+
+                <td>
+
+                    <a class="footer-style" href="../index.html#blog"> Blog</a>
+
+                </td>
+            </tr>
+
+        </table><br>
+    </section>
+
+    <!-- Bootstrap - Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
