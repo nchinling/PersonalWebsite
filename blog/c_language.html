@@ -112,16 +112,19 @@
         <p>
             C was created in the 1970s by Dennis Ritchie. It is an imperative procedural language with uses in operating
             systems and device drivers. C does not have object-orientation and garbage collection. Many languages have
-            been built on the ideas of C, such as C++ and Java. Thus when I read C's syntax, I found it strikingly
+            been built on the ideas of C, such as C++ and Java. Thus C's syntax is strikingly
             similar to Java.
         </p>
         <p>
             Coming back to my revisiting of the C programming language, I dived straight into the topics of pointers,
             address and memory management as these are not taught in Java. Java handles pointers, addresses, and memory
             management under the hood by abstracting these details from the programmer, providing a safer and more
-            managed environment. Let's discuss pointers, addresses and memory management briefly. Pointers and addresses
-            will be discussed together their usage in C language depends on each other. Memory management will have its
-            own topic.
+            managed environment. Nonetheless, having knowledge of these topics would enable us to develop a greater
+            appreciation at how computers manage memory and data. In some cases, there are some performance-critical
+            applications which require fine-grained control of memory, which can be achieved with C. Let's discuss
+            pointers, addresses and memory management briefly. Pointers and addresses
+            will be discussed together since their usage in C language are closely related to each other. Memory
+            management will have its own topic coverage below.
         </p>
         <p>
             <u>Pointers and Address</u>
@@ -130,21 +133,80 @@
             Pointers are variables that store the memory address of another variable. There are a few ways to declare a
             pointer.
 
-            a) int* p;
-            b) int *p;
-            c) int * p;
+        <div class="container">
+            <pre class="preStyle">
 
-            int* p;
-            int *p;
-            int * p;
+        a) int* p;
+        b) int *p;
+        c) int * p;
+    </pre>
+        </div>
 
+        </p>
+
+        <p>
             All 3 approaches will work fine and it depends on individual preference on which approach to use.
             Personally, I prefer approach a). Visually, it tells me that p is a pointer which points at a memory that
-            stores an integer. However, be mindful that in more complex declarations, such as `int* p, q;`, it might not
-            be clear that `q` is not a pointer. For this reason, some prefer the style `int *p;` to avoid confusion when
-            declaring multiple variables in the same statement.
+            stores an integer. However, it might be a source of confusion when it is declared like this;
 
-            Pitfall: int* p, q; misinterpret
+        <div class="container">
+            <pre class="preStyle">
+
+        int* p, q;
+        </pre>
+        </div>
+        </p>
+        <p>
+            In the above example, although p is a pointer variable which stores an integer, q is not. It is an integer
+            variable. For this reason, some prefer the style below to avoid confusion when declaring multiple variables
+            in the same statement.
+        <div class="container">
+            <pre class="preStyle">
+
+        int *p, q;
+            </pre>
+        </div>
+        <p>
+            Next, let's assign an address to a pointer. Recall that a pointer is a variable that store the memory
+            address of another variable. Here, pointer b points to/stores the memory address of integer c which is
+            assigned a
+            value of 3. Note that the memory address is not the same as the integer value.
+        <div class="container">
+            <pre class="preStyle">
+
+        int* b, c;
+        c = 3;
+        b = &c;
+                </pre>
+        </div>
+        </p>
+        <p>
+            Below shows how the addresses of int c and pointer b are obtained. The address operator, '&' is used to
+            obtain the address value of int c. Notice that the address operator is not used to retrieve the address
+            value of pointer b as b already stores the address value.
+        <div class="container">
+            <pre class="preStyle">
+
+        printf("Address of c: %p\n", &c);
+        printf("Address of pointer b: %p\n", b);
+                    </pre>
+        </div>
+        </p>
+        <p>To retrieve the value pointed by b, we use the dereferencing operator, *, as shown below.
+        <div class="container">
+            <pre class="preStyle">
+
+        printf("Address of c: %p\n", &c);
+        printf("Address of pointer b: %p\n", b);
+                        </pre>
+        </div>
+
+        </p>
+
+
+        <p>Memory management</p>
+        <p>
+
         </p>
         <p>Useful sites
 
