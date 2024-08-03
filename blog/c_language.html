@@ -99,7 +99,7 @@
             </div>
         </div></br>
         <p>
-            22 May '24
+            3 Aug '24
         </p>
         <p>
             I first encountered the C programming language during my undergraduate days as part of my introductory
@@ -116,13 +116,13 @@
             similar to Java.
         </p>
         <p>
-            Coming back to my revisiting of the C programming language, I dived straight into the topics of pointers,
-            address and memory management as these are not taught in Java. Java handles pointers, addresses, and memory
-            management under the hood by abstracting these details from the programmer, providing a safer and more
+            Coming back to me revisiting the language, I dived straight into the topics of pointers,
+            address and memory management as these are not taught in Java. Java handles them under the hood by
+            abstracting these details from the programmer, providing a safer and more
             managed environment. Nonetheless, having knowledge of these topics would enable us to develop a greater
             appreciation at how computers manage memory and data. In some cases, there are some performance-critical
-            applications which require fine-grained control of memory, which can be achieved with C. Let's discuss
-            pointers, addresses and memory management briefly. Pointers and addresses
+            applications which require fine-grained control of memory, which can be achieved with C. Let's discuss these
+            topics briefly. Pointers and addresses
             will be discussed together since their usage in C language are closely related to each other. Memory
             management will have its own topic coverage below.
         </p>
@@ -145,7 +145,7 @@
         </p>
 
         <p>
-            All 3 approaches will work fine and it depends on individual preference on which approach to use.
+            All 3 approaches will work fine and it depends on individual preference.
             Personally, I prefer approach a). Visually, it tells me that p is a pointer which points at a memory that
             stores an integer. However, it might be a source of confusion when it is declared like this;
 
@@ -182,7 +182,7 @@
         </p>
         <p>
             Below shows how the addresses of int c and pointer b are obtained. The address operator, '&' is used to
-            obtain the address value of int c. Notice that the address operator is not used to retrieve the address
+            obtain the address of int c. Notice that the address operator is not used to retrieve the address
             value of pointer b as b already stores the address value.
         <div class="container">
             <pre class="preStyle">
@@ -196,36 +196,105 @@
         <div class="container">
             <pre class="preStyle">
 
-        printf("Address of c: %p\n", &c);
-        printf("Address of pointer b: %p\n", b);
+        printf("Value of pointer b: %d\n", *b);
                         </pre>
         </div>
 
-        </p>
+        </p><br>
 
 
-        <p>Memory management</p>
+        <p><u>Memory management</u> </p>
         <p>
-
+            Memory management is the process of handling how much memory a program uses through allocation, reallocation
+            and deallocation (w3schools.com/c). There are two types of memory; static and dynamic memory. Static memory,
+            also known as compile-time memory, is memory that is reserved for variables before the program runs. Static
+            variable is created through the declaration of variables.
         </p>
-        <p>Useful sites
-
-            https://www.programiz.com/c-programming/c-pointers
-
-            https://www.w3schools.com/c/index.php
+        <p>
+            Dynamic memory, also known as runtime memory, is memory that is allocated after the program starts running.
+            Codes can be written to manage memory for allocation, reallocation and deallocation.
         </p>
+        <div class="container">
+            <pre class="preStyle">
+
+        int *ptr1, *ptr2;
+        ptr1 = malloc(sizeof(*ptr1));
+        ptr2 = calloc(3, sizeof(*ptr2));
+                
+                        </pre>
+        </div>
+        <p>In the example above, two integer pointers are declared. ptr1 and ptr2 are allocated memories dynamically
+            using malloc and calloc. malloc and calloc are accessed from the standard library, 'stdlib.h'. malloc( )
+            accepts one parameter, size, which specifies how much memory to allocate,
+            measured in bytes. calloc( ) accepts two parameters; amount of items and size. It is suited for
+            situations
+            involving an array or a block of elements.
+        </p>
+        <p>When either malloc or calloc are called, the system's memory manager finds a suitable block of free memory of
+            at least the
+            requested size. In this case, ptr1 points to 4 bytes of allocated memory while ptr2 points to 12 bytes of
+            allocated memory.</p>
 
         <div class="container">
+            <pre class="preStyle">
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <figure style="text-align: center;">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg"
-                            alt="env4" width="500" height="auto">
-                    </figure>
-                </div>
-            </div>
-        </div></br>
+        // Allocate memory
+        int* ptr;
+        ptr = calloc(5, sizeof(*ptr));
+        
+        // Write to the memory
+        *ptr = 14;
+        ptr[1] = 4;
+        ptr[2] = 6;
+        
+        // Read from the memory
+        printf("%d %d %d %d %d", *ptr, ptr[1], ptr[2], ptr[3], ptr[4]);
+        printf("%d %d %d %d %d", *ptr, *(ptr+1), *(ptr+2), *(ptr+3), *(ptr+4));
+              
+                            </pre>
+        </div>
+        <p>
+            The above example show hows an integer pointer, 'ptr', points to an array of size 5. calloc allocates memory
+            for an array of 5 int elements and initialises all elements to zero. The dereferencing
+            operator *, can be used to access the first element, assigning a value to it. The second print statement
+            uses pointer arithmetic syntax. The output for both are
+        </p>
+        <div class="container">
+            <pre class="preStyle">
+
+        14 4 6 0 0  
+                            </pre>
+        </div>
+        <p>
+            Other memory management functions are realloc( ) and free( ). If the inital amount of memory allocated is
+            not
+            enough,
+            it can be reallocated with a larger amount of memory using realloc( ) while keeping the data that was
+            stored
+            in it.
+        </p>
+        <div class="container">
+            <pre class="preStyle">
+
+        ptr2 = realloc(ptr1, new_size);
+                            </pre>
+        </div>
+        <p>When a block of memory is no longer needed, it should be deallocated / freed up. Memory leaks can happen when
+            dynamic memory is allocated but never freed. So, if a function is with dynamic memory allocation is called
+            often, it will consume too much memory until the system slows down. To free up the memory allocated to the
+            pointer, simply use the
+            free () function. </p>
+        <div class="container">
+            <pre class="preStyle">
+
+        free(ptr_name);
+                            </pre>
+        </div>
+        <p>This concludes the article's discussion on pointers, addresses and memory management in C. While not
+            exhaustive, it provides a solid foundation for further exploration of these concepts.
+
+        </p><br>
+
 
     </section>
 
