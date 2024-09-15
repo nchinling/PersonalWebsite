@@ -225,7 +225,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <figure style="text-align: center;">
-                            <img src="../Images/jenkins/buildtrigger.webp" alt="haversack" width="800" height="auto">
+                            <img src="../Images/jenkins/buildtrigger.webp" alt="haversack" width="600" height="auto">
                             <figcaption> </figcaption>
                         </figure>
                     </div>
@@ -241,23 +241,56 @@
                 more commonly used because it allows for version control and easier collaboration among team
                 members.
             </p>
-            <p> <img src="../Images/jenkins/pipelinesource.webp" alt="Build trigger" style="width: 50%;"></p>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/pipelinesource.webp" alt="haversack" width="600" height="auto">
+                            <figcaption> </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+            <!-- <p> <img src="../Images/jenkins/pipelinesource.webp" alt="Build trigger" style="width: 50%;"></p> -->
             <p>
                 This setting informs Jenkins which branch to build as there may be multiple branches in the repository.
                 In this case, it is configured to build the repository's main branch.
             </p>
-            <p>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/branchbuild.webp" alt="haversack" width="300" height="auto">
+                            <figcaption> </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+            <!-- <p>
                 <img src="../Images/jenkins/branchbuild.webp" alt="main branch build" style="width: 30%; ">
-            </p>
+            </p> -->
             <p>
                 The script path provides the path of the script to Jenkins. In this case, it is set to JenkinsFile (name
                 of the file in the root folder). The lightweight checkout option enables Jenkins to retrieve only the
                 necessary files such as the pipeline script to configure the pipeline. Once the pipeline configuration
                 is evaluated, a full checkout of the repository is still required to build the project.
             </p>
-            <p>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/scriptpath.webp" alt="haversack" width="300" height="auto">
+                            <figcaption> </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+            <!-- <p>
                 <img src="../Images/jenkins/scriptpath.webp" alt="script path" style="width: 30%; ">
-            </p>
+            </p> -->
         </li>
     </ol>
 
@@ -271,10 +304,21 @@
                 target="_blank">
                 Jenkinsfile</a></b> with the following pipeline flow: </p>
     <p>
+    <div class="container">
 
-    <p>
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins/pipeline.webp" alt="haversack" width="800" height="auto">
+                    <figcaption> </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+
+    <!-- <p>
         <img src="../Images/jenkins/pipeline.webp" alt="stages flow" style="width: 50%; border: 1px solid black;">
-    </p>
+    </p> -->
     <p>
         The sequential pipeline branches into a parallel pipeline after the project is built. The first parallel
         pipeline sends an email to the user informing that the project has been successfully built. The second parallel
@@ -283,9 +327,20 @@
     </p>
 
     <p><u>Description of Pipeline stages (Part 1)</u></p>
-    <p>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins/pipelinestages.webp" alt="haversack" width="500" height="auto">
+                    <figcaption> </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+    <!-- <p>
         <img src="../Images/jenkins/pipelinestages.webp" alt="stages flow" style="width: 40%; border: 1px solid black;">
-    </p>
+    </p> -->
 
     <p>
         The pipeline is written declaratively using a simple and structured syntax. It uses a Maven version configured
@@ -324,17 +379,40 @@
                 the web application runs with Java 21. Both Java versions are available in the user's Java program
                 folder.
             </p>
-            <p>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/sonarqubeplugin.webp" alt="haversack" width="500" height="auto">
+                            <figcaption> </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+
+            <!-- <p>
                 <img src="../Images/jenkins/sonarqubeplugin.webp" alt="script path" style="width: 50%; ">
-            </p>
+            </p> -->
         </li>
         <li> Build
             <p>Jenkins runs the 'mvn install -DskipTests' command to build and prepare the project for deployment. The
                 -DskipTests flag is used because the test stage has already been executed earlier in the pipeline.
             </p>
-            <p>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/build.webp" alt="haversack" width="500" height="auto">
+                            <figcaption> </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+            <!-- <p>
                 <img src="../Images/jenkins/build.webp" alt="script path" style="width: 50%; ">
-            </p>
+            </p> -->
         </li>
     </ol><br>
     <p><u>Description of Pipeline stages (Part 2)</u></p>
@@ -345,27 +423,72 @@
     <p>
     <ol class="clist" type="a">
         <li>Send email
-            <p>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/email.webp" alt="haversack" width="900" height="auto">
+                            <figcaption> </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+            <!-- <p>
                 <img src="../Images/jenkins/email.webp" alt="stages flow" style="width: 70%; border: 1px solid black;">
-            </p>
-            <p>
+            </p> -->
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/buildsuccessemail.webp" alt="haversack" width="800"
+                                height="auto">
+                            <figcaption> </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+            <!-- <p>
                 <img src="../Images/jenkins/buildsuccessemail.webp  " alt="stages flow"
                     style="width: 50%; border: 1px solid black;">
-            </p>
+            </p> -->
             <p>
                 The email settings has been configured in Jenkins globally to use Google’s Gmail. It specifies the SMTP
                 server address as ‘smtp.gmail.com’, uses SSL (Secure Sockets Layer) instead of TLS (Transport Layer
                 Security) with port number 465. To enable Jenkins to send an email using Gmail, it requires a custom
                 password generated in Google.
             </p>
-            <p>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/emailconfig.webp" alt="haversack" width="800" height="auto">
+                            <figcaption> </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+            <!-- <p>
                 <img src="../Images/jenkins/emailconfig.webp" alt="email" style="width: 50%;">
-            </p>
+            </p> -->
         </li>
         <li>Building and pushing Docker image
-            <p>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/buildpushdocker.webp" alt="haversack" width="800" height="auto">
+                            <figcaption> </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+            <!-- <p>
                 <img src="../Images/jenkins/buildpushdocker.webp" alt="docker" style="width: 70%;">
-            </p>
+            </p> -->
             <p>
                 The second stage task in the parallel stage, ‘Docker Operations’, builds the Docker image and pushes it
                 to Docker Hub, an online centralised repository. The command 'docker build -t
@@ -386,21 +509,54 @@
         to user in the
         event of failure at any of the stages.
     </p>
-    <p>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins/post.webp" alt="haversack" width="800" height="auto">
+                    <figcaption> </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+    <!-- <p>
         <img src="../Images/jenkins/post.webp" alt="docker" style="width: 80%;">
-    </p>
+    </p> -->
     <p>The table below shows the types of email sent for the different scenarios:</p>
-    <p>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins/table.webp" alt="haversack" width="800" height="auto">
+                    <figcaption> </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+    <!-- <p>
         <img src="../Images/jenkins/table.webp" alt="docker" style="width: 50%;">
-    </p>
+    </p> -->
     <p>
         <u>Results</u>
     </p>
     <p>The diagram below shows the build outcome for the configured job created in the JenkinsFile. The 'post' stage
         was not executed as it did not encounter a build failure. </p>
-    <p>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins/pipelinestage.webp" alt="haversack" width="1000" height="auto">
+                    <figcaption> </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+    <!-- <p>
         <img src="../Images/jenkins/pipelinestage.webp" alt="stages" style="width: 90%;">
-    </p>
+    </p> -->
     <h6>
         <u>DevOps</u>
     </h6>
