@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Jenkins and AWS</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Google Fonts: Montserrat and Ubuntu. Currently not used.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sacramento&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/181c7bc6bd.js" crossorigin="anonymous"></script>
+
+
+    <!-- Javascript -->
+    <script src="../index.js" charset="utf-8"></script>
+
+</head>
+
+
+
+<body>
+
+
+    <section id="nav">
+        <!-- <div class="container-fluid"> -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- AddToAny BEGIN -->
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="float: left; margin-left: 20px;">
+                <!-- <a class="a2a_dd" href="https://www.addtoany.com/share"></a> -->
+                <a class="a2a_button_linkedin"></a>
+                <a class="a2a_button_facebook"></a>
+                <a class="a2a_button_whatsapp"></a>
+                <a class="a2a_button_twitter"></a>
+                <a class="a2a_button_email"></a>
+                <a class="a2a_button_google_gmail"></a>
+            </div>
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
+            <!-- AddToAny END -->
+
+            <!-- Links at top right will collapse -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#projects">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="../index.html#contact" class="nav-link">Contact</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#blog">Blog</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <!-- </div> -->
+    </section>
+
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+
+
+                <div class="col-lg-12">
+
+
+                    <h1 style="text-align:center" class="intro-padding">CI/CD Pipeline with Jenkins and AWS</h1>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+
+
+                <div style="margin:0 auto;" class="col-md-12">
+
+                    <section id="slides">
+
+                        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                                    aria-label="Slide 4">
+                                </button>
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                                    aria-label="Slide 5">
+                                </button>
+
+                            </div>
+
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active" data-bs-interval="3000">
+                                    <img src="../Images/jenkins/Jenkins_logo.svg" class="carousel-image" alt="homepage">
+
+                                    <br />
+
+                                    <!-- </div> -->
+                                </div>
+                                <div class="carousel-item" data-bs-interval="3000">
+                                    <img src="../Images/jenkins/pipeline.webp" class="carousel-image" alt="homepage">
+                                    <br />
+
+                                    <!-- </div> -->
+                                </div>
+
+                                <div class="carousel-item" data-bs-interval="3000">
+
+                                    <img src="../Images/jenkins/buildpushdocker.webp" class="carousel-image"
+                                        alt="homepage">
+                                </div>
+
+
+                                <div class="carousel-item" data-bs-interval="3000">
+
+                                    <img src="../Images/jenkins/sonarqubeoverall.webp" class="carousel-image"
+                                        alt="homepage">
+                                </div>
+
+                                <div class="carousel-item" data-bs-interval="3000">
+
+                                    <img src="../Images/jenkins/pipelinestage.webp" class="carousel-image"
+                                        alt="homepage">
+                                </div>
+
+
+
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+
+    </section><br>
+
+    <h6>
+        Project codes are available at <a class="one" href="https://github.com/nchinling/jenkins-advance-features"
+            target="_blank">
+            Github <i class="contact-img fa-brands fa-github"></i></a>
+    </h6>
+
+    <p>This project showcases a Jenkins pipeline that automates the deployment of a web application (love calculator) to
+        AWS. The Jenkins
+        pipeline implements advanced Jenkins features such as:
+    <ul class="clist">
+        <li>multi-branch pipelines</li>
+        <li>boolean parameter</li>
+        <li>junit report</li>
+        <li>input for manual intervention</li>
+        <li>fingerprinting</li>
+        <li>archival of artifacts</li>
+        <li>email notification</li>
+    </ul>
+    </p>
+
+    <p>
+        In addition to building the application, the CI/CD pipeline creates a Docker container, which is first uploaded
+        to Docker Hub and subsequently pushed to AWS Elastic Container Registry (ECR). The containerised application is
+        then deployed to AWS Elastic Beanstalk for production use. This setup showcases a complete CI/CD pipeline,
+        starting from code integration, automated testing, Docker image creation, and deployment to production. By
+        leveraging Jenkins for automation and AWS for scalable deployment, this project demonstrates end-to-end delivery
+        of web applications, ensuring efficient and reliable application releases.
+    </p><br>
+    <h6>
+        Jenkinsfile configuration (Declarative Pipeline)
+    </h6>
+
+    <p>The Jenkins job is configured with the following features:
+
+    <ol class="clist" type="a">
+        <li>Build trigger
+            <p>The build is triggered by polling the Source Code Management system, specifically Git. It is configured
+                to
+                poll the GitHub repository every minute using CronJob, similar to the implementation in the previous <a
+                    href="https://ngchinling.com/projects/jenkins.html">Jenkins pipeline project</a>.
+
+            </p>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/buildtrigger.webp" alt="haversack" width="600" height="auto">
+                            <figcaption> </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+        </li>
+
+
+        <li>Multi-branch pipelines
+            <p>Multi-branch pipelines are used to automatically create a pipeline for each branch in the repository,
+                enabling each branch to have different CI/CD pipeline configurations. For this to work, the
+                'Multi-Branch Pipeline Job' has to be selected in Jenkins UI and each feature branch will need to have
+                its own Jenkinsfile.
+            </p>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/pipelinesource.webp" alt="multi_pipelines" width="600"
+                                height="auto">
+                            <figcaption>Multi-build pipelines</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+        </li>
+        <li>Boolean parameter
+            <p>The pipeline uses a boolean parameter which determines whether the application should be containerised
+                and deployed to Docker Hub.
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/pipelinesource.webp" alt="multi_pipelines" width="600"
+                                height="auto">
+                            <figcaption>Boolean Parameter checkbox</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/pipelinesource.webp" alt="multi_pipelines" width="600"
+                                height="auto">
+                            <figcaption>Boolean Parameter code</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+        </li>
+        <li>Junit report
+            <p>The 'junit' pipeline step processes the JUnit test result files. It displays the the results of unit
+                tests in Jenkins. The code used below informs Jenkins to use the provided path pattern to locate the
+                JUnit XML files generated by the tests.
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/pipelinesource.webp" alt="multi_pipelines" width="600"
+                                height="auto">
+                            <figcaption>junit code snippet</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/pipelinesource.webp" alt="multi_pipelines" width="600"
+                                height="auto">
+                            <figcaption>Test results displayed on Jenkins</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+        </li>
+    </ol>
+
+    </p><br>
+
+    <h6>
+        Jenkins Pipeline
+    </h6>
+    <p>The job is scripted in a <b><a class="one"
+                href="https://github.com/nchinling/jenkins-project-dashmath-backend/blob/main/JenkinsFile"
+                target="_blank">
+                Jenkinsfile</a></b> with the following pipeline flow: </p>
+    <p>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins/pipeline.webp" alt="haversack" width="800" height="auto">
+                    <figcaption> </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+
+    <!-- <p>
+        <img src="../Images/jenkins/pipeline.webp" alt="stages flow" style="width: 50%; border: 1px solid black;">
+    </p> -->
+    <p>
+        The sequential pipeline branches into a parallel pipeline after the project is built. The first parallel
+        pipeline sends an email to the user informing that the project has been successfully built. The second parallel
+        pipeline builds a Docker image and pushes it to the Docker Hub public repository. At the 'post' stage, an email
+        is sent in the event any of the pipeline stage fails.
+    </p>
+
+    <p><u>Description of Pipeline stages (Part 1)</u></p>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins/pipelinestages.webp" alt="haversack" width="500" height="auto">
+                    <figcaption> </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+    <!-- <p>
+        <img src="../Images/jenkins/pipelinestages.webp" alt="stages flow" style="width: 40%; border: 1px solid black;">
+    </p> -->
+
+    <p>
+        The pipeline is written declaratively using a simple and structured syntax. It uses a Maven version configured
+        in Jenkins' global settings and Java version 21, as a version higher than Java 11 was used to meet the web
+        application's needs. The stages created are as follows:
+    </p>
+    <p>
+    <ol class="clist" type="a">
+        <li>Clean
+            <p>Jenkins runs the 'mvn clean' command which deletes the 'target' directory. The 'target' directory stores
+                the generated compiled files. Deleting the 'target' directory ensures each build starts with a clean
+                slate.
+            </p>
+        </li>
+
+
+        <li> Test
+            <p>Jenkins runs the 'mvn test' command which is used to run the test cases of a Maven project. It
+                compiles and executes the tests and generates test reports. In this assignment, the test cases are
+                written in
+                JUnit.
+            </p>
+        </li>
+        <li> Sonar
+            <p>It runs the 'mvn sonar:sonar' command is used to run SonarQube analysis. SonarQube is used to perform
+                static code analysis such as bugs, code smells, security vulnerabilities and code coverage. The results
+                of the
+                analysis are sent to a SonarQube server. In this assignment, the SonarQube server has been configured in
+                Jenkins
+                and is hosted locally by running the StartSonar.bat file. The SonarQube server provides a web interface
+                for
+                viewing the reports, while static analysis is performed by a plugin specified in the web application's
+                pom.xml
+                file. Note that the SonarQube server is configured to run with Java 11 (specified in the 'Path'
+                directory) while
+                the web application runs with Java 21. Both Java versions are available in the user's Java program
+                folder.
+            </p>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/sonarqubeplugin.webp" alt="haversack" width="500" height="auto">
+                            <figcaption> </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+
+            <!-- <p>
+                <img src="../Images/jenkins/sonarqubeplugin.webp" alt="script path" style="width: 50%; ">
+            </p> -->
+        </li>
+        <li> Build
+            <p>Jenkins runs the 'mvn install -DskipTests' command to build and prepare the project for deployment. The
+                -DskipTests flag is used because the test stage has already been executed earlier in the pipeline.
+            </p>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/build.webp" alt="haversack" width="500" height="auto">
+                            <figcaption> </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+            <!-- <p>
+                <img src="../Images/jenkins/build.webp" alt="script path" style="width: 50%; ">
+            </p> -->
+        </li>
+    </ol><br>
+    <p><u>Description of Pipeline stages (Part 2)</u></p>
+    <p>
+        After the project has been built successfully, the Jenkins pipeline branches into two parallel tasks, one for
+        building the Docker image and another for notifying the user of the successful build via email.
+    </p>
+    <p>
+    <ol class="clist" type="a">
+        <li>Send email
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/email.webp" alt="haversack" width="900" height="auto">
+                            <figcaption> </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+            <!-- <p>
+                <img src="../Images/jenkins/email.webp" alt="stages flow" style="width: 70%; border: 1px solid black;">
+            </p> -->
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/buildsuccessemail.webp" alt="haversack" width="800"
+                                height="auto">
+                            <figcaption> </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+            <!-- <p>
+                <img src="../Images/jenkins/buildsuccessemail.webp  " alt="stages flow"
+                    style="width: 50%; border: 1px solid black;">
+            </p> -->
+            <p>
+                The email settings has been configured in Jenkins globally to use Google’s Gmail. It specifies the SMTP
+                server address as ‘smtp.gmail.com’, uses SSL (Secure Sockets Layer) instead of TLS (Transport Layer
+                Security) with port number 465. To enable Jenkins to send an email using Gmail, it requires a custom
+                password generated in Google.
+            </p>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/emailconfig.webp" alt="haversack" width="800" height="auto">
+                            <figcaption> </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+            <!-- <p>
+                <img src="../Images/jenkins/emailconfig.webp" alt="email" style="width: 50%;">
+            </p> -->
+        </li>
+        <li>Building and pushing Docker image
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure style="text-align: center;">
+                            <img src="../Images/jenkins/buildpushdocker.webp" alt="haversack" width="800" height="auto">
+                            <figcaption> </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div></br>
+            <!-- <p>
+                <img src="../Images/jenkins/buildpushdocker.webp" alt="docker" style="width: 70%;">
+            </p> -->
+            <p>
+                The second stage task in the parallel stage, ‘Docker Operations’, builds the Docker image and pushes it
+                to Docker Hub, an online centralised repository. The command 'docker build -t
+                nchinling/jenkins_dashmath_repo:latest .' tells Docker to build an image from the Dockerfile in the
+                current directory (.) and tag (-t) it with the name nchinling/jenkins_dashmath_repo:latest. It is the
+                image name that will be seen in Docker Hub.
+            </p>
+            <p>
+                After building the image, Jenkins pushes the image to Docker Hub using the Docker Hub log in details
+                which have been configured in Jenkins Credentials settings. Finally, it notifies the user of the
+                successful push via email.
+            </p>
+        </li>
+    </ol>
+    <p><u>Description of Pipeline stages (Part 3)</u></p>
+    <p>
+        The 'post' section is the last snippet of code in the JenkinsFile. It is configured to send a notification
+        to user in the
+        event of failure at any of the stages.
+    </p>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins/post.webp" alt="haversack" width="800" height="auto">
+                    <figcaption> </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+    <!-- <p>
+        <img src="../Images/jenkins/post.webp" alt="docker" style="width: 80%;">
+    </p> -->
+    <p>The table below shows the types of email sent for the different scenarios:</p>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins/table.webp" alt="haversack" width="800" height="auto">
+                    <figcaption> </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+    <!-- <p>
+        <img src="../Images/jenkins/table.webp" alt="docker" style="width: 50%;">
+    </p> -->
+    <p>
+        <u>Results</u>
+    </p>
+    <p>The diagram below shows the build outcome for the configured job created in the JenkinsFile. The 'post' stage
+        was not executed as it did not encounter a build failure. </p>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins/pipelinestage.webp" alt="haversack" width="1000" height="auto">
+                    <figcaption> </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+    <!-- <p>
+        <img src="../Images/jenkins/pipelinestage.webp" alt="stages" style="width: 90%;">
+    </p> -->
+    <h6>
+        <u>DevOps</u>
+    </h6>
+    <p>
+        The business world is ever-evolving, with new technologies coming into the foray every few years. It is
+        quintessential that businesses respond and adapt to them, or risk losing out their business to competitors and
+        be wiped out. The applications that drive their operations serve as a reflection of how well businesses leverage
+        technology.
+    </p>
+    <p>
+        Before the advent of DevOps, development (creating applications) and operations (supporting and deploying them)
+        teams operated in silos. It was a painful and laborious process as it required excessive manual work and
+        incessant communication to drive the project, resulting in deliveries which frequently failed to meet business
+        needs. Often, businesses are lost to competitors, not to mention, damaged reputations which have lasting
+        impacts.
+    </p>
+    <p>
+        Born out of empiricism, experience, and necessity, the idea of DevOps began to take shape in the 2000s. It was
+        officially conceptualised in 2009 by Patrick Debois, who also initiated the first DevOpsDay. This event sparked
+        a wave of adoption among companies that had been using traditional methods of software development. Today,
+        DevOps is a mature and evolving philosophy, embraced and adapted in various forms by organisations worldwide.
+        The 2024 edition of DevOpsDays took place in a few countries including Singapore, reflecting the continued
+        relevance and impact of DevOps.
+    </p>
+    <h6>
+        <u>CI/CD pipeline and DevOps</u>
+    </h6>
+    <p>
+        This project of creating a CI/CD pipeline with Jenkins exemplifies how the philosophy of DevOps philosophy can
+        be implemented in practice. Instead of having development and operations teams work in silos, DevOps removes the
+        barrier between these two crucial components. DevOps speeds up development and its subsequent operations to
+        create an error free, valuable and deployable software product. Each stage of the Software Development Life
+        Cycle (SDLC) is completed in a fraction of the time it would typically take using traditional methods.
+    </p>
+    <p>
+        This approach translates into significant cost savings and faster deployments, which in turn enhance an
+        organisation's ability to respond swiftly to market changes. By reducing the time-to-market, businesses can more
+        effectively capture emerging opportunities and outpace competitors. DevOps drives business growth, ensuring
+        organisations remain competitive in an ever-evolving landscape.
+    </p>
+    <p>
+        There is no fixed approach approach to creating the flow of a Jenkins job. It varies depending on the technical
+        requirements and organisational needs. Additionally, there are numerous DevOps tools available for different
+        stages of the Software Development Life Cycle (SDLC). While proficiency in these tools is valuable, the key to
+        success lies in understanding the role of DevOps and how its principles can be effectively adopted within the
+        organisation. This understanding will guide DevOps engineers in making informed decisions, optimising workflows
+        and driving continuous improvement.
+    </p>
+    <p>The following video demonstrates the implementation and execution of the Jenkins pipeline.</p><br>
+
+
+
+    <div class="container">
+        <div align="center">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/CRetL1E_0OY" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <hr>
+
+
+    <section id=footer>
+        <table>
+
+            <tr>
+                <td>
+
+                    <a class="footer-style" href="../index.html"> Home</a>
+
+                </td>
+                <td>
+
+                    <a class="footer-style" href="../index.html#projects"> Projects</a>
+
+                </td>
+
+                <td>
+
+                    <a class="footer-style" href="../index.html#blog"> Blog</a>
+
+                </td>
+            </tr>
+
+        </table><br>
+
+    </section>
+
+    <!-- Bootstrap - Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
