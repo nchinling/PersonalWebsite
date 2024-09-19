@@ -131,14 +131,16 @@
 
                             <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" data-bs-interval="3000">
-                                    <img src="../Images/jenkins/Jenkins_logo.svg" class="carousel-image" alt="homepage">
+                                    <img src="../Images/jenkins-advanced/jenkins-advanced.webp  " class="carousel-image"
+                                        alt="homepage">
 
                                     <br />
 
                                     <!-- </div> -->
                                 </div>
                                 <div class="carousel-item" data-bs-interval="3000">
-                                    <img src="../Images/jenkins/pipeline.webp" class="carousel-image" alt="homepage">
+                                    <img src="../Images/jenkins-advanced/buildstages.webp" class="carousel-image"
+                                        alt="homepage">
                                     <br />
 
                                     <!-- </div> -->
@@ -146,20 +148,20 @@
 
                                 <div class="carousel-item" data-bs-interval="3000">
 
-                                    <img src="../Images/jenkins/buildpushdocker.webp" class="carousel-image"
+                                    <img src="../Images/jenkins-advanced/love_calc.webp" class="carousel-image"
                                         alt="homepage">
                                 </div>
 
 
                                 <div class="carousel-item" data-bs-interval="3000">
 
-                                    <img src="../Images/jenkins/sonarqubeoverall.webp" class="carousel-image"
+                                    <img src="../Images/jenkins-advanced/aws_beanstalk.webp" class="carousel-image"
                                         alt="homepage">
                                 </div>
 
                                 <div class="carousel-item" data-bs-interval="3000">
 
-                                    <img src="../Images/jenkins/pipelinestage.webp" class="carousel-image"
+                                    <img src="../Images/jenkins-advanced/ecr_images.webp" class="carousel-image"
                                         alt="homepage">
                                 </div>
 
@@ -217,419 +219,342 @@
         Jenkinsfile configuration (Declarative Pipeline)
     </h6>
 
-    <p>The Jenkins job is configured with the following features:
+    <p>The Jenkins job is configured with the following features:</p>
+    <p><u>Build trigger, Maven build, unit tests, static code analysis, containerisation and email notification</u></p>
 
-    <ol class="clist" type="a">
-        <li>Build trigger
-            <p>The build is triggered by polling the Source Code Management system, specifically Git. It is configured
-                to
-                poll the GitHub repository every minute using CronJob, similar to the implementation in the previous <a
-                    href="https://ngchinling.com/projects/jenkins.html">Jenkins pipeline project</a>.
+    <p>These features are similar to the implementations in the previous <a
+            href="https://ngchinling.com/projects/jenkins.html">Jenkins pipeline project</a>.</p>
 
-            </p>
-            <div class="container">
+    <p><u>Multi-branch pipelines</u></p>
+    <p>Multi-branch pipelines are used to automatically create a pipeline for each branch in the repository,
+        enabling each branch to have different CI/CD pipeline configurations. For this to work, the
+        'Multi-Branch Pipeline Job' has to be selected in Jenkins UI and each feature branch will need to have
+        its own Jenkinsfile.
+    </p>
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <figure style="text-align: center;">
-                            <img src="../Images/jenkins/buildtrigger.webp" alt="haversack" width="600" height="auto">
-                            <figcaption> </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div></br>
-        </li>
-
-
-        <li>Multi-branch pipelines
-            <p>Multi-branch pipelines are used to automatically create a pipeline for each branch in the repository,
-                enabling each branch to have different CI/CD pipeline configurations. For this to work, the
-                'Multi-Branch Pipeline Job' has to be selected in Jenkins UI and each feature branch will need to have
-                its own Jenkinsfile.
-            </p>
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <figure style="text-align: center;">
-                            <img src="../Images/jenkins/pipelinesource.webp" alt="multi_pipelines" width="600"
-                                height="auto">
-                            <figcaption>Multi-build pipelines</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div></br>
-        </li>
-        <li>Boolean parameter
-            <p>The pipeline uses a boolean parameter which determines whether the application should be containerised
-                and deployed to Docker Hub.
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <figure style="text-align: center;">
-                            <img src="../Images/jenkins/pipelinesource.webp" alt="multi_pipelines" width="600"
-                                height="auto">
-                            <figcaption>Boolean Parameter checkbox</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div></br>
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <figure style="text-align: center;">
-                            <img src="../Images/jenkins/pipelinesource.webp" alt="multi_pipelines" width="600"
-                                height="auto">
-                            <figcaption>Boolean Parameter code</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div></br>
-        </li>
-        <li>Junit report
-            <p>The 'junit' pipeline step processes the JUnit test result files. It displays the the results of unit
-                tests in Jenkins. The code used below informs Jenkins to use the provided path pattern to locate the
-                JUnit XML files generated by the tests.
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <figure style="text-align: center;">
-                            <img src="../Images/jenkins/pipelinesource.webp" alt="multi_pipelines" width="600"
-                                height="auto">
-                            <figcaption>junit code snippet</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div></br>
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <figure style="text-align: center;">
-                            <img src="../Images/jenkins/pipelinesource.webp" alt="multi_pipelines" width="600"
-                                height="auto">
-                            <figcaption>Test results displayed on Jenkins</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div></br>
-        </li>
-    </ol>
-
-    </p><br>
-
-    <h6>
-        Jenkins Pipeline
-    </h6>
-    <p>The job is scripted in a <b><a class="one"
-                href="https://github.com/nchinling/jenkins-project-dashmath-backend/blob/main/JenkinsFile"
-                target="_blank">
-                Jenkinsfile</a></b> with the following pipeline flow: </p>
-    <p>
     <div class="container">
 
         <div class="row">
             <div class="col-lg-12">
                 <figure style="text-align: center;">
-                    <img src="../Images/jenkins/pipeline.webp" alt="haversack" width="800" height="auto">
-                    <figcaption> </figcaption>
+                    <img src="../Images/jenkins-advanced/multibranches_ui.webp" alt="multi_pipelines" width="600"
+                        height="auto">
+                    <figcaption>Multi-branch pipelines</figcaption>
                 </figure>
             </div>
         </div>
     </div></br>
-
-    <!-- <p>
-        <img src="../Images/jenkins/pipeline.webp" alt="stages flow" style="width: 50%; border: 1px solid black;">
-    </p> -->
-    <p>
-        The sequential pipeline branches into a parallel pipeline after the project is built. The first parallel
-        pipeline sends an email to the user informing that the project has been successfully built. The second parallel
-        pipeline builds a Docker image and pushes it to the Docker Hub public repository. At the 'post' stage, an email
-        is sent in the event any of the pipeline stage fails.
-    </p>
-
-    <p><u>Description of Pipeline stages (Part 1)</u></p>
     <div class="container">
 
         <div class="row">
             <div class="col-lg-12">
                 <figure style="text-align: center;">
-                    <img src="../Images/jenkins/pipelinestages.webp" alt="haversack" width="500" height="auto">
-                    <figcaption> </figcaption>
+                    <img src="../Images/jenkins-advanced/multibranches.webp" alt="multi_pipelines" width="600"
+                        height="auto">
+                    <figcaption>Multi-branch pipelines in terminal</figcaption>
                 </figure>
             </div>
         </div>
     </div></br>
-    <!-- <p>
-        <img src="../Images/jenkins/pipelinestages.webp" alt="stages flow" style="width: 40%; border: 1px solid black;">
-    </p> -->
+
+    <p><u>Boolean parameter</u></p>
+    <p>A boolean parameter is a type of build parameter that allows the user to include a simple checkbox in the build
+        configuration.The pipeline uses a boolean parameter which determines whether the application should be
+        containerised
+        and deployed to Docker Hub. The default value is set to True so that the build will be automatically
+        containerised whenever there is a code change in the repository. The boolean parameter is defined in a
+        parameters block. It is then conditionally
+        executed based on the boolean value passed.
+    </p>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins-advanced/buildparamUI.webp" alt="multi_pipelines" width="600"
+                        height="auto">
+                    <figcaption>Boolean checkbox</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins-advanced/booleanparamcode.webp" alt="multi_pipelines" width="600"
+                        height="auto">
+                    <figcaption>Parameters block</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins-advanced/booleanparamcode2.webp" alt="multi_pipelines" width="600"
+                        height="auto">
+                    <figcaption>Conditional execution (When)</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+
+    <p><u>JUnit report</u></p>
+    <p>The 'junit' pipeline step processes the JUnit test result files and displays the unit tests results in
+        Jenkins. The code used below informs Jenkins to use the provided path pattern to locate the
+        JUnit XML files generated by the tests.
+    </p>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins-advanced/junit.webp" alt="junit code snippet" width="600" height="auto">
+                    <figcaption>junit code snippet</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins-advanced/junit_test_result_ui.webp" alt="test results" width="600"
+                        height="auto">
+                    <figcaption>Unit test results</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+
+    <p><u>Input for manual intervention</u></p>
+    <p>The input step is pauses the pipeline and waits for user input (manual intervention) before continuing with
+        the execution of the job. The input step used in the pipeline waits for user input in deciding whether to
+        approve a deployment to production. If not approved, it proceeds straight to the post stage to email the
+        results of job build.</p>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins-advanced/input_code.webp" alt="junit code snippet" width="600"
+                        height="auto">
+                    <figcaption>Input code snippet</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+
+    <p><u>Archiving and Fingerprinting</u></p>
+    <p>Archiving saves the build artifacts generated by the build, making them available for download. The archive is
+        stored in the build workspace. It stores
+        things like build logs, JAR files, WAR files and reports. Meanwhile, fingerprinting tracks the usage of
+        files (artifacts) across different jobs or builds. A hash (md5 checksum fingerprint) is created for each
+        file which tracks which build the the file was first created and usage across jobs if any.</p>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins-advanced/jenkinsworkspace.webp" alt="junit code snippet" width="600"
+                        height="auto">
+                    <figcaption>Build workspace</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins-advanced/archive_and_fingerprint_code.webp" alt="junit code snippet"
+                        width="600" height="auto">
+                    <figcaption>Archiving and fingerprinting code snippet</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/jenkins-advanced/fingerprint_and_artifact.webp" alt="test results" width="600"
+                        height="auto">
+                    <figcaption>Archived artifact and fingerprint</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+
+
+    <p><u>Deployment to AWS</u></p>
+
 
     <p>
-        The pipeline is written declaratively using a simple and structured syntax. It uses a Maven version configured
-        in Jenkins' global settings and Java version 21, as a version higher than Java 11 was used to meet the web
-        application's needs. The stages created are as follows:
+        The deployment to AWS involves a series of setup in the AWS Management Console and code snippet in the
+        Jenkinsfile. This Medium <a
+            href="https://medium.com/@prabhnoorsingh22/setting-up-a-ci-cd-pipeline-with-jenkins-deploying-a-docker-application-to-elastic-beanstalk-via-3c5c679153a6"
+            target="_blank">article</a>
+        provides a good tutorial on deploying the build to AWS.
     </p>
     <p>
     <ol class="clist" type="a">
-        <li>Clean
-            <p>Jenkins runs the 'mvn clean' command which deletes the 'target' directory. The 'target' directory stores
-                the generated compiled files. Deleting the 'target' directory ensures each build starts with a clean
-                slate.
-            </p>
-        </li>
+        <li>Containerise the build</li>
+        <p>Containerise the build using Docker. The Docker build instructions are stored in a Dockerfile.</p>
 
 
-        <li> Test
-            <p>Jenkins runs the 'mvn test' command which is used to run the test cases of a Maven project. It
-                compiles and executes the tests and generates test reports. In this assignment, the test cases are
-                written in
-                JUnit.
-            </p>
-        </li>
-        <li> Sonar
-            <p>It runs the 'mvn sonar:sonar' command is used to run SonarQube analysis. SonarQube is used to perform
-                static code analysis such as bugs, code smells, security vulnerabilities and code coverage. The results
-                of the
-                analysis are sent to a SonarQube server. In this assignment, the SonarQube server has been configured in
-                Jenkins
-                and is hosted locally by running the StartSonar.bat file. The SonarQube server provides a web interface
-                for
-                viewing the reports, while static analysis is performed by a plugin specified in the web application's
-                pom.xml
-                file. Note that the SonarQube server is configured to run with Java 11 (specified in the 'Path'
-                directory) while
-                the web application runs with Java 21. Both Java versions are available in the user's Java program
-                folder.
-            </p>
-            <div class="container">
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <figure style="text-align: center;">
-                            <img src="../Images/jenkins/sonarqubeplugin.webp" alt="haversack" width="500" height="auto">
-                            <figcaption> </figcaption>
-                        </figure>
-                    </div>
+        <li>Push the image to AWS Elastic Container Registry (ECR)</li>
+        <p>The image is pushed to ECR. A repository needs to be created first in ECR before the push can happen. In the
+            code snippet, user first logs in to ECR and then pushes the build to ECR.</p>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/jenkins-advanced/ecr_code.webp" alt="test results" width="800"
+                            height="auto">
+                        <figcaption>Log in and push to ECR</figcaption>
+                    </figure>
                 </div>
-            </div></br>
+            </div>
+        </div></br>
 
-            <!-- <p>
-                <img src="../Images/jenkins/sonarqubeplugin.webp" alt="script path" style="width: 50%; ">
-            </p> -->
-        </li>
-        <li> Build
-            <p>Jenkins runs the 'mvn install -DskipTests' command to build and prepare the project for deployment. The
-                -DskipTests flag is used because the test stage has already been executed earlier in the pipeline.
-            </p>
-            <div class="container">
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <figure style="text-align: center;">
-                            <img src="../Images/jenkins/build.webp" alt="haversack" width="500" height="auto">
-                            <figcaption> </figcaption>
-                        </figure>
-                    </div>
+        <li>Create a Dockerrun.aws.json file</li>
+        <p>Create a Dockerrun.aws.json file at the root of the repository. It is used by AWS Elastic Beanstalk to
+            configure and deploy Docker-based applications. It contains the configuration details needed for Elastic
+            Beanstalk to run the application inside Docker containers. AWSEBDockerrunVersion specifies the version of
+            the Dockerrun file format. '1' is for single-container Docker environments. The image name specifies the
+            Docker image to be used from ECR. The "Update": "true" tag specifies that whenever a new version of the
+            image
+            is pushed to
+            ECR, Elastic Beanstalk will use the latest version for deployment. Finally, ContainerPort:8080 means the
+            container is exposing port 8080, allowing the application inside the Docker container to be accessible
+            through this port. The file is zipped to be deployed to ECR.</p>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/jenkins-advanced/dockerrun_code.webp" alt="test results" width="800"
+                            height="auto">
+                        <figcaption>Dockerrun.aws.json </figcaption>
+                    </figure>
                 </div>
-            </div></br>
-            <!-- <p>
-                <img src="../Images/jenkins/build.webp" alt="script path" style="width: 50%; ">
-            </p> -->
-        </li>
+            </div>
+        </div></br>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/jenkins-advanced/zip_code.webp" alt="ELB" width="800" height="auto">
+                        <figcaption>Zip the build</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/jenkins-advanced/ecr.webp" alt="test results" width="800" height="auto">
+                        <figcaption>ECR repository</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/jenkins-advanced/ecr_images.webp" alt="test results" width="800"
+                            height="auto">
+                        <figcaption>ECR images</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+
+
+
+
+        <li>Elastic Beanstalk</li>
+        <p>AWS Elastic Beanstalk is a Platform as a Service (PaaS) offered by AWS that simplifies
+            the deployment and management of web applications and services.</p>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/jenkins-advanced/ebeancode.webp" alt="test results" width="800"
+                            height="auto">
+                        <figcaption>AWS Elastic Beanstalk code snippet</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/jenkins-advanced/aws_beanstalk.webp" alt="ELB" width="800" height="auto">
+                        <figcaption>Environment</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/jenkins-advanced/env.webp" alt="ELB" width="800" height="auto">
+                        <figcaption>Event log in AWS Elastic Beanstalk</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+
+
+
+
     </ol><br>
-    <p><u>Description of Pipeline stages (Part 2)</u></p>
+    <p><u>Application</u></p>
     <p>
-        After the project has been built successfully, the Jenkins pipeline branches into two parallel tasks, one for
-        building the Docker image and another for notifying the user of the successful build via email.
-    </p>
-    <p>
-    <ol class="clist" type="a">
-        <li>Send email
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <figure style="text-align: center;">
-                            <img src="../Images/jenkins/email.webp" alt="haversack" width="900" height="auto">
-                            <figcaption> </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div></br>
-            <!-- <p>
-                <img src="../Images/jenkins/email.webp" alt="stages flow" style="width: 70%; border: 1px solid black;">
-            </p> -->
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <figure style="text-align: center;">
-                            <img src="../Images/jenkins/buildsuccessemail.webp" alt="haversack" width="800"
-                                height="auto">
-                            <figcaption> </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div></br>
-            <!-- <p>
-                <img src="../Images/jenkins/buildsuccessemail.webp  " alt="stages flow"
-                    style="width: 50%; border: 1px solid black;">
-            </p> -->
-            <p>
-                The email settings has been configured in Jenkins globally to use Google’s Gmail. It specifies the SMTP
-                server address as ‘smtp.gmail.com’, uses SSL (Secure Sockets Layer) instead of TLS (Transport Layer
-                Security) with port number 465. To enable Jenkins to send an email using Gmail, it requires a custom
-                password generated in Google.
-            </p>
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <figure style="text-align: center;">
-                            <img src="../Images/jenkins/emailconfig.webp" alt="haversack" width="800" height="auto">
-                            <figcaption> </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div></br>
-            <!-- <p>
-                <img src="../Images/jenkins/emailconfig.webp" alt="email" style="width: 50%;">
-            </p> -->
-        </li>
-        <li>Building and pushing Docker image
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <figure style="text-align: center;">
-                            <img src="../Images/jenkins/buildpushdocker.webp" alt="haversack" width="800" height="auto">
-                            <figcaption> </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div></br>
-            <!-- <p>
-                <img src="../Images/jenkins/buildpushdocker.webp" alt="docker" style="width: 70%;">
-            </p> -->
-            <p>
-                The second stage task in the parallel stage, ‘Docker Operations’, builds the Docker image and pushes it
-                to Docker Hub, an online centralised repository. The command 'docker build -t
-                nchinling/jenkins_dashmath_repo:latest .' tells Docker to build an image from the Dockerfile in the
-                current directory (.) and tag (-t) it with the name nchinling/jenkins_dashmath_repo:latest. It is the
-                image name that will be seen in Docker Hub.
-            </p>
-            <p>
-                After building the image, Jenkins pushes the image to Docker Hub using the Docker Hub log in details
-                which have been configured in Jenkins Credentials settings. Finally, it notifies the user of the
-                successful push via email.
-            </p>
-        </li>
-    </ol>
-    <p><u>Description of Pipeline stages (Part 3)</u></p>
-    <p>
-        The 'post' section is the last snippet of code in the JenkinsFile. It is configured to send a notification
-        to user in the
-        event of failure at any of the stages.
+        Once Elastic Beanstalk completes the deployment, the application will be fully configured and automatically
+        accessible online, allowing users to interact with it immediately.
     </p>
     <div class="container">
 
         <div class="row">
             <div class="col-lg-12">
                 <figure style="text-align: center;">
-                    <img src="../Images/jenkins/post.webp" alt="haversack" width="800" height="auto">
-                    <figcaption> </figcaption>
+                    <img src="../Images/jenkins-advanced/love_calc.webp" alt="ELB" width="800" height="auto">
+                    <figcaption>Love calculator web application</figcaption>
                 </figure>
             </div>
         </div>
     </div></br>
-    <!-- <p>
-        <img src="../Images/jenkins/post.webp" alt="docker" style="width: 80%;">
-    </p> -->
-    <p>The table below shows the types of email sent for the different scenarios:</p>
-    <div class="container">
 
-        <div class="row">
-            <div class="col-lg-12">
-                <figure style="text-align: center;">
-                    <img src="../Images/jenkins/table.webp" alt="haversack" width="800" height="auto">
-                    <figcaption> </figcaption>
-                </figure>
-            </div>
-        </div>
-    </div></br>
-    <!-- <p>
-        <img src="../Images/jenkins/table.webp" alt="docker" style="width: 50%;">
-    </p> -->
     <p>
-        <u>Results</u>
-    </p>
-    <p>The diagram below shows the build outcome for the configured job created in the JenkinsFile. The 'post' stage
-        was not executed as it did not encounter a build failure. </p>
-    <div class="container">
 
-        <div class="row">
-            <div class="col-lg-12">
-                <figure style="text-align: center;">
-                    <img src="../Images/jenkins/pipelinestage.webp" alt="haversack" width="1000" height="auto">
-                    <figcaption> </figcaption>
-                </figure>
-            </div>
-        </div>
-    </div></br>
-    <!-- <p>
-        <img src="../Images/jenkins/pipelinestage.webp" alt="stages" style="width: 90%;">
-    </p> -->
-    <h6>
-        <u>DevOps</u>
-    </h6>
-    <p>
-        The business world is ever-evolving, with new technologies coming into the foray every few years. It is
-        quintessential that businesses respond and adapt to them, or risk losing out their business to competitors and
-        be wiped out. The applications that drive their operations serve as a reflection of how well businesses leverage
-        technology.
-    </p>
-    <p>
-        Before the advent of DevOps, development (creating applications) and operations (supporting and deploying them)
-        teams operated in silos. It was a painful and laborious process as it required excessive manual work and
-        incessant communication to drive the project, resulting in deliveries which frequently failed to meet business
-        needs. Often, businesses are lost to competitors, not to mention, damaged reputations which have lasting
-        impacts.
-    </p>
-    <p>
-        Born out of empiricism, experience, and necessity, the idea of DevOps began to take shape in the 2000s. It was
-        officially conceptualised in 2009 by Patrick Debois, who also initiated the first DevOpsDay. This event sparked
-        a wave of adoption among companies that had been using traditional methods of software development. Today,
-        DevOps is a mature and evolving philosophy, embraced and adapted in various forms by organisations worldwide.
-        The 2024 edition of DevOpsDays took place in a few countries including Singapore, reflecting the continued
-        relevance and impact of DevOps.
-    </p>
-    <h6>
-        <u>CI/CD pipeline and DevOps</u>
-    </h6>
-    <p>
-        This project of creating a CI/CD pipeline with Jenkins exemplifies how the philosophy of DevOps philosophy can
-        be implemented in practice. Instead of having development and operations teams work in silos, DevOps removes the
-        barrier between these two crucial components. DevOps speeds up development and its subsequent operations to
-        create an error free, valuable and deployable software product. Each stage of the Software Development Life
-        Cycle (SDLC) is completed in a fraction of the time it would typically take using traditional methods.
-    </p>
-    <p>
-        This approach translates into significant cost savings and faster deployments, which in turn enhance an
-        organisation's ability to respond swiftly to market changes. By reducing the time-to-market, businesses can more
-        effectively capture emerging opportunities and outpace competitors. DevOps drives business growth, ensuring
-        organisations remain competitive in an ever-evolving landscape.
-    </p>
-    <p>
-        There is no fixed approach approach to creating the flow of a Jenkins job. It varies depending on the technical
-        requirements and organisational needs. Additionally, there are numerous DevOps tools available for different
-        stages of the Software Development Life Cycle (SDLC). While proficiency in these tools is valuable, the key to
-        success lies in understanding the role of DevOps and how its principles can be effectively adopted within the
-        organisation. This understanding will guide DevOps engineers in making informed decisions, optimising workflows
-        and driving continuous improvement.
-    </p>
     <p>The following video demonstrates the implementation and execution of the Jenkins pipeline.</p><br>
 
 
@@ -637,7 +562,7 @@
     <div class="container">
         <div align="center">
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/CRetL1E_0OY" title="YouTube video player" frameborder="0"
+                <iframe src="https://www.youtube.com/embed/-ObMFdBJlFE" title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
