@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Load Balancing with Nginx</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Google Fonts: Montserrat and Ubuntu. Currently not used.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sacramento&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/181c7bc6bd.js" crossorigin="anonymous"></script>
+
+
+    <!-- Javascript -->
+    <script src="../index.js" charset="utf-8"></script>
+
+</head>
+
+
+
+<body>
+
+
+    <section id="nav">
+        <!-- <div class="container-fluid"> -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- AddToAny BEGIN -->
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="float: left; margin-left: 20px;">
+                <!-- <a class="a2a_dd" href="https://www.addtoany.com/share"></a> -->
+                <a class="a2a_button_linkedin"></a>
+                <a class="a2a_button_facebook"></a>
+                <a class="a2a_button_whatsapp"></a>
+                <a class="a2a_button_twitter"></a>
+                <a class="a2a_button_email"></a>
+                <a class="a2a_button_google_gmail"></a>
+            </div>
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
+            <!-- AddToAny END -->
+
+            <!-- Links at top right will collapse -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#projects">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="../index.html#blog" class="nav-link">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="../index.html#contact" class="nav-link">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </nav>
+
+        <!-- </div> -->
+    </section>
+
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+
+
+                <div class="col-lg-12">
+
+
+                    <h1 style="text-align:center" class="intro-padding">Reverse Proxying and Load Balancing with Nginx
+                    </h1>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <!-- <img src="../Images/imageconverter/tux1.webp" alt="tux" width="700" height="auto"> -->
+                        <img src="../Images/nginx-images/load-balancer.webp" alt="tomcat" width="700" height="auto">
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <p>
+            4 Oct '24
+        </p>
+        <p>
+            Nginx ("engine x") is a a free and open-source software which was created in 2004. It is commonly used as a
+            HTTP web server, reverse proxy and load balancer. It also has other use-cases,
+            details of which can be found at its official site at
+            <a href=https://nginx.org/en>https://nginx.org/en/</a>. Let's dive deeper into what is a HTTP web server,
+            reverse proxy and load balancer.
+        </p>
+        <p><u>1) Web Server</u></p>
+        <p>At a minimum, this is an HTTP server. An HTTP server is software that understands URLs (web addresses) and
+            HTTP (the protocol your browser uses to view webpages). An HTTP server can be accessed through the domain
+            names of the websites it stores, and it delivers the content of these hosted websites to the end user's
+            device. (Mozilla MDN)</p>
+        <p>At the most basic level, whenever a browser needs a file that is hosted on a web server, the browser requests
+            the file via HTTP. When the request reaches the correct (hardware) web server, the (software) HTTP server
+            accepts the request, finds the requested document, and sends it back to the browser, also through HTTP. (If
+            the server doesn't find the requested document, it returns a 404 response instead.)</p>
+        <p><u>2) Reverse Proxy</u></p>
+        <p>A reverse proxy is a server that sits in front of web servers. It forwards client requests to those web
+            servers and then return the server's response to the client. While a forward proxy serves clients by routing
+            requests to external resources, a reverse proxy serves web servers by managing client connections on their
+            behalf. Reverse proxies increase security, performance
+            and reliability
+            (CloudFlare). </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <!-- <img src="../Images/imageconverter/tux1.webp" alt="tux" width="700" height="auto"> -->
+                        <img src="../Images/nginx-images/reverseproxy.webp" alt="tomcat" width="700" height="auto">
+                    </figure>
+                </div>
+            </div>
+        </div><br>
+        <p><u>3) Load balancer</u></p>
+        <p>A load balancer is a device that sits between the user and the server group and acts as an invisible
+            facilitator, ensuring that all resource servers are used equally (AWS). It can be considered as a feature of
+            a reverse proxy. The image below shows how a load balancer works. Multiple servers with the same API
+            endpoints are created, allowing the load balancer to distribute incoming client requests equally as much as
+            possible. There are
+            various algorithms for the distribution. Two of the most commonly used distribution algorithms are
+            round-robin and least connection methods. We can treat round-robin as each server taking turns sequentially
+            to serve content while in least connection method, the load balancer checks which server has the fewest
+            active connections at that time and sends traffic to those servers. The result of using a load balancer is
+            it ensures application availability, scalability, security and performance. </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <!-- <img src="../Images/imageconverter/tux1.webp" alt="tux" width="700" height="auto"> -->
+                        <img src="../Images/nginx-images/load-balancer.webp" alt="tomcat" width="700" height="auto">
+                    </figure>
+                </div>
+            </div>
+        </div><br>
+        <p><u>Setting up the reverse proxy and load balancer</u> </p>
+        <p>In this tutorial, we will configure a Spring Boot application to work with nginx's reverse proxy and load
+            balancer. The application has a simple REST API endpoint which returns the port number of the application
+            server which has been queried.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <!-- <img src="../Images/imageconverter/tux1.webp" alt="tux" width="700" height="auto"> -->
+                        <img src="../Images/nginx-images/controller.webp" alt="tomcat" width="600" height="auto">
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <p>Firstly create multiple instances of the application.properties file. These files are used to
+            launch multiple (in example below, 3) instances of the application. Inside each application.properties file,
+            provide the port number in
+            which the instance of the application will be launched.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <!-- <img src="../Images/imageconverter/tux1.webp" alt="tux" width="700" height="auto"> -->
+                        <img src="../Images/nginx-images/application-properties.webp" alt="tomcat" width="400"
+                            height="auto">
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <!-- <img src="../Images/imageconverter/tux1.webp" alt="tux" width="700" height="auto"> -->
+                        <img src="../Images/nginx-images/server-port.webp" alt="tomcat" width="300" height="auto">
+                    </figure>
+                </div>
+            </div>
+        </div><br>
+        <p>Run the instances of the application with maven with active profiles -Dspring-boot.run.profiles=
+            instance[number]. If you use -Dspring-boot.run.profiles=instance[number], then there should be a
+            corresponding application-instance[number].properties
+        </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <!-- <img src="../Images/imageconverter/tux1.webp" alt="tux" width="700" height="auto"> -->
+                        <img src="../Images/nginx-images/maven-command.webp" alt="tomcat" width="600" height="auto">
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <p>Next, we configure nginx's configuration file. The server block configures the reverse proxy. In this
+            example, it is set to listen for requests using the default HTTP port 80. Provide the name of the server
+            in server_name. On a local machine, this can be set to any arbitrary name. The location directive is used
+            to specify how Nginx should respond to specific request URIs (URLs). It allows matching of different parts
+            of the URL and defines what Nginx should do with requests that match those parts. The proxy_pass directive
+            is
+            used to define the backend server (upstream service) to which nginx should forward the request. The load
+            balancer is configured in the upstream block, which indicates which servers are used for load balancing. The
+            load balancer uses the round-robin algorithm by default to distribute traffic evenly among the servers.
+            Save the
+            configuration file and launch the nginx server in the terminal with the command 'start nginx'. And that is
+            all to it. Test the load balancer by making multiple calls to the endpoint. It will return the port number
+            of
+            the application instance which served the response.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <!-- <img src="../Images/imageconverter/tux1.webp" alt="tux" width="700" height="auto"> -->
+                        <img src="../Images/nginx-images/nginx-config.webp" alt="tomcat" width="900" height="auto">
+                    </figure>
+                </div>
+            </div>
+        </div><br>
+
+        <p>The video below describes the steps implemented above.</p>
+
+
+        <div class="container">
+            <div align="center">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/yZKxwGwTHx8" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div><br>
+        <p>Modern applications often use Nginx in cloud environments as part of their architecture. For example , Nginx
+            is often paired with services like AWS EC2 (Elastic Cloud Compute), Google Cloud Platform's Compute Engine,
+            or Kubernetes to route traffic to instances or pods running the application. In AWS, Nginx is often deployed
+            on EC2 instances or in containerised applications using Elastic Container Service (ECS) or Elastic
+            Kubernetes Service (EKS). It can also be used with AWS Elastic Load Balancers for a hybrid approach.</p>
+        <p>Hope you have enjoyed reading this article and found it useful. Till next time...</p><br>
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+    <hr>
+
+
+    <section id=footer>
+
+        <table>
+
+            <tr>
+                <td>
+
+                    <a class="footer-style" href="../index.html"> Home</a>
+
+                </td>
+                <td>
+
+                    <a class="footer-style" href="../index.html#projects"> Projects</a>
+
+                </td>
+
+                <td>
+
+                    <a class="footer-style" href="../index.html#blog"> Blog</a>
+
+                </td>
+            </tr>
+
+        </table><br>
+    </section>
+
+    <!-- Bootstrap - Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
