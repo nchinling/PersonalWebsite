@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>EC2</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Google Fonts: Montserrat and Ubuntu. Currently not used.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sacramento&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/181c7bc6bd.js" crossorigin="anonymous"></script>
+
+
+    <!-- Javascript -->
+    <script src="../index.js" charset="utf-8"></script>
+
+</head>
+
+
+
+<body>
+
+
+    <section id="nav">
+        <!-- <div class="container-fluid"> -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- AddToAny BEGIN -->
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="float: left; margin-left: 20px;">
+                <!-- <a class="a2a_dd" href="https://www.addtoany.com/share"></a> -->
+                <a class="a2a_button_linkedin"></a>
+                <a class="a2a_button_facebook"></a>
+                <a class="a2a_button_whatsapp"></a>
+                <a class="a2a_button_twitter"></a>
+                <a class="a2a_button_email"></a>
+                <a class="a2a_button_google_gmail"></a>
+            </div>
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
+            <!-- AddToAny END -->
+
+            <!-- Links at top right will collapse -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#projects">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="../index.html#blog" class="nav-link">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="../index.html#contact" class="nav-link">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </nav>
+
+        <!-- </div> -->
+    </section>
+
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+
+
+                <div class="col-lg-12">
+
+
+                    <h1 style="text-align:center" class="intro-padding">Getting Started with Amazon EC2</h1>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <!-- <img src="../Images/imageconverter/tux1.webp" alt="tux" width="700" height="auto"> -->
+                        <img src="../Images/ec2/ec2_logo.webp" alt="tux" width="700" height="auto">
+                    </figure>
+                </div>
+            </div>
+        </div></br>
+        <p>12 Oct '24</p>
+        <p>
+            Amazon Web Service (AWS), Microsoft Azure and Google Cloud Platform; these are the dominant cloud providers
+            in the world of cloud computing. Cloud computing gained prominence at the start of the 21st century, driven
+            by significant advancements in storage and processing power. Today, AWS is the market leader in cloud
+            computing. Interestingly, Amazon is also the market leader in e-commerce, making it one of the rare
+            companies which holds the lead in two different industries.
+        </p>
+        <p>Coming back to AWS, one of the services which stand out among its offerings is Elastic Cloud Computer (EC2).
+            EC2 is a "web service that provides sizable compute capacity in the cloud. It is designed to make web-scale
+            computing easier for developers" (AWS). In layman's terms, it is like renting a server in the cloud. With
+            this virtual server, you can perform various computing tasks such as running computations or hosting
+            applications. The term 'Elastic' highlights that the server's capacity can be easily scaled up or down as
+            needed.
+        </p>
+        <p>The beauty of cloud computing is it has made the so-called renting of servers accessible to the public, no
+            longer exclusive to big corporations. So, in this article, we are going to explore setting up an EC2
+            instance and connect to it locally via Secure Shell (SSH). In addition, we are going to use the SSH
+            connection to install Docker in the EC2 instance. Prepare a cup of coffee and let's begin :)</p>
+        <p><strong><u>Set up EC2 instance in AWS</u></strong></p>
+        <div class="container">
+            <ol>
+                <li>
+                    <p><strong>Navigate to EC2</strong></p>
+                    <p>In AWS, navigate to EC2 by typing "EC2" in the search bar and selecting it.</p>
+                </li>
+                <li>
+                    <p><strong>Launch Instance</strong></p>
+                    <p>Launch a new instance by clicking the orange "Launch Instance" button. </p>
+                </li>
+                <li>
+                    <p><strong>Choose an Amazon Machine Image (AMI)</strong></p>
+                    <p>After naming the instance, choose an AMI. The AMI is the operating system for the instance. For a
+                        simple Linux flavour, choose Amazon Linux 2,
+                        which is a Linux operating system from AWS.</p>
+                </li>
+                <li>
+                    <p><strong>Choose an instance type</strong></p>
+                    <p>The instance type refers to the configuration for CPU, memory, storage, and networking capacity.
+                        Each
+                        instance type is designed for different use cases. Select t2.micro which is eligible for
+                        free-tier.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Add Storage</strong></p>
+                    <p>Add storage based on your needs. The default root volume (usually 8 GB) is good for most basic
+                        uses.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Configure security group</strong></p>
+                    <p>Set up a security group to define firewall rules. Allow inbound SSH traffic (for Linux). You can
+                        also
+                        choose to allow specific IP addresses for improved security.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Select / create Key Pair</strong></p>
+                    <p>A Key Pair is a set of cryptographic keys that is used to connect securely to EC2 instances. It
+                        consists of a <strong>public key</strong> and a <strong>private key</strong>. Choose an existing
+                        key
+                        pair or create a new key pair to connect to the instance. AWS will install the public key on
+                        your
+                        instance, while the private key is retained by the user. If a new key pair is
+                        created, download the private key file (.pem) and store it safely in local computer. This is
+                        required to SSH into the instance.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Create Instance</strong></p>
+                    <p>Review the configurations once more and click the "Launch" button to create the instance.
+                    </p>
+                </li>
+            </ol><br>
+        </div>
+        <p><strong><u>Connect to EC2 Linux instance using an SSH client</u></strong></p>
+
+        <p>In a terminal, connect to the instance by using the command below. It has the path to the private key file
+            (.pem) which was created / selected while creating the EC2 instance. Replace 'instance-user-name' with
+            'ec2-user' for Amazon Linux 2. The 'instance-public-dns-name' value can be found in AWS console.
+
+        <div class="container">
+            <pre class="preStyle">
+
+    ssh -i /path/key-pair-name.pem instance-user-name@instance-public-dns-name
+
+</pre><br>
+        </div>
+
+        </p>
+        <p>Once connected to the EC2 instance, you can perform various tasks such as installing Docker, which will allow
+            you to run various containers. To install Docker, as it involves a few steps, one can create a shell script
+            with the following:
+        <div class="container">
+            <pre class="preStyle">
+
+        #!/bin/bash
+        # Update package list
+        sudo yum update -y
+        
+        # Install Docker from Amazon Linux repository
+        sudo yum install -y docker
+        
+        # Start Docker service
+        sudo systemctl start docker
+        
+        # Enable Docker to start on boot
+        sudo systemctl enable docker
+                
+    </pre><br>
+        </div>
+        </p>
+        <p> It updates all installed packages in the system that uses YUM before installing docker. It then starts
+            Docker
+            immediately
+            and also configures the system to start the Docker service automatically when the system boots up, ensuring
+            that
+            Docker is always running whenever the machine is running.</p>
+        <p>Make the script executable (assuming script name is install_docker.sh)
+
+        <div class="container">
+            <pre class="preStyle">
+
+    chmod +x install_docker.sh
+
+</pre><br>
+        </div>
+        <p>Execute the script to install Docker:
+
+        <div class="container">
+            <pre class="preStyle">
+
+    sudo ./install_docker.sh
+
+</pre><br>
+        </div>
+        <p>Just a minor step to check if Docker is installed:
+
+        <div class="container">
+            <pre class="preStyle">
+
+    docker --version
+    </pre><br>
+        </div>
+        <p><u>Conclusion</u></p>
+        <p>In this article, we have learnt how to create an EC2 instance, connect to it with SSH and install Docker in
+            the created instance using the terminal. The video below provides a comprehensive overview of the
+            implementations discussed above, offering detailed insights and practical demonstrations. Till next time...
+        </p>
+
+        <div class="container">
+            <div align="center">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/XfAoVFmdu_0" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div><br>
+
+
+
+
+
+
+
+    </section>
+
+
+    <hr>
+
+
+    <section id=footer>
+
+        <table>
+
+            <tr>
+                <td>
+
+                    <a class="footer-style" href="../index.html"> Home</a>
+
+                </td>
+                <td>
+
+                    <a class="footer-style" href="../index.html#projects"> Projects</a>
+
+                </td>
+
+                <td>
+
+                    <a class="footer-style" href="../index.html#blog"> Blog</a>
+
+                </td>
+            </tr>
+
+        </table><br>
+    </section>
+
+    <!-- Bootstrap - Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
