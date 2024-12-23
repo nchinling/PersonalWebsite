@@ -105,12 +105,12 @@
                 <div class="col-lg-12">
                     <figure style="text-align: center;">
                         <!-- <img src="../Images/imageconverter/tux1.webp" alt="tux" width="700" height="auto"> -->
-                        <img src="../Images/docker_swarm/dockerswarm.webp" alt="tux" width="700" height="auto">
+                        <img src="../Images/docker/docker.webp" alt="tux" width="700" height="auto">
                     </figure>
                 </div>
             </div>
         </div></br>
-        <p>11 Dec '24</p>
+        <p>23 Dec '24</p>
         <p>
             Welcome back to another article on Docker. Although Kubernetes (K8s) does not directly support Docker as a
             container runtime anymore, Docker images remain fully compatible with K8s as they adhere to the Open
@@ -124,80 +124,101 @@
             functioning application.
         </p>
         <p>
-            This article shows
+            This article shows how a multi-container application can be set up with Docker Compose. Docker Compose
+            simplifies the
+            control of an application stack, making it easy to manage services, networks, and volumes in a single,
+            comprehensible YAML configuration file (https://docs.docker.com/compose/). The application is launched with
+            two containers, which are WordPress and MySQL. The WordPress and MySQL is a classic example of a
+            multi-container application managed by Docker Compose. WordPress (a content management system) requires a
+            database to store user-generated content such as posts, comments, and settings. MySQL, a relational database
+            management system, is commonly used as the backend database for WordPress. Both containers run from images
+            obtained from Docker Hub.
         </p>
-        <p>In this tutorial, we will set up a Docker Swarm to manage a cluster of 3 nodes. Next, a service will be
-            initialised
-            to create container instances which run Nginx. One of the nodes is both the master and worker node. For
-            refence on setting up the nodes with EC2, please refer to my previous <a
-                href="https://ngchinling.com/blog/ec2.html">article</a>. Set up 3 nodes and SSH into one of the nodes.
-            This node will be the master.</p>
-        <p><strong><u>Creating the Swarm</u></strong></p>
+
         <div class="container">
-            <ol>
-                <li>
-                    <p><strong>Initialise the swarm</strong></p>
-                    <p>The ip address can be obtained from AWS console or with ifconfig.</p>
-                    <div class="container">
-                        <pre class="preStyle">
 
-    docker swarm init --advertise-addr <i style="color: yellow;">ip_address</i>
-            </pre><br>
-                    </div>
-
-                </li>
-                <li>
-                    <p><strong>Add workers to swarm</strong></p>
-                    <p>On initialising the swarm, a command snippet will be provided in the terminal how to add worker
-                        nodes. The snippet has a token which authenticates the worker node's request. Port 2377 is the
-                        default port used by the manager node for communication. Execute this
-                        command at the other two nodes (EC2 instances).</p>
-                    <div class="container">
-                        <pre class="preStyle">
-
-    docker swarm join --token <i style="color: yellow;">provided token</i> <i style="color: yellow;">ip_address</i>
-    :2377
-            </pre><br>
-                    </div>
-                </li>
-
-            </ol><br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/docker-compose/docker-compose.webp" alt="exit" width="500" height="auto">
+                        <figcaption>Docker Compose file</figcaption>
+                    </figure>
+                </div>
+            </div>
         </div>
-        <p><strong><u>Creating a Docker Service</u></strong></p>
+        <p>The image above shows the Docker Compose file (docker-compose.yaml) for the application. It consists of two
+            services, which are WordPress and the database (represented by db).</p><br><br>
 
-        <p>The final step is to create a Docker service. It is used to define and manage containers in a Docker Swarm.
-            This allows the containerised application to be scalable and reliable by ensuring that a consistent number
-            of containers is always up and running. </p>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/docker-compose/wordpress.webp" alt="exit" width="500" height="auto">
+                        <figcaption>WordPress</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <p>The WordPress app maps port 8080 on the
+            localhost to port 80 of the container. The environment keys provide information on database configurations
+            while the volume key informs where the WordPress data will be stored. </p>
+        <p>The volumes key creates a persistent volume named wordpress_data on the host machine, which is mapped to
+            /var/www/html inside the container. The volume is used to store WordPress files such as themes, plugins and
+            uploads. The 'depends_on' key Indicates that the WordPress service depends on the db service, ensuring that
+            the database container starts before the WordPress container.</p><br><br>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/docker-compose/database.webp" alt="exit" width="500" height="auto">
+                        <figcaption>Database</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <p>
+            The db service provides configuration values for the MySQL database, such as the username, password, and
+            database name. The environment variables in the wordpress service must match these database credentials to
+            enable WordPress to connect successfully. The db_data volume maps the /var/lib/mysql directory inside the
+            MySQL container (where MySQL stores its data) to a persistent storage location managed by Docker on the host
+            machine, ensuring the database data persists across container restarts or recreation.
+        </p><br><br>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/docker-compose/volume.webp" alt="exit" width="300" height="auto">
+                        <figcaption>Volumes</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <p>The volumes key in the docker-compose.yml file informs Docker about the volumes used by the application.
+            These volumes are important for persisting data outside the containers, ensuring it remains available even
+            if the containers are restarted or removed. The complete yaml file is available at <a
+                href="https://github.com/nchinling/wordpress-docker-compose">article</a>https://github.com/nchinling/wordpress-docker-compose
+        </p>.
+
+
+        <p>Finally, run the application using the command below to see the results</p>
 
         <div class="container">
             <pre class="preStyle">
 
-    docker service create --name <i style="color: yellow;">name_of_service</i> --replicas <i style="color: yellow;">number of containers</i> --publish 8080:80 nginx
+  docker compose up -d
 
 </pre><br>
         </div>
-
-        </p>
-        <p>We can easily scale or adjust the number of running containers using the command below. The service ensures
-            the desired number of container is always running.
-        <div class="container">
-            <pre class="preStyle">
-
-    docker service scale <i style="color: yellow;">name_of_service</i>=<i style="color: yellow;"    >desired_number_of_containers</i>
-
-    docker service scale mywebservice=2
-                
-    </pre><br>
-        </div>
+        <p>That's all there is to Docker Compose. You will be able to access WordPress on port 8080. View the video
+            below for the explanations and
+            implementations described above.
         </p>
 
-        <p><u>Conclusion</u></p>
-        <p>In this article, we have created a Docker Swarm of 3 nodes. These nodes were created in EC2. Upon creating
-            the swarm, we initialised a service which manages the desired number of containers. The swarm manager
-            orchestrates where containers are placed across the nodes in the cluster while the service defines the
-            desired state. The video below provides a comprehensive overview of the
-            implementations discussed above, offering detailed insights and practical demonstrations.
-        </p>
 
         <div class="container">
             <div align="center">
