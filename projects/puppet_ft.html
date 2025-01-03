@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Puppet File Transfer</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Google Fonts: Montserrat and Ubuntu. Currently not used.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sacramento&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/181c7bc6bd.js" crossorigin="anonymous"></script>
+
+
+    <!-- Javascript -->
+    <script src="../index.js" charset="utf-8"></script>
+
+</head>
+
+
+
+<body>
+
+
+    <section id="nav">
+        <!-- <div class="container-fluid"> -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- AddToAny BEGIN -->
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="float: left; margin-left: 20px;">
+                <!-- <a class="a2a_dd" href="https://www.addtoany.com/share"></a> -->
+                <a class="a2a_button_linkedin"></a>
+                <a class="a2a_button_facebook"></a>
+                <a class="a2a_button_whatsapp"></a>
+                <a class="a2a_button_twitter"></a>
+                <a class="a2a_button_email"></a>
+                <a class="a2a_button_google_gmail"></a>
+            </div>
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
+            <!-- AddToAny END -->
+
+            <!-- Links at top right will collapse -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#projects">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="../index.html#contact" class="nav-link">Contact</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#blog">Blog</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <!-- </div> -->
+    </section>
+
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+
+
+                <div class="col-lg-12">
+
+
+                    <h1 style="text-align:center" class="intro-padding">File Transfer with Puppet</h1>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+
+
+                <div style="margin:0 auto;" class="col-md-12">
+
+                    <section id="slides">
+
+                        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                                    aria-label="Slide 4">
+                                </button>
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                                    aria-label="Slide 5">
+                                </button>
+
+                            </div>
+
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active" data-bs-interval="3000">
+                                    <img src="../Images/puppet-filetransfer/puppet-logo.webp" class="carousel-image"
+                                        alt="homepage">
+
+                                    <br />
+
+                                    <!-- </div> -->
+                                </div>
+                                <div class="carousel-item" data-bs-interval="3000">
+                                    <img src="../Images/puppet-filetransfer/init.webp" class="carousel-image"
+                                        alt="homepage">
+                                    <br />
+
+                                    <!-- </div> -->
+                                </div>
+
+                                <div class="carousel-item" data-bs-interval="3000">
+
+                                    <img src="../Images/puppet-filetransfer/site.webp" class="carousel-image"
+                                        alt="homepage">
+                                </div>
+
+
+                                <div class="carousel-item" data-bs-interval="3000">
+
+                                    <img src="../Images/puppet-filetransfer/puppet-agent-run.webp"
+                                        class="carousel-image" alt="homepage">
+                                </div>
+
+                                <div class="carousel-item" data-bs-interval="3000">
+
+                                    <img src="../Images/puppet-filetransfer/agent-output.webp" class="carousel-image"
+                                        alt="homepage">
+                                </div>
+
+
+
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+
+    </section><br>
+
+    <!-- <h6>
+        Project codes are available at <a class="one" href="https://github.com/nchinling/jenkins-advance-features"
+            target="_blank">
+            Github <i class="contact-img fa-brands fa-github"></i></a>
+    </h6> -->
+
+    <p>This project implements a file transfer script using Puppet to automate the process of copying a file from the
+        master node to the agent nodes.
+    </p>
+
+    <p><u>Directory overview</u></p>
+    <p>The scripts are organised in a module named 'movefile'. There are two directories inside the module; files and
+        manifests. The files directory stores the file to be copied to the agent node while the manifests directory
+        stores the init.pp and site.pp file. The init.pp file is the default manifest file in a Puppet module. It acts
+        as the main entry point for defining resources and configurations in that module. The site.pp file serves as the
+        entry point for defining how nodes in the Puppet infrastructure are configured. Puppet uses this file to
+        determine what resources, classes, and modules to apply to each node.
+    </p><br>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/puppet-filetransfer/directory.webp" alt="directory-overview" width="1200"
+                        height="auto">
+                    <figcaption>Module directory overview</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+
+
+    <p><u>User and group resources</u></p>
+    <p>A users.pp file containing the user and group resources is created in the manifests directory to manage user
+        accounts and groups on a system.
+    </p>
+    <p>User resource attributes
+    <ul class="clist">
+        <li>ensure: The 'present' value specifies that the user should exist in the node.</li>
+        <li>shell: The shell attribute in the Puppet user resource specifies the login shell assigned to the user. The
+            login shell (Bash in this case) provides a command-line interface when the user logs into the system.</li>
+        <li>gid: The group ID 'user5066357p' becomes the default group for files the user creates. It is used to set
+            group ownership and permissions for files created by the user</li>
+        <li>managehome: Creates the home directory in the agent node if it doesn't exist.</li>
+
+    </ul>
+    </p>
+
+    <p>Group resource attribute
+    <ul class="clist">
+        <li>ensure: Similar to the ensure attribute in user resource, the 'present' value specifies that the group named
+            'user5066357p' should exist in the node.</li>
+    </ul>
+    </p>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/puppet-filetransfer/users.webp" alt="multi_pipelines" width="800" height="auto">
+                    <figcaption>User and group resources</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+
+    <p><u>File resource</u></p>
+    <p>The init.pp file is the default manifest file in a Puppet module. It acts
+        as the main entry point for defining resources and configurations in that module. It has the file resource for
+        managing files and directories on a system.
+    <ul class="clist">
+        <li>$user: It is an environment variable that holds the username. Environment variables like $user improves
+            code reusability as it removes hardcoded values, making the code more portable and maintainable.</li>
+        <li>$file_path: It is an environment variable which specifies the file's location in the agent node.</li>
+        <li>ensure: The 'present' value specifies that the file should be present.</li>
+        <li>owner: Specifies the owner of the file, which is 'user5066357p' in this case.</li>
+        <li>group: Specifies the group the file belongs to, which is also 'user5066357p'.</li>
+        <li>mode: It specifies the permissions for the file using a numeric octal value. This value defines the read,
+            write, and execute permissions for the owner, group, and others. The value 0644 would mean that the owner is
+            able
+            to read and write to the file while the group and others are able to read the file only.</li>
+
+    </ul>
+    </p><br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/puppet-filetransfer/init.webp" alt="junit code snippet" width="800"
+                        height="auto">
+                    <figcaption>File resource</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+    <p>Check the syntax of both .pp files using 'puppet parser validate' to ensure that the Puppet agent can apply the
+        configurations successfully.</p>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/puppet-filetransfer/parser_validate.webp" alt="junit code snippet" width="800"
+                        height="auto">
+                    <figcaption>Check syntax</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+
+    <p><u>Node definition</u></p>
+    <p>The site.pp file defines how the agent nodes should be configured. It defines the classes (modules) to be applied
+        to the nodes. When the agent node requests the configuration from the master node, the Puppet master evaluates
+        the site.pp file and other manifests, generating a catalog, which is then sent back to the agent node to apply
+        the desired configuration. If no specific configuration is provided for a
+        node, the default configuration in site.pp is applied. In the script created, the movefile module and users.pp
+        file is applied to the agent node named 'pa5066357p.localdomain'. </p>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/puppet-filetransfer/site.webp" alt="junit code snippet" width="400"
+                        height="auto">
+                    <figcaption>Node definition</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div><br>
+
+    <p>Similarly, check the syntax of the site.pp file using 'puppet parser validate' to ensure that the Puppet agent
+        can apply the
+        configurations successfully.</p>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/puppet-filetransfer/parser_validate_site.webp" alt="check syntax" width="800"
+                        height="auto">
+                    <figcaption>Check syntax</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div><br>
+
+    <p><u>Apply configurations</u></p>
+    <p>After creating the required files, it is time to apply the configurations. Run the command 'puppet agent -tv
+        --noop' from the Puppet agent terminal. The command with the --noop flag simulates the changes but does not
+        apply them. Puppet will show which resources would be changed, added, or removed without actually making those
+        changes. After verifying the configurations in noop mode, use the command 'puppet agent -tv' to apply the
+        changes to the system. Note that in a typical Puppet setup, the process of checking for configuration changes is
+        automated and does not require manually running 'puppet agent -tv'. This is in line with the DevOps principle of
+        automation, which in this case is the automation of configuration management.
+    </p>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/puppet-filetransfer/puppet-agent-test.webp" alt="puppet agent -tv -noop"
+                        width="800" height="auto">
+                    <figcaption>Puppet agent test run</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/puppet-filetransfer/puppet-agent-run.webp" alt="puppet agent run" width="800"
+                        height="auto">
+                    <figcaption>Puppet agent run</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+
+    <p><u>Verify changes</u></p>
+
+
+    <p>
+        The last step is to verify that the changes have been applied correctly. Similarly, this process is automated
+        using automated testing or with monitoring tools as part of a continuous delivery pipeline.
+    </p>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <figure style="text-align: center;">
+                    <img src="../Images/puppet-filetransfer/agent-output.webp" alt="verify" width="800" height="auto">
+                    <figcaption>Verification of changes</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div></br>
+
+
+
+
+
+
+
+    <br />
+    <hr>
+
+
+    <section id=footer>
+        <table>
+
+            <tr>
+                <td>
+
+                    <a class="footer-style" href="../index.html"> Home</a>
+
+                </td>
+                <td>
+
+                    <a class="footer-style" href="../index.html#projects"> Projects</a>
+
+                </td>
+
+                <td>
+
+                    <a class="footer-style" href="../index.html#blog"> Blog</a>
+
+                </td>
+            </tr>
+
+        </table><br>
+
+    </section>
+
+    <!-- Bootstrap - Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
