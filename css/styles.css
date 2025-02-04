@@ -293,6 +293,26 @@ td {
   display: none;
 }
 
+
+a.hidden-certificate-list-row:link {
+  color: black;
+  text-decoration: none;
+}
+
+a.hidden-certificate-list-row:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a.hidden-certificate-list-row:active {
+  color: black;
+  text-decoration: none;
+}
+
+a.hidden-certificate-list-row:hover {
+  color: grey;
+}
+
 .thumbnail {
   width: 150px;
   height: auto;
