@@ -103,7 +103,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <figure style="text-align: center;">
-                        <img src="../Images/k8s/kubernetes_logo.svg" alt="k8s" width="700" height="auto">
+                        <img src="../Images/k8s/kubernetes_logo.svg" alt="k8s" width="400" height="auto">
                     </figure>
                 </div>
             </div>
@@ -118,15 +118,23 @@
             of the proprietary cloud solutions like Red Hat OpenShift, Google Kubernetes Engine (GKE), Amazon Elastic
             Kubernetes Service (EKS) and Azure Kubernetes Service are built on top of Kubernetes.
         </p>
+        <p><strong><u>Kubernetes architecture</u></strong></p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/k8s/k8s-architecture.webp" alt="eqn" width="700" height="auto">
+                        <figcaption>Kubernetes architecture</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div></br>
         <p>Kubernetes (K8s) is designed with a client-server architecture. It has multiple components working
             together to manage containerised applications. When one installs K8s, one is actually these components on
             both the master node and worker nodes. the
             core of the system consisting of the master node (control plane) and worker nodes (node cluster). When one
             installs K8s, one is actually these components on both the master node and worker nodes.
-
-
         </p>
-        <p><strong><u>K8s architecture</u></strong></p>
         <div class="container">
             <p><strong>Control Plane</strong></p>
             <p>The control plane refers to the set of components responsible for managing the cluster. It makes
@@ -135,65 +143,274 @@
                 components are:</p>
             <ol>
                 <li>
-                    <p><strong>API server</strong></p>
+                    <p><strong>API server (kube-apiserver)</strong></p>
                     <p>The API server is the component which exposes the Kubernetes API. It is the interface for
                         managing RESTful API commands, such as requests from users, administrators, and other Kubernetes
                         components.</p>
 
                 </li>
                 <li>
-                    <p><strong>Controller manager</strong></p>
+                    <p><strong>Controller manager (kube-controller-manager)</strong></p>
                     <p>The controller manager monitors the cluster and makes changes to maintain the desired state, such
                         as the creation of new pods if required. It is the 'decision-maker' of Kubernetes.</p>
+                </li>
+                <li>
+                    <p><strong>Scheduler (kube-scheduler)</strong></p>
+                    <p>It watches for newly created pods with no assigned node, and selects a node for them to run on.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>etcd</strong></p>
+                    <p>Consistent and highly-available key value store used as Kubernetes' underlying storage system
+                        (backing store) for all cluster data. It holds the desired state of the cluster and persists
+                        information like the configuration of deployments, services and nodes.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>(Cloud) controller-manager</strong></p>
+                    <p>The cloud controller manager links the cluster into the cloud provider's API. It only runs
+                        controllers that are specific to the cloud provider. The cluster does not have a cloud
+                        controller manager if Kubernetes is run only in the local machine.
                 </li>
 
             </ol><br>
         </div>
-        <p><strong><u>Creating a Docker Service</u></strong></p>
-
-        <p>The final step is to create a Docker service. It is used to define and manage containers in a Docker Swarm.
-            This allows the containerised application to be scalable and reliable by ensuring that a consistent number
-            of containers is always up and running. </p>
-
         <div class="container">
-            <pre class="preStyle">
+            <p><strong>Node components</strong></p>
+            <p>Node components run on every node, maintaining running pods and providing the Kubernetes runtime
+                environment. These components are:</p>
+            <ol>
+                <li>
+                    <p><strong>kubelet</strong></p>
+                    <p>The kubelet is an agent that runs on each node in the cluster. It communicates with the API
+                        server to check the current state of the cluster. It also makes sure that containers are running
+                        in a pod.</p>
+                </li>
+                <li>
+                    <p><strong>Container runtime</strong></p>
+                    <p>It enables Kubernetes to run containers effectively. It is responsible for managing the execution
+                        and lifecycle of containers within the Kubernetes environment. Kubernetes supports container
+                        runtimes such as containerd, CRI-O, and any other implementation
+                        of the Kubernetes CRI (Container Runtime Interface).
+                    </p>
+                </li>
+                <li>
+                    <p><strong>kube-proxy</strong></p>
+                    <p>The kube-proxy maintains network rules on nodes. It enables pod-to-pod communication, load
+                        balancing, and service discovery across the cluster.
+                    </p>
+                </li>
 
-    docker service create --name <i style="color: yellow;">name_of_service</i> --replicas <i style="color: yellow;">number of containers</i> --publish 8080:80 nginx
-
-</pre><br>
+            </ol><br>
         </div>
+        <p><strong><u>Main Kubernetes components</u></strong></p>
 
-        </p>
-        <p>We can easily scale or adjust the number of running containers using the command below. The service ensures
-            the desired number of container is always running.
+        <p><strong><u>Kubernetes architecture</u></strong></p>
         <div class="container">
-            <pre class="preStyle">
-
-    docker service scale <i style="color: yellow;">name_of_service</i>=<i style="color: yellow;"    >desired_number_of_containers</i>
-
-    docker service scale mywebservice=2
-                
-    </pre><br>
-        </div>
-        </p>
-
-        <p><u>Conclusion</u></p>
-        <p>In this article, we have created a Docker Swarm of 3 nodes. These nodes were created in EC2. Upon creating
-            the swarm, we initialised a service which manages the desired number of containers. The swarm manager
-            orchestrates where containers are placed across the nodes in the cluster while the service defines the
-            desired state. The video below provides a comprehensive overview of the
-            implementations discussed above, offering detailed insights and practical demonstrations.
-        </p>
-
-        <div class="container">
-            <div align="center">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/h4cb7JV-i1w" title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
+            <div class="row">
+                <div class="col-lg-12">
+                    <figure style="text-align: center;">
+                        <img src="../Images/k8s/workloadoperators.webp" alt="eqn" width="500" height="auto">
+                        <figcaption>Kubernetes workloads (Credit: Anton Putra,
+                            https://www.youtube.com/watch?v=4MEgCP7h8UU)</figcaption>
+                    </figure>
                 </div>
             </div>
-        </div><br>
+        </div></br>
+
+        <p>A workload is an application running on Kubernetes. The smallest deployable objects in Kubernetes are pods.
+            Kubernetes has higher-level abstractions (components) that can help to run them.</p>
+
+        </p>
+        <div class="container">
+            <ol>
+                <li>
+                    <p><strong>Pod</strong></p>
+                    <p>A Pod is the smallest and simplest unit in Kubernetes. The containers in a Pod share the same
+                        network, storage, and namespace. Kubernetes pods have a defined lifecycle, meaning that if the
+                        node where the Pod is running becomes faulty, the Pod will not be automatically rescheduled;
+                        instead, a new Pod needs to be created. However, Pods do not need to be managed manually.
+                        Kubernetes provides workload resources, such as Deployments, StatefulSets, and DaemonSets, to
+                        automatically create and manage Pods, ensuring availability and scalability. </p>
+                </li>
+                <li>
+                    <p><strong>ReplicaSet</strong></p>
+                    <p>A ReplicaSet ensures that a specified number of Pod replicas are running at any given time. It is
+                        primarily used by Deployments to manage scaling and Pod replacement during updates.</p>
+                </li>
+                <li>
+                    <p><strong>Deployment</strong></p>
+                    <p>Although ReplicaSets would seem to meet the requirements for high availability, it is rarely used
+                        on its own. Instead a Deployment is used. It improves on the features provided by ReplicaSets.
+                        For example, a Deployment allows rolling
+                        updates, meaning a new version of the application can be rolled out gradually without downtime.
+                        In addition, a Deployment provide easy rollbacks to a previous stable version in the event of an
+                        update failure. Finally, a Deployment can be scaled easily. Kubernetes automatically creates a
+                        ReplicaSet to manage the Pods when a Deployment is created.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Service</strong></p>
+                    <p>A Service is an abstraction that exposes groups of Pods over a network. It groups a set of pods
+                        and defines a stable network endpoint with policies for accessing them. Since Pods are ephemeral
+                        and can be replaced, their IP addresses can change dynamically. A Service ensures consistent
+                        access to these Pods using label selectors. Common types of services include ClusterIP
+                        (default), NodePort, LoadBalancer, and ExternalName.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>StatefulSet and DaemonSet</strong></p>
+                    <p>StatefulSets and DaemonSets are Kubernetes workload controllers used for specific use cases.
+                        StatefulSets are used to manage stateful applications such as databases, where each pod in a set
+                        must have a unique identity and persistent storage. DaemonSets ensure that a single instance of
+                        a pod runs on every node in a cluster. They are useful for running system-level services such as
+                        logging, monitoring and backups.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>ConfigMap and Secrets</strong></p>
+                    <p>ConfigMaps store configuration data that can be accessed by containers in the form of environment
+                        variables or files. Secrets store sensitive data, such as passwords, tokens, or keys, securely.
+                        Secrets are encrypted and can be mounted into containers as environment variables or volumes.
+                </li>
+                <li>
+                    <p><strong>Namespaces</strong></p>
+                    <p>Similar to Docker, Namespaces provide a way to partition resources in the cluster.
+                </li>
+
+            </ol><br>
+        </div>
+
+        <p><strong><u>Implementation</u></strong></p>
+
+        <p>We've explored the different workloads used in Kubernetes, but how are they actually created and deployed?
+            Workloads are defined using YAML (Yet Another Markup Language) files, which specify their configuration.
+            They are then deployed using the <i>kubectl apply -f filename.yaml</i> command, allowing Kubernetes to
+            create and manage the resources automatically. The YAML file below shows a configuration for a Deployment.
+            It deploys the nginx app. </p>
+
+        </p>
+        <div class="container">
+            <ol>
+                <li>
+                    <p><strong>Deployment configuration</strong></p>
+                    <p>The YAML file below shows a configuration for a Deployment.
+                        It deploys the nginx app.</p>
+                    <div class="container">
+                        <pre class="preStyle">
+
+    <span style="color: yellow;">apiVersion: apps/v1</span>
+    <span style="color: blueviolet;">kind: Deployment</span>
+    <span style="color: blue;">metadata:
+      name: my-app</span>
+    <span style="color: cyan;">spec:
+      replicas: 3
+      selector:
+        matchLabels:
+          app: my-app
+      template:
+        metadata:
+          labels:
+            app: my-app
+        spec:
+          containers:
+            - name: my-container
+              image: nginx:latest</span>
+            </pre>
+                    </div><br>
+                    <p>The ReplicaSet and Pod information are configured within the Deployment YAML file under
+                        <strong>spec</strong>. The ReplicaSet is created automatically by the Deployment configuration
+                        (in yellow). It ensures that 3 Pods are always running. The selector ensures that the ReplicaSet
+                        manages Pods with this label (i.e. my-app).
+                    </p>
+                    <p>The Pod is defined inside the template section (in red). The label
+                        (i.e. my-app) must match the selector for the ReplicaSet to manage these Pods. The template
+                        defines the Pod's structure, including metadata and container specifications.</p>
+                    <div class="container">
+                        <pre class="preStyle">
+    <span style="color: cyan;">spec:
+    <span style="color: yellow;">  replicas: 3
+      selector:
+        matchLabels:
+          app: my-app</span>
+    <span style="color: palevioletred;">  template:
+        metadata:
+          labels:
+            app: my-app
+        spec:
+          containers:
+            - name: my-container
+              image: nginx:latest</span>
+            </pre>
+                    </div><br>
+
+                </li>
+                <li>
+                    <p><strong>Apply the Deployment configuration</strong></p>
+                    <div class="container">
+                        <pre class="preStyle">
+
+    kubectl apply -f <i style="color: yellow;">deployment-file</i>.yaml
+            </pre><br>
+                    </div>
+                </li>
+                <li>
+                    <p><strong>Expose the workload</strong></p>
+                    <p>Create a NodePort Service to expose the Pods. Apply it.</p>
+                    <div class="container">
+                        <pre class="preStyle">
+
+    <span style="color: yellow;">apiVersion: v1</span>
+    <span style="color: blueviolet;">kind: Service</span>
+    <span style="color: blue;">metadata:
+      name: my-app-service</span>
+    <span style="color: cyan;">spec:
+      selector:
+        app: my-app
+      ports:
+        - protocol: TCP
+          port: 80              <span style="color: white;"># the port the Service listens on</span>
+          targetPort: 80        <span style="color: white;"># The port on the container </span>
+          nodePort: 30001       <span style="color: white;"># The port on the node (for external access)</span>
+      type: NodePort</span>
+            </pre>
+                    </div><br>
+                    <div class="container">
+                        <pre class="preStyle">
+
+    kubectl apply -f <i style="color: yellow;">service-file</i>.yaml
+            </pre><br>
+                    </div>
+                </li>
+                <li>
+                    <p><strong>Verify the deployment</strong></p>
+                    <p>The commands below will list all pods, deployments and services which have been created in the
+                        current namespace. The Nginx application can be verified by visiting
+                        <em>http://localhost:30001</em> at the browser.
+                    </p>
+                    <div class="container">
+                        <pre class="preStyle">
+
+    kubectl get pods
+    kubectl get deployments
+    kubectl get services
+            </pre><br>
+                    </div>
+                </li>
+
+            </ol>
+        </div>
+
+        <p><u>Conclusion</u></p>
+        <p>In this article, we provided an overview of Kubernetes, a powerful container orchestration tool. We examined
+            its architecture and discussed key workload resources commonly used in Kubernetes. To demonstrate its
+            implementation, we deployed a simple Nginx application using a Deployment and exposed it via a NodePort
+            Service. While this article covered some fundamental concepts, there is much more to Kubernetes than what we
+            have explored here. It is hoped that this article has served as a
+            good introduction, inspiring curious learners to further explore Kubernetes on their own.
+        </p><br>
+
+
 
 
 
