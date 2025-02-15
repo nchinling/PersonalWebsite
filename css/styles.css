@@ -336,3 +336,74 @@ a.hidden-certificate-list-row:hover {
   overflow: hidden;
   /* This ensures the image doesn't overflow the border radius */
 }
+
+/* New class for the outer container */
+.pi-calculator {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.pi-calculator h2 {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Input Field Styling */
+.pi-calculator input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* Input Field Focus Styling */
+.pi-calculator input[type="number"]:focus {
+  border-color: #4CAF50;
+}
+
+/* Button Styling */
+.pi-calculator button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+/* Button Hover Effect */
+.pi-calculator button:hover {
+  background-color: #45a049;
+}
+
+/* Result Section Styling */
+.pi-calculator #result {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+
+  .pi-calculator input[type="number"],
+  .pi-calculator button {
+    width: 100%;
+  }
+}
