@@ -26,8 +26,8 @@
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
     <df-messenger project-id="first-ai-chatbot-454602" agent-id="1aa0a52b-8889-4994-8ac4-60a8cd5230b4"
         language-code="en" max-query-length="-1">
-        <df-messenger-chat chat-title="Math Agent">
-        </df-messenger-chat>
+        <df-messenger-chat-bubble chat-title="Math Agent">
+        </df-messenger-chat-bubble>
     </df-messenger>
     <style>
         df-messenger {
@@ -38,10 +38,8 @@
             --df-messenger-chat-background: #f3f6fc;
             --df-messenger-message-user-background: #d3e3fd;
             --df-messenger-message-bot-background: #fff;
-            bottom: 0;
-            right: 0;
-            top: 0;
-            width: 350px;
+            bottom: 16px;
+            right: 16px;
         }
     </style>
 
@@ -154,14 +152,15 @@
 
                             <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" data-bs-interval="3000">
-                                    <img src="../Images/encyclopedia/durian.webp" class="carousel-image" alt="homepage">
+                                    <img src="../Images/mathagent/questionanswer.webp" class="carousel-image"
+                                        alt="homepage">
 
                                     <br />
 
                                     <!-- </div> -->
                                 </div>
                                 <div class="carousel-item" data-bs-interval="3000">
-                                    <img src="../Images/encyclopedia/raspberrypi.webp" class="carousel-image"
+                                    <img src="../Images/mathagent/conversation_agents.webp" class="carousel-image"
                                         alt="homepage">
                                     <br />
 
@@ -170,13 +169,12 @@
 
                                 <div class="carousel-item" data-bs-interval="3000">
 
-                                    <img src="../Images/encyclopedia/dinosaur.webp" class="carousel-image"
+                                    <img src="../Images/mathagent/dialogflow.webp" class="carousel-image"
                                         alt="homepage">
                                 </div>
 
                                 <div class="carousel-item" data-bs-interval="3000">
-                                    <img src="../Images/encyclopedia/australia.webp" class="carousel-image"
-                                        alt="homepage">
+                                    <img src="../Images/mathagent/vertexapi.webp" class="carousel-image" alt="homepage">
                                 </div>
 
 
@@ -208,9 +206,22 @@
 
 
 
-    <p>This is the Singapore Math syllabus chatbot. </p>
+    <p>This is the Singapore Math syllabus GenAI chatbot. It is created using Google's Vertex AI Conversation and
+        Dialogflow CX. The data is obtained from the 2020 Secondary Math syllabus document. Thus there might have
+        been revisions to the syallabus since.</p>
+
+    <p>Click on the dialog box button at the bottom right to chat with the chatbot. You may test it out with the
+        following prompts below for a start.
+    </p>
 
     <p>
+    <ul class="bullet_indent">
+        <li>What is inside the Secondary Math syllabus?</li>
+        <li>What is metacognition?</li>
+
+        <li>What are the big ideas?</li>
+        <li>what is inside the NA-Level Sec 2 geometry syllabus?</li>
+    </ul>
     </p>
 
 
